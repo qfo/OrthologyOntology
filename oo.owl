@@ -75,7 +75,7 @@
     <!-- http://purl.obolibrary.org/obo/CDAO_0000194 -->
 
     <rdf:Description rdf:about="&obo;CDAO_0000194">
-        <owl:equivalentProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000068"/>
     </rdf:Description>
     
 
@@ -122,7 +122,7 @@
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:label xml:lang="en">Has homologous</rdfs:label>
         <rdfs:description xml:lang="en">Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs </rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="http://www.obofoundry.org/ro/ro.owl#has_part"/>
+        <rdfs:subPropertyOf rdf:resource="&sio;SIO_000028"/>
     </owl:ObjectProperty>
     
 
@@ -175,13 +175,13 @@
 
     <!-- http://semanticscience.org/resource/SIO_010078 -->
 
-    <owl:ObjectProperty rdf:about="&sio;SIO_010078"/>
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_010078"/>
     
 
 
     <!-- http://www.obofoundry.org/ro/ro.owl#part_of -->
 
-    <rdf:Description rdf:about="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+    <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068"/>
     
 
 
@@ -466,7 +466,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0001018"/>
-                <owl:someValuesFrom rdf:resource="&sio;SIO_000750"/>
+                <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/SIO_000750"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -532,13 +532,13 @@
 
     <!-- http://semanticscience.org/resource/SIO_000750 -->
 
-    <owl:Class rdf:about="&sio;SIO_000750"/>
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000750"/>
     
 
 
     <!-- http://semanticscience.org/resource/SIO_010100 -->
 
-    <owl:Class rdf:about="&sio;SIO_010100"/>
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_010100"/>
     
 
 
