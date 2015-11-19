@@ -12,7 +12,7 @@ PURL: http://purl.org/net/orth
 * [Sample queries](http://mbgd.genome.ad.jp/sparql/example.php?category=oo) exploiting the dataset described in this ontology are available.
 
 ### Future work
-* See the [wiki page](https://github.com/qfo/OrthologyOntology/wiki)
+* See the [wiki page](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki)
 
 ### Contributors
 * Jesualdo Tomás Fernández-Breis
