@@ -12,10 +12,8 @@ PURL: http://purl.org/net/orth
 * [Sample queries](http://mbgd.genome.ad.jp/sparql/example.php?category=oo) exploiting the dataset described in this ontology are available.
 
 ### Issues
-* [Open an issue](https://github.com/qfo/OrthologyOntology/issues) for questions, comments and suggestions.
-
-### Future work
-* See the [wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki)
+* [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki)
+* [Questions or suggestions](https://github.com/qfo/OrthologyOntology/issues)
 
 ### Contributors
 * Jesualdo Tomás Fernández-Breis
