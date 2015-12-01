@@ -14,8 +14,8 @@ The need of a common ontology for describing orthology information in the biolog
 * [Questions or suggestions](https://github.com/qfo/OrthologyOntology/issues) can be posted.
 
 ### See also
-* http://bioportal.bioontology.org/ontologies/ORTH (BioPortal)
-* http://aber-owl.net/ontology/ORTH (AberOWL)
+* [BioPortal](http://bioportal.bioontology.org/ontologies/ORTH)
+* [AberOWL](http://aber-owl.net/ontology/ORTH)
 
 ### Contributors
 * Jesualdo Tomás Fernández-Breis
