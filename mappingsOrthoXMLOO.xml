@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alignment>
+<schemas><schema>1406106202578/orthoxml.xsd</schema></schemas>
+<xmls><xml>1406106195967/InParanoid.A.fumigatus-E.coliK12.ortho.XML</xml>
+</xmls>
+<ontotarget>1406106207741/orthology.owl</ontotarget>
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+	<arch>
+		<nodepath>//orthologGroup</nodepath>
+	</arch>
+</map>
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#Gene</id></class>
+	
+	<arch>
+		<nodepath>/orthoXML/species/database/genes/gene/@id</nodepath>
+	</arch>
+</map>
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://miuras.inf.um.es/ontologies/swit/ncbi.owl#NCBI_1</id></class>
+	<arch>
+		<nodepath>/orthoXML/species</nodepath>
+		<infopath>@NCBITaxId</infopath>
+		<valuepath>@name</valuepath>
+	    <specificURI>http://identifiers.org/taxonomy/</specificURI>
+	</arch>
+</map>
+
+
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+	<arch>
+		<nodepath>//paralogGroup</nodepath>
+	</arch>
+</map>
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#Gene</id></class>
+		<arch>
+			<nodepath>./geneRef/@id</nodepath>
+
+		</arch>
+	</target>
+</map>
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#Gene</id></class>
+		<arch>
+			<nodepath>./geneRef/@id</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch>
+			<nodepath>./orthologGroup</nodepath>
+
+		</arch>
+	</target>
+</map>
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch>
+			<nodepath>./paralogGroup</nodepath>
+
+		</arch>
+	</target>
+</map>
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch>
+			<nodepath>./paralogGroup</nodepath>
+
+		</arch>
+	</target>
+</map>
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasHomologous</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch>
+			<nodepath>./orthologGroup</nodepath>
+
+		</arch>
+	</target>
+</map>
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#Gene</id></class>
+		<arch>
+			<nodepath>/orthoXML/species/database/genes/gene/@id</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/dc/terms/identifier</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../@geneId</valuepath>
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#Gene</id></class>
+		<arch><nodepath>/orthoXML/species/database/genes/gene/@id</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.obolibrary.org/obo/RO_0002162</id></predicate>
+	<target>
+		<class><id>http://miuras.inf.um.es/ontologies/swit/ncbi.owl#NCBI_1</id></class>
+		<arch>
+			<nodepath>../../../../.</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#OrthologyDataset</id></class>
+	<arch>
+		<nodepath>/orthoXML</nodepath>
+		<infopath>@name</infopath>
+	</arch>
+</map>
+
+
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologyDataset</id></class>
+		<arch>
+			<nodepath>/orthoXML/@origin</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/pav/version</id></predicate>
+	<target>
+		<arch>
+			<valuepath>/orthoXML/@originVersion</valuepath>
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologyDataset</id></class>
+		<arch>
+			<nodepath>/orthoXML/@origin</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasSource</id></predicate>
+	<target>
+		<arch>
+			<valuepath>/orthoXML/@origin</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch>
+			<nodepath>//orthologGroup</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/dc/terms/identifier</id></predicate>
+	<target>
+		<arch>
+			<valuepath>./@id</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://rdfs.org/ns/void#inDataset</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#OrthologyDataset</id></class>
+		<arch>
+			<nodepath>/orthoXML/@origin</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://rdfs.org/ns/void#inDataset</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#OrthologyDataset</id></class>
+		<arch>
+			<nodepath>/orthoXML/@origin</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+
+
+
+<map>
+<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#Protein</id></class>
+	<arch>
+		<nodepath>/orthoXML/species/database/genes/gene/@id</nodepath>
+	</arch>
+</map>
+
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#Protein</id></class>
+		<arch>
+			<nodepath>/orthoXML/species/database/genes/gene/@id</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/dc/terms/identifier</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../@protId</valuepath>
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#Gene</id></class>
+		<arch><nodepath>/orthoXML/species/database/genes/gene/@id</nodepath></arch>
+	</source>
+	<predicate><id>http://semanticscience.org/resource/SIO_010078</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#Protein</id></class>
+		<arch>
+			<nodepath>.</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Class</type>
+	<class><id>http://semanticscience.org/resource/SIO_000750</id></class>
+	<arch>
+		<nodepath>/orthoXML/species/database</nodepath>
+	</arch>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://semanticscience.org/resource/SIO_000750</id></class>
+		<arch>
+			<nodepath>/orthoXML/species/database</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/pav/version</id></predicate>
+	<target>
+		<arch>
+			<valuepath>./@version</valuepath>
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://semanticscience.org/resource/SIO_000750</id></class>
+		<arch>
+			<nodepath>/orthoXML/species/database</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/dc/terms/identifier</id></predicate>
+	<target>
+		<arch>
+			<valuepath>./@name</valuepath>
+		</arch>
+	</target>
+</map>
+	
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#Protein</id></class>
+		<arch><nodepath>/orthoXML/species/database/genes/gene/@id</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.obolibrary.org/obo/RO_0001018</id></predicate>
+	<target>
+		<class><id>http://semanticscience.org/resource/SIO_000750</id></class>
+		<arch>
+			<nodepath>../../../.</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+	<arch>
+		<nodepath>//orthologGroup/property[@name="TaxRange"]/@value</nodepath>
+		<valuepath>@value</valuepath>
+		
+	</arch>
+	
+</map>
+
+<map>
+<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+	<arch>
+		<nodepath>//paralogGroup/property[@name="TaxRange"]/@value</nodepath>
+		<valuepath>@value</valuepath>
+		
+	</arch>
+	
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasTaxonomicRange</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>./property[@name="TaxRange"]/@value</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasTaxonomicRange</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>./property[@name="TaxRange"]/@value</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//orthologGroup/property[@name="TaxRange"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRange</id></predicate>
+	<target>
+		<arch>
+			<valuepath>.</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//paralogGroup/property[@name="TaxRange"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRange</id></predicate>
+	<target>
+		<arch>
+			<valuepath>.</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//orthologGroup/property[@name="TaxRange"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRangeId</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../../property[@name="taxon_id"]/@value</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//paralogGroup/property[@name="TaxRange"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRangeId</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../../property[@name="taxon_id"]/@value</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+	<arch>
+		<nodepath>//orthologGroup/property[@name="taxon_name"]/@value</nodepath>
+		<valuepath>@value</valuepath>
+		
+	</arch>
+	
+</map>
+
+<map>
+<type>Arch2Class</type>
+	<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+	<arch>
+		<nodepath>//paralogGroup/property[@name="taxon_name"]/@value</nodepath>
+		<valuepath>@value</valuepath>
+		
+	</arch>
+	
+</map>
+
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#OrthologsCluster</id></class>
+		<arch><nodepath>//orthologGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasTaxonomicRange</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>./property[@name="taxon_name"]/@value</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Rel</type>
+	<source>
+		<class><id>http://purl.org/net/orth#ParalogsCluster</id></class>
+		<arch><nodepath>//paralogGroup</nodepath></arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#hasTaxonomicRange</id></predicate>
+	<target>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>./property[@name="taxon_name"]/@value</nodepath>
+
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//orthologGroup/property[@name="taxon_name"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRange</id></predicate>
+	<target>
+		<arch>
+			<valuepath>.</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//paralogGroup/property[@name="taxon_name"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRange</id></predicate>
+	<target>
+		<arch>
+			<valuepath>.</valuepath>
+		</arch>
+	</target>
+</map>
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//orthologGroup/property[@name="taxon_name"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRangeId</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../../property[@name="taxon_id"]/@value</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+<map>
+	<type>Arch2Prop</type>
+	<source>
+		<class><id>http://purl.org/net/orth#TaxonomicRange</id></class>
+		<arch>
+			<nodepath>//paralogGroup/property[@name="taxon_name"]/@value</nodepath>
+		</arch>
+	</source>
+	<predicate><id>http://purl.org/net/orth#taxRangeId</id></predicate>
+	<target>
+		<arch>
+			<valuepath>../../property[@name="taxon_id"]/@value</valuepath>
+		</arch>
+	</target>
+</map>
+
+
+</Alignment>
