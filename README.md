@@ -6,6 +6,7 @@ The OWL file is publicly available at http://purl.org/net/orth.
 ### Description
 
 * [OWLDoc](http://mbgd.genome.ad.jp/ontology/OWLDOC/) exported from Protégé is available.
+* [Mappings](https://github.com/qfo/OrthologyOntology/wiki/Mappings) from previous ontologies.
 
 ### Applications
 
