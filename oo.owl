@@ -1,37 +1,32 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY orthology "http://purl.org/net/orth#" >
-    <!ENTITY dct "http://purl.org/dc/terms/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
-    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY sio "http://semanticscience.org/resource/" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY biositemap "http://bioontology.org/ontologies/biositemap.owl#" >
-]>
-
-
 <rdf:RDF xmlns="http://purl.org/net/orth#"
      xml:base="http://purl.org/net/orth"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dct="http://purl.org/dc/terms/"
-     xmlns:sio="http://semanticscience.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:orthology="http://purl.org/net/orth#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:so-xp="http://purl.obolibrary.org/obo/so-xp.obo#"
+     xmlns:ncbi="http://miuras.inf.um.es/ontologies/swit/ncbi.owl#"
+     xmlns:cito="http://purl.org/spar/cito/"
      xmlns:biositemap="http://bioontology.org/ontologies/biositemap.owl#"
-     xmlns:orthology="http://purl.org/net/orth#">
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sio="http://semanticscience.org/resource/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#">
     <owl:Ontology rdf:about="http://purl.org/net/orth">
         <owl:imports rdf:resource="http://miuras.inf.um.es/ontologies/swit/ncbi.owl"/>
-        <owl:imports rdf:resource="&obo;cdao.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/cdao.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
         <owl:imports rdf:resource="http://semanticscience.org/ontology/sio.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        
     </owl:Ontology>
     
 
@@ -49,7 +44,7 @@
 
     <!-- http://www.w3.org/2000/01/rdf-schema#description -->
 
-    <owl:AnnotationProperty rdf:about="&rdfs;description"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#description"/>
     
 
 
@@ -66,23 +61,27 @@
 
     <!-- http://bioontology.org/ontologies/biositemap.owl#version_information -->
 
-    <owl:ObjectProperty rdf:about="&biositemap;version_information">
+    <owl:ObjectProperty rdf:about="http://bioontology.org/ontologies/biositemap.owl#version_information">
         <rdfs:label xml:lang="en">version information</rdfs:label>
     </owl:ObjectProperty>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000178 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CDAO_0000194 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000194">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000068"/>
-    </rdf:Description>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000194"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0001018 -->
 
-    <owl:ObjectProperty rdf:about="&obo;RO_0001018">
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001018">
         <rdfs:label xml:lang="en">contained in</rdfs:label>
     </owl:ObjectProperty>
     
@@ -90,7 +89,7 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
 
-    <owl:ObjectProperty rdf:about="&obo;RO_0002162">
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162">
         <rdfs:label xml:lang="en">in taxon</rdfs:label>
     </owl:ObjectProperty>
     
@@ -98,7 +97,7 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002350 -->
 
-    <owl:ObjectProperty rdf:about="&obo;RO_0002350">
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002350">
         <rdfs:label xml:lang="en">member of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -106,58 +105,57 @@
 
     <!-- http://purl.org/net/orth#hasCluster -->
 
-    <owl:ObjectProperty rdf:about="&orthology;hasCluster">
-        <rdfs:label xml:lang="en">Has cluster</rdfs:label>
-        <rdfs:description xml:lang="en">Inverse property of inDataset.  It permits to navigate to the clusters included in a particular dataset.</rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="&obo;CDAO_0000178"/>
-        <rdfs:range rdf:resource="&orthology;GeneTreeNode"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasCluster">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
         <owl:inverseOf rdf:resource="http://rdfs.org/ns/void#inDataset"/>
+        <rdfs:range rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
+        <rdfs:description xml:lang="en">Inverse property of inDataset.  It permits to navigate to the clusters included in a particular dataset.</rdfs:description>
+        <rdfs:label xml:lang="en">Has cluster</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/net/orth#hasHomologous -->
 
-    <owl:ObjectProperty rdf:about="&orthology;hasHomologous">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:label xml:lang="en">Has homologous</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasHomologous">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000028"/>
+        <owl:inverseOf rdf:resource="http://purl.org/net/orth#isHomologMember"/>
         <rdfs:description xml:lang="en">Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs </rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="&sio;SIO_000028"/>
+        <rdfs:label xml:lang="en">Has homologous</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/net/orth#hasSource -->
 
-    <owl:ObjectProperty rdf:about="&orthology;hasSource">
-        <rdfs:label xml:lang="en">Has source</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasSource">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/orth#OrthologyDataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
         <rdfs:description xml:lang="en">It permits to link a cluster with its data source</rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="&obo;CDAO_0000178"/>
-        <rdfs:domain rdf:resource="&orthology;OrthologyDataset"/>
-        <rdfs:range rdf:resource="&rdfs;Resource"/>
+        <rdfs:label xml:lang="en">Has source</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/net/orth#hasTaxonomicRange -->
 
-    <owl:ObjectProperty rdf:about="&orthology;hasTaxonomicRange">
-        <rdfs:label xml:lang="en">Has taxonomic range</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasTaxonomicRange">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
+        <rdfs:range rdf:resource="http://purl.org/net/orth#TaxonomicRange"/>
         <rdfs:description xml:lang="en">Property that associates a cluster of homologs with the taxonomic range at which it has been calculated</rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="&obo;CDAO_0000178"/>
-        <rdfs:domain rdf:resource="&orthology;HomologsCluster"/>
-        <rdfs:range rdf:resource="&orthology;TaxonomicRange"/>
+        <rdfs:label xml:lang="en">Has taxonomic range</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/net/orth#isHomologMember -->
 
-    <owl:ObjectProperty rdf:about="&orthology;isHomologMember">
-        <rdfs:label xml:lang="en">Is homologous member</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/orth#isHomologMember">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
         <rdfs:description xml:lang="en">Inverse of has homologous. This property permits to find the cluster in which a cluster or sequence unit is included.</rdfs:description>
-        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002350"/>
-        <owl:inverseOf rdf:resource="&orthology;hasHomologous"/>
+        <rdfs:label xml:lang="en">Is homologous member</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -165,23 +163,23 @@
     <!-- http://rdfs.org/ns/void#inDataset -->
 
     <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#inDataset">
-        <rdfs:label xml:lang="en">In dataset</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
+        <rdfs:range rdf:resource="http://purl.org/net/orth#OrthologyDataset"/>
         <rdfs:description xml:lang="en">Property that provides the dataset associated with a gene tree node</rdfs:description>
-        <rdfs:domain rdf:resource="&orthology;GeneTreeNode"/>
-        <rdfs:range rdf:resource="&orthology;OrthologyDataset"/>
+        <rdfs:label xml:lang="en">In dataset</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000028 -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000028"/>
     
 
 
     <!-- http://semanticscience.org/resource/SIO_010078 -->
 
     <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_010078"/>
-    
-
-
-    <!-- http://www.obofoundry.org/ro/ro.owl#part_of -->
-
-    <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068"/>
     
 
 
@@ -198,7 +196,7 @@
 
     <!-- http://bioontology.org/ontologies/biositemap.owl#description -->
 
-    <owl:DatatypeProperty rdf:about="&biositemap;description">
+    <owl:DatatypeProperty rdf:about="http://bioontology.org/ontologies/biositemap.owl#description">
         <rdfs:label xml:lang="en">description</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -206,28 +204,28 @@
 
     <!-- http://purl.org/dc/terms/identifier -->
 
-    <owl:DatatypeProperty rdf:about="&dct;identifier">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">identifier</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://purl.org/net/orth#taxRange -->
 
-    <owl:DatatypeProperty rdf:about="&orthology;taxRange">
-        <rdfs:label xml:lang="en">tax range</rdfs:label>
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/orth#taxRange">
+        <rdfs:domain rdf:resource="http://purl.org/net/orth#TaxonomicRange"/>
         <rdfs:description xml:lang="en">Property that stores the name of the taxonomic range at which a given cluster of homologs has been calculated</rdfs:description>
-        <rdfs:domain rdf:resource="&orthology;TaxonomicRange"/>
+        <rdfs:label xml:lang="en">tax range</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://purl.org/net/orth#taxRangeId -->
 
-    <owl:DatatypeProperty rdf:about="&orthology;taxRangeId">
-        <rdfs:label xml:lang="en">tax range id</rdfs:label>
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/orth#taxRangeId">
         <rdfs:description xml:lang="en">This property links a cluster of homologs with its taxonomic range.</rdfs:description>
+        <rdfs:label xml:lang="en">tax range id</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -269,7 +267,7 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000012 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000012">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000012">
         <rdfs:description xml:lang="en">Tree with a root node, which is the common ancestor to all the nodes in the tree</rdfs:description>
     </rdf:Description>
     
@@ -277,7 +275,7 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000064 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000064">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000064">
         <rdfs:description xml:lang="en">Evolutionary event</rdfs:description>
     </rdf:Description>
     
@@ -285,7 +283,7 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000077 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000077">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000077">
         <rdfs:description xml:lang="en">Evolutionary event that consists on the duplication of a gene</rdfs:description>
     </rdf:Description>
     
@@ -293,27 +291,55 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000121 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000121">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000121">
         <rdfs:description xml:lang="en">Evolutionary event related with the evolution of a gene in different species</rdfs:description>
     </rdf:Description>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000138 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000138"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CDAO_0000140 -->
 
-    <rdf:Description rdf:about="&obo;CDAO_0000140">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000140">
         <rdfs:description xml:lang="en">Basic unit of graphs and trees</rdfs:description>
     </rdf:Description>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/SO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000104">
+        <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Protein"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
+        <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Gene"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0001411 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001411"/>
+    
+
+
     <!-- http://purl.org/net/orth#Gene -->
 
-    <owl:Class rdf:about="&orthology;Gene">
-        <rdfs:subClassOf rdf:resource="&orthology;SequenceUnit"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#Gene">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002162"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                 <owl:someValuesFrom rdf:resource="http://miuras.inf.um.es/ontologies/swit/ncbi.owl#NCBI_1"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -323,149 +349,149 @@
 
     <!-- http://purl.org/net/orth#GeneTreeNode -->
 
-    <owl:Class rdf:about="&orthology;GeneTreeNode">
-        <rdfs:label xml:lang="en">Gene tree node</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;CDAO_0000140"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#GeneTreeNode">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000140"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dct;identifier"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">A node of a tree whose leaf nodes are sequence units and whose internal nodes are clusters of homologs</rdfs:description>
+        <rdfs:label xml:lang="en">Gene tree node</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#HierarchicalClusteringTree -->
 
-    <owl:Class rdf:about="&orthology;HierarchicalClusteringTree">
-        <rdfs:label xml:lang="en">Hierarchical clustering tree</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;CDAO_0000012"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#HierarchicalClusteringTree">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000012"/>
         <rdfs:description xml:lang="en">A tree whose content is the result of the application of hierarchical clustering to a dataset</rdfs:description>
+        <rdfs:label xml:lang="en">Hierarchical clustering tree</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#HierarchicalGeneTree -->
 
-    <owl:Class rdf:about="&orthology;HierarchicalGeneTree">
-        <rdfs:label xml:lang="en">Hierarchical gene tree </rdfs:label>
-        <rdfs:subClassOf rdf:resource="&orthology;HierarchicalClusteringTree"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#HierarchicalGeneTree">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HierarchicalClusteringTree"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000178"/>
-                <owl:someValuesFrom rdf:resource="&orthology;Gene"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/net/orth#Gene"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000178"/>
-                <owl:allValuesFrom rdf:resource="&orthology;GeneTreeNode"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">A tree whose leaf nodes correspond to genes</rdfs:description>
+        <rdfs:label xml:lang="en">Hierarchical gene tree </rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#HomologsCluster -->
 
-    <owl:Class rdf:about="&orthology;HomologsCluster">
-        <rdfs:label xml:lang="en">Cluster of homologs</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&orthology;GeneTreeNode"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#HomologsCluster">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://rdfs.org/ns/void#inDataset"/>
-                <owl:someValuesFrom rdf:resource="&orthology;OrthologyDataset"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/net/orth#OrthologyDataset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&orthology;hasHomologous"/>
-                <owl:allValuesFrom rdf:resource="&orthology;GeneTreeNode"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000064"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&orthology;hasTaxonomicRange"/>
-                <owl:allValuesFrom rdf:resource="&orthology;TaxonomicRange"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/orth#hasHomologous"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000178"/>
-                <owl:allValuesFrom rdf:resource="&obo;CDAO_0000064"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/orth#hasTaxonomicRange"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/net/orth#TaxonomicRange"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">Set of homologous sequences</rdfs:description>
+        <rdfs:label xml:lang="en">Cluster of homologs</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#OrthologsCluster -->
 
-    <owl:Class rdf:about="&orthology;OrthologsCluster">
-        <rdfs:label xml:lang="en">Cluster of orthologs</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&orthology;HomologsCluster"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#OrthologsCluster">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000178"/>
-                <owl:allValuesFrom rdf:resource="&obo;CDAO_0000121"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000121"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">Set of homologous sequences derived from a speciation event.
 
 </rdfs:description>
+        <rdfs:label xml:lang="en">Cluster of orthologs</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#OrthologyDataset -->
 
-    <owl:Class rdf:about="&orthology;OrthologyDataset">
-        <rdfs:label xml:lang="en">Orthology dataset</rdfs:label>
+    <owl:Class rdf:about="http://purl.org/net/orth#OrthologyDataset">
         <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&orthology;hasSource"/>
-                <owl:someValuesFrom rdf:resource="&rdfs;Resource"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/orth#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/pav#version"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description>A resource that provides information about orthology</rdfs:description>
+        <rdfs:label xml:lang="en">Orthology dataset</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#ParalogsCluster -->
 
-    <owl:Class rdf:about="&orthology;ParalogsCluster">
-        <rdfs:label xml:lang="en">Cluster of paralogs</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&orthology;HomologsCluster"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#ParalogsCluster">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000178"/>
-                <owl:allValuesFrom rdf:resource="&obo;CDAO_0000077"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">Set of homologous sequences derived from a duplication event</rdfs:description>
+        <rdfs:label xml:lang="en">Cluster of paralogs</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#Protein -->
 
-    <owl:Class rdf:about="&orthology;Protein">
-        <rdfs:subClassOf rdf:resource="&orthology;SequenceUnit"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#Protein">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0001018"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/SIO_000750"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -475,48 +501,49 @@
 
     <!-- http://purl.org/net/orth#SequenceUnit -->
 
-    <owl:Class rdf:about="&orthology;SequenceUnit">
-        <rdfs:label xml:lang="en">Sequence unit</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;CDAO_0000138"/>
-        <rdfs:subClassOf rdf:resource="&orthology;GeneTreeNode"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#SequenceUnit">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000138"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
         <rdfs:description xml:lang="en">protein or DNA sequence as a unit of comparison</rdfs:description>
+        <rdfs:label xml:lang="en">Sequence unit</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#Subgene -->
 
-    <owl:Class rdf:about="&orthology;Subgene">
-        <rdfs:label xml:lang="en">Subgene</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&orthology;SequenceUnit"/>
+    <owl:Class rdf:about="http://purl.org/net/orth#Subgene">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;CDAO_0000194"/>
-                <owl:someValuesFrom rdf:resource="&orthology;Gene"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000194"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/net/orth#Gene"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">A region of the sequence of the gene</rdfs:description>
+        <rdfs:label xml:lang="en">Subgene</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#TaxonomicRange -->
 
-    <owl:Class rdf:about="&orthology;TaxonomicRange">
-        <rdfs:label xml:lang="en">Taxonomic range</rdfs:label>
+    <owl:Class rdf:about="http://purl.org/net/orth#TaxonomicRange">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&orthology;taxRange"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/orth#taxRange"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&orthology;taxRangeId"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/orth#taxRangeId"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:description xml:lang="en">The taxonomic range represents the taxon at which a group of sequences are considered members of the same cluster of orthologs/paralogs</rdfs:description>
+        <rdfs:label xml:lang="en">Taxonomic range</rdfs:label>
     </owl:Class>
     
 
@@ -524,8 +551,8 @@
     <!-- http://rdfs.org/ns/void#Dataset -->
 
     <owl:Class rdf:about="http://rdfs.org/ns/void#Dataset">
-        <rdfs:label xml:lang="en">Dataset</rdfs:label>
         <rdfs:description xml:lang="en">Collection of data</rdfs:description>
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
     </owl:Class>
     
 
@@ -544,13 +571,13 @@
 
     <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
 
-    <owl:Class rdf:about="&rdfs;Resource">
-        <rdfs:label xml:lang="en">Resource</rdfs:label>
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
         <rdfs:description xml:lang="en">The source of orthology information (e.g., database)</rdfs:description>
+        <rdfs:label xml:lang="en">Resource</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
 
