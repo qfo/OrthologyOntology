@@ -10,7 +10,7 @@ The OWL file is publicly available at http://purl.org/net/orth.
 
 ### Applications
 
-* [Sample queries](http://mbgd.genome.ad.jp/sparql/example.php?category=oo) exploiting the dataset described in this ontology are available.
+* [Sample queries](http://mbgd.genome.ad.jp/sparql/example.php?category=orth) exploiting the dataset described in this ontology are available.
 
 ### Issues
 * [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for remaining issues.
