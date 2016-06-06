@@ -22,6 +22,9 @@ The OWL file is publicly available at http://purl.org/net/orth.
 * María del Carmen Legaz-García
 * Ikuo Uchiyama
 
+### Publication
+* Jesualdo Tomás Fernández-Breis†, Hirokazu Chiba†, María del Carmen Legaz-García, Ikuo Uchiyama (†Equal contributors). The Orthology Ontology: development and applications. Journal of Biomedical Semantics 7:34 (2016). [[link](http://www.jbiomedsem.com/content/7/1/34)]
+
 ### See also
 * [BioPortal](http://bioportal.bioontology.org/ontologies/ORTH)
 * [AberOWL](http://aber-owl.net/ontology/ORTH)
