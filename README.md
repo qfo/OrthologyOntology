@@ -21,6 +21,7 @@ The OWL file is publicly available at http://purl.org/net/orth.
 * Hirokazu Chiba
 * María del Carmen Legaz-García
 * Ikuo Uchiyama
+* Tarcisio Mendes de Farias
 
 ### See also
 * [BioPortal](http://bioportal.bioontology.org/ontologies/ORTH)
