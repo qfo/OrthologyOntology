@@ -1,9 +1,7 @@
 # The Orthology Ontology
-The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH) on the basis of the best practices in ontology engineering. This ontology was developed in the Web Ontology Language ([OWL](http://www.w3.org/TR/owl2-overview/)) using [Protégé](http://protege.stanford.edu). This ontology should serve as a knowledge framework for semantic standardization of the orthology resources. 
-
+The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH) on the basis of the best practices in ontology engineering. This ontology was developed in the Web Ontology Language ([OWL](http://www.w3.org/TR/owl2-overview/)) using [Protégé](http://protege.stanford.edu). 
 The OWL file is publicly available at http://purl.org/net/orth.
 
-### Issues
 * [Recent modifications](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) of the ontology
 * [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for previous activities
 
