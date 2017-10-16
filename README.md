@@ -3,7 +3,7 @@ The need of a common ontology for describing orthology information in biological
 The OWL file is publicly available at http://purl.org/net/orth.
 
 ### Issues and Activities
-* [Recent modifications](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) to create a new release candidate (http://purl.org/net/orth_rc)
+* [Recent modifications](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) to create version 2 release candidate (http://purl.org/net/orth_rc)
 * [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for previous activities
 
 ### Contributors
