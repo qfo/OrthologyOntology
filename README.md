@@ -1,20 +1,10 @@
 # The Orthology Ontology
-The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH) on the basis of the best practices in ontology engineering. This ontology was developed in the Web Ontology Language ([OWL](http://www.w3.org/TR/owl2-overview/)) using [Protégé](http://protege.stanford.edu). The mappings from [OrthoXML](http://orthoxml.org/0.3/orthoxml_doc_v0.3.html) to the ontology was defined using the Semantic Web Integration Tool ([SWIT](http://sele.inf.um.es/swit/)). This ontology should serve as a knowledge framework for semantic standardization of the orthology resources. 
-
+The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH) on the basis of the best practices in ontology engineering. This ontology was developed in the Web Ontology Language ([OWL](http://www.w3.org/TR/owl2-overview/)) using [Protégé](http://protege.stanford.edu). 
 The OWL file is publicly available at http://purl.org/net/orth.
 
-### Description
-
-* [Mappings](https://github.com/qfo/OrthologyOntology/wiki/Mappings) from previous ontologies.
-* [OWLDoc](http://mbgd.genome.ad.jp/ontology/OWLDOC/) exported from Protégé is available.
-
-### Applications
-
-* [Sample queries](http://mbgd.genome.ad.jp/sparql/example.php?category=orth) exploiting the dataset described in this ontology are available.
-
-### Issues
-* [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for remaining issues.
-* [Questions or suggestions](https://github.com/qfo/OrthologyOntology/issues) can be posted.
+### Issues and Activities
+* [Recent modifications](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) to create a second version release candidate (http://purl.org/net/orth_rc)
+* [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for previous activities
 
 ### Contributors
 * Jesualdo Tomás Fernández-Breis
