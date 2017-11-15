@@ -78,24 +78,11 @@ orth:hasHomologousMember rdf:type owl:ObjectProperty ;
                          rdfs:label "has homologous member"@en .
 
 
-###  http://purl.org/net/orth#hasInParalog
-orth:hasInParalog rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf orth:hasParalog ;
-                  rdf:type owl:SymmetricProperty ;
-                  owl:propertyDisjointWith orth:hasOutParalog .
-
-
 ###  http://purl.org/net/orth#hasOrtholog
 orth:hasOrtholog rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf orth:hasHomolog ;
                  rdf:type owl:SymmetricProperty ;
                  rdfs:comment "Orthologous pairwise relation between genes/proteins. For example, A Gene(A) hasOrtholog Gene(B). This property can be materialized or inferred by applying a logical rule or a sub-query."@en .
-
-
-###  http://purl.org/net/orth#hasOutParalog
-orth:hasOutParalog rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf orth:hasParalog ;
-                   rdf:type owl:SymmetricProperty .
 
 
 ###  http://purl.org/net/orth#hasParalog
