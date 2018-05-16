@@ -274,10 +274,19 @@ sio:SIO_000028 rdf:type owl:ObjectProperty ;
                rdfs:label "has part"@en .
 
 
+###  http://semanticscience.org/resource/SIO_010079
+sio:SIO_010079 rdf:type owl:ObjectProperty ;
+               rdfs:comment "A relation between two objects, in which the first object is produced from the information contained in the second object."@en ;
+               rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
+               rdfs:label "is encoded by"@en .
+
+
 ###  http://semanticscience.org/resource/SIO_010078
 sio:SIO_010078 rdf:type owl:ObjectProperty ;
+               owl:inverseOf sio:SIO_010079 ;
+               rdfs:comment "A relation between two objects, in which the first object contains information that is used to produce the second object."@en ;
+               rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
                rdfs:label "encodes"@en .
-
 
 #################################################################
 #    Data properties
