@@ -1,0 +1,160 @@
+@prefix : <http://purl.org/lscr#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix up: <http://purl.uniprot.org/core/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebi: <http://rdf.ebi.ac.uk/terms/ensembl/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix oma: <http://omabrowser.org/ontology/oma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix lscr: <http://purl.org/lscr#> .
+@prefix mbgd: <http://mbgd.genome.ad.jp/owl/mbgd#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ensembl: <http://rdf.ebi.ac.uk/resource/ensembl/> .
+@prefix upuniprot: <http://purl.uniprot.org/uniprot/> .
+@prefix ensemblprot: <http://rdf.ebi.ac.uk/resource/ensembl.protein/> .
+@prefix ensembltrascript: <http://rdf.ebi.ac.uk/resource/ensembl.transcript/> .
+@base <http://purl.org/lscr> .
+
+<http://purl.org/lscr> rdf:type owl:Ontology ;
+                        owl:versionIRI <http://purl.org/lscr/0.1> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/identifier
+dct:identifier rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:string ;
+               rdfs:label "identifier"@en .
+               
+###  http://purl.org/lscr#xrefEMBLSequence
+lscr:xrefEMBLSequence rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/lscr#xrefEnsembl
+lscr:xrefEnsembl rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/lscr#xrefEnsemblGene
+lscr:xrefEnsemblGene rdf:type owl:AnnotationProperty ;
+                     rdfs:comment "URI RDF instance template to assign this property: http://rdf.ebi.ac.uk/resource/ensembl/{ENSEMBL_GENE_ID}. Example: :ANY_URI lscr:xrefEnsemblGene http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000139618"@en ;
+                     rdfs:subPropertyOf lscr:xrefEnsembl ;
+                     rdfs:range obo:SO_0000704 .
+
+
+###  http://purl.org/lscr#xrefEnsemblProtein
+lscr:xrefEnsemblProtein rdf:type owl:AnnotationProperty ;
+                        rdfs:comment "URI RDF instance template to assign this property: http://rdf.ebi.ac.uk/resource/ensembl.protein/{ENSEMBL_PROTEIN_ID}. Example: :ANY_URI lscr:xrefEnsemblProtein http://rdf.ebi.ac.uk/resource/ensembl.protein/ENSP00000296370"@en ;
+                        rdfs:subPropertyOf lscr:xrefEnsembl ;
+                        rdfs:range ebi:protein .
+
+
+###  http://purl.org/lscr#xrefEnsemblTranscript
+lscr:xrefEnsemblTranscript rdf:type owl:AnnotationProperty ;
+                           rdfs:comment "URI RDF instance template to assign this property: http://rdf.ebi.ac.uk/resource/ensembl.transcript/{ENSEMBL_TRANSCRIPT_ID}. Example: :ANY_URI lscr:xrefEnsemblTranscript http://rdf.ebi.ac.uk/resource/ensembl.transcript/ENST00000380152"@en ;
+                           rdfs:subPropertyOf lscr:xrefEnsembl ;
+                           rdfs:range obo:SO_0000673 .
+
+
+###  http://purl.org/lscr#xrefMBGD
+lscr:xrefMBGD rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/lscr#xrefMBGDGene
+lscr:xrefMBGDGene rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf lscr:xrefMBGD .
+
+
+###  http://purl.org/lscr#xrefMBGDGroup
+lscr:xrefMBGDGroup rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf lscr:xrefMBGD .
+
+
+###  http://purl.org/lscr#xrefNCBI
+lscr:xrefNCBI rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/lscr#xrefNCBIGene
+lscr:xrefNCBIGene rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf lscr:xrefNCBI .
+
+
+###  http://purl.org/lscr#xrefNCBIProtein
+lscr:xrefNCBIProtein rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf lscr:xrefNCBI .
+
+
+###  http://purl.org/lscr#xrefNCBIRefSeq
+lscr:xrefNCBIRefSeq rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf lscr:xrefNCBI .
+
+
+###  http://purl.org/lscr#xrefOMA
+lscr:xrefOMA rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/lscr#xrefOMAGroup
+lscr:xrefOMAGroup rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf lscr:xrefOMA .
+
+
+###  http://purl.org/lscr#xrefOMAProtein
+lscr:xrefOMAProtein rdf:type owl:AnnotationProperty ;
+                    rdfs:comment "URI RDF instance template to assign this property: http://omabrowser.org/ontology/oma#PROTEIN_{OMA_ID}. Example: :ANY_URI lscr:xrefOMAProtein http://omabrowser.org/ontology/oma#PROTEIN_HUMAN22168"@en ;
+                    rdfs:subPropertyOf lscr:xrefOMA ;
+                    rdfs:range orth:Protein .
+
+
+###  http://purl.org/lscr#xrefUniprot
+lscr:xrefUniprot rdf:type owl:AnnotationProperty ;
+                 rdfs:comment "URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefUniprot http://purl.uniprot.org/uniprot/P68871"@en ;
+                 rdfs:subPropertyOf rdfs:seeAlso ;
+                 rdfs:range up:Protein .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/SO_0000673
+obo:SO_0000673 rdf:type owl:Class ;
+               rdfs:isDefinedBy "https://www.ebi.ac.uk/rdf/documentation/ensembl/" ;
+               rdfs:label "Transcript" .
+
+
+###  http://purl.obolibrary.org/obo/SO_0000704
+obo:SO_0000704 rdf:type owl:Class ;
+               rdfs:isDefinedBy "http://www.ontobee.org/ontology/SO?iri=http://purl.obolibrary.org/obo/SO_0000704" ;
+               rdfs:label "Gene" .
+
+
+###  http://purl.org/net/orth#Gene
+orth:Gene rdf:type owl:Class ;
+          rdfs:isDefinedBy "https://github.com/qfo/OrthologyOntology" .
+
+
+###  http://purl.org/net/orth#Protein
+orth:Protein rdf:type owl:Class ;
+             rdfs:isDefinedBy "https://github.com/qfo/OrthologyOntology" .
+
+
+###  http://purl.uniprot.org/core/Protein
+up:Protein rdf:type owl:Class ;
+           rdfs:isDefinedBy "http://purl.uniprot.org/core/" .
+
+
+###  http://rdf.ebi.ac.uk/terms/ensembl/protein
+ebi:protein rdf:type owl:Class ;
+            rdfs:isDefinedBy "https://www.ebi.ac.uk/rdf/documentation/ensembl/" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
