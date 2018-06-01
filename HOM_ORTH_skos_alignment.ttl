@@ -495,7 +495,7 @@ obo:HOM_0000024 rdf:type owl:NamedIndividual ;
 
 ###  http://purl.org/net/orth#ParalogyRelation
 <http://purl.org/net/orth#ParalogyRelation> rdf:type owl:NamedIndividual ;
-                                            skos:related obo:HOM_0000011 ;
+                                            skos:relatedMatch obo:HOM_0000011 ;
                                             rdfs:comment "Homology relation that involves sequences that diverged after a duplication event."@en ;
                                             rdfs:label "paralogy relation"@en ;
                                             skos:altLabel "paralogous relation"@en .
