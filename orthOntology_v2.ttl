@@ -13,6 +13,7 @@
 @base <http://purl.org/net/orth> .
 
 <http://purl.org/net/orth> rdf:type owl:Ontology ;
+                            owl:versionIRI <http://purl.org/net/orth/2.0> ;
                             owl:versionInfo """This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .
 @authors T.M. de Farias, H. Chiba, J.T. Fernandez-Breis, E. Antezana, D. Kuznetsov, C. Dessimoz and F. Villiers."""@en .
 
@@ -86,8 +87,18 @@ orth:inDatabase rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
+###  http://purl.obolibrary.org/obo/CDAO_0000148
+obo:CDAO_0000148 rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf obo:CDAO_0000178 ;
+                 rdfs:domain obo:CDAO_0000012 ;
+                 rdfs:range obo:CDAO_0000140 ;
+                 rdfs:comment "The property links a rooted tree to the specific node that represents the unique root of the tree."@en ;
+                 rdfs:label "has_Root"^^xsd:string .
+
+
 ###  http://purl.obolibrary.org/obo/CDAO_0000178
 obo:CDAO_0000178 rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Generic 'has' property."@en ;
                  rdfs:label "has"^^xsd:string .
 
 
@@ -98,6 +109,7 @@ obo:CDAO_0000194 rdf:type owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/RO_0001018
 obo:RO_0001018 rdf:type owl:ObjectProperty ;
+               rdfs:comment "This property was simplified. Original range and domain were removed due to be highly abstracted because it is well-know the domain of discourse: orthology databases.  The rage restriction of this property is defined as a class restriction in (e.g.: orth:Gene)."@en ;
                rdfs:label "contained in"@en .
 
 
@@ -109,23 +121,30 @@ obo:RO_0002162 rdf:type owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/RO_0002350
 obo:RO_0002350 rdf:type owl:ObjectProperty ;
+               rdfs:comment "Is member of is a mereological relation between a item and a collection."@en ;
+               rdfs:isDefinedBy "http://purl.obolibrary.org/obo/ro.owl" ;
                rdfs:label "member of"@en .
 
 
 ###  http://purl.org/net/orth#hasAncestralEvolutionaryEvent
 orth:hasAncestralEvolutionaryEvent rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf orth:hasEvolutionaryEvent ;
+                                   rdfs:comment "A property of a homology relation (e.g.: \"inparalogy relation\") to state an ancestral evolutionary event. An ancestral evolutionary event is an event that precedes another evolutionary event. For example, a speciation event before a duplication event."@en ;
                                    rdfs:label "has ancestral evolutionary event"@en .
 
 
 ###  http://purl.org/net/orth#hasCluster
-orth:hasCluster rdf:type owl:ObjectProperty ;
+orth:hasHomologyData rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf obo:CDAO_0000178 ;
                 owl:inverseOf orth:inDataset ;
                 rdfs:domain orth:OrthologyDataset ;
-                rdfs:range orth:HomologsCluster ;
-                rdfs:comment "Inverse property of inDataset.  It permits to navigate to the clusters included in a particular dataset."@en ;
-                rdfs:label "has cluster"@en .
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( orth:HomologsCluster
+                                           orth:HomologyRelation
+                                         )
+                           ] ;
+                rdfs:comment "Inverse property of inDataset.  It permits to retrieve  the clusters or homology relations included in a particular dataset."@en ;
+                rdfs:label "has homology data"@en .
 
 
 ###  http://purl.org/net/orth#hasCoOrthologousMember
@@ -133,12 +152,14 @@ orth:hasCoOrthologousMember rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf sio:SIO_000028 ;
                             rdfs:domain orth:CoOrthologyRelation ;
                             rdfs:range orth:SequenceUnit ;
+                            rdfs:comment "A property to define the membership of a sequence unit into a co-orthology relation."@en ;
                             rdfs:label "has co-orthologous member"@en .
 
 
 ###  http://purl.org/net/orth#hasDescendantEvolutionaryEvent
 orth:hasDescendantEvolutionaryEvent rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf orth:hasEvolutionaryEvent ;
+                                    rdfs:comment "A property of a homology relation (e.g.: \"outparalogy relation\") to state a descendant evolutionary event. A descendant evolutionary event is  an event that occurs after another evolutionary event. For example, a speciation event after a duplication event."@en ;
                                     rdfs:label "has descendant evolutionary event"@en .
 
 
@@ -151,6 +172,7 @@ orth:hasEvolutionaryEvent rdf:type owl:ObjectProperty ;
                                                     )
                                       ] ;
                           rdfs:range obo:CDAO_0000064 ;
+                          rdfs:comment "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."@en ;
                           rdfs:label "has evolutionary event"@en .
 
 
@@ -160,6 +182,7 @@ orth:hasHomolog rdf:type owl:ObjectProperty ;
                 rdf:type owl:SymmetricProperty ;
                 rdfs:domain orth:SequenceUnit ;
                 rdfs:range orth:SequenceUnit ;
+                rdfs:comment "Homologous pairwise relation between sequence units (e.g.: genes, proteins or gene regions). For example, A Gene(A) hasHomolog Gene(B). This property can be materialized or inferred by applying a logical rule."@en ;
                 rdfs:label "has homolog"@en ;
                 <http://www.w3.org/2004/02/skos/core#altLabel> "is homologous to"@en .
 
@@ -183,6 +206,7 @@ orth:hasInparalogousMember rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf sio:SIO_000028 ;
                            rdfs:domain orth:CoOrthologyRelation ;
                            rdfs:range orth:InparalogyRelation ;
+                           rdfs:comment "A property to define the membership of a  in-paralogy relation into co-orthology relation."@en ;
                            rdfs:label "has inparalogous member"@en ;
                            <http://www.w3.org/2004/02/skos/core#altLabel> "has in-paralogous member"@en .
 
@@ -243,7 +267,11 @@ orth:hasXenolog rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/net/orth#inDataset
 orth:inDataset rdf:type owl:ObjectProperty ;
-               rdfs:domain orth:GeneTreeNode ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( orth:HomologsCluster
+                                           orth:HomologyRelation
+                                         )
+                           ] ;
                rdfs:range orth:OrthologyDataset ;
                rdfs:comment "Property that provides the dataset associated with a gene tree node"@en ;
                rdfs:label "in dataset"@en .
@@ -259,26 +287,26 @@ orth:isHomologousMember rdf:type owl:ObjectProperty ;
 ###  http://purl.org/net/orth#organism
 orth:organism rdf:type owl:ObjectProperty ;
               rdfs:domain orth:SequenceUnit ;
-              rdfs:range orth:Organism .
+              rdfs:range orth:Organism ;
+              rdfs:comment "A sequence unit (e.g.: gene) comes from an organism."@en ;
+              rdfs:label "in organism"@en .
 
 
 ###  http://purl.uniprot.org/core/replaces
 up:replaces rdf:type owl:ObjectProperty ;
             rdfs:domain up:Taxon ;
             rdfs:range up:Taxon ;
-            rdfs:comment "A resource that is replaced by this resource."^^xsd:string .
+            rdfs:comment "A resource that is replaced by this resource."^^xsd:string ;
+            rdfs:label "replaces"@en .
 
 
 ###  http://semanticscience.org/resource/SIO_000028
-sio:SIO_000028 rdf:type owl:ObjectProperty ;
+sio:SIO_000028 rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ,
+                        owl:ReflexiveProperty ;
+               rdfs:comment "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."@en ;
+               rdfs:isDefinedBy "http://semanticscience.org/ontology/sio.owl" ;
                rdfs:label "has part"@en .
-
-
-###  http://semanticscience.org/resource/SIO_010079
-sio:SIO_010079 rdf:type owl:ObjectProperty ;
-               rdfs:comment "A relation between two objects, in which the first object is produced from the information contained in the second object."@en ;
-               rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
-               rdfs:label "is encoded by"@en .
 
 
 ###  http://semanticscience.org/resource/SIO_010078
@@ -288,6 +316,14 @@ sio:SIO_010078 rdf:type owl:ObjectProperty ;
                rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
                rdfs:label "encodes"@en .
 
+
+###  http://semanticscience.org/resource/SIO_010079
+sio:SIO_010079 rdf:type owl:ObjectProperty ;
+               rdfs:comment "A relation between two objects, in which the first object is produced from the information contained in the second object."@en ;
+               rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
+               rdfs:label "is encoded by"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -295,6 +331,7 @@ sio:SIO_010078 rdf:type owl:ObjectProperty ;
 ###  http://purl.org/dc/terms/identifier
 dct:identifier rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:string ;
+               rdfs:comment "This property is orignally defined in dcterms schema however in the context of the ORTH ontology we define this property as being an OWL datatype property rather than a generic RDF property. This property should be assigned to any individual that have one or more identifiers. For example, uniprot:P01308 dcterms:identifier \"P01308\"."@en ;
                rdfs:label "identifier"@en .
 
 
@@ -302,6 +339,7 @@ dct:identifier rdf:type owl:DatatypeProperty ;
 orth:isLeastDivergedOrtholog rdf:type owl:DatatypeProperty ;
                              rdfs:domain orth:OrthologyRelation ;
                              rdfs:range xsd:boolean ;
+                             rdfs:comment "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities. This property assigns a boolean value to state if an orthology relation is a actually LDO relation."@en ;
                              rdfs:label "is least diverged ortholog"@en .
 
 
@@ -324,6 +362,11 @@ orth:taxRangeId rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/pav/version
 pav:version rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment """The version number of a resource. This is a freetext string, typical values are \"1.5\" or \"21\". The URI identifying the previous version can be provided using prov:previousVersion.
+
+This property is normally used in a functional way, although PAV does not formally restrict this."""@en ;
+            rdfs:isDefinedBy "http://purl.org/pav/"@en ;
             rdfs:label "Version"@en .
 
 
@@ -342,6 +385,11 @@ up:mnemonic rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.obolibrary.org/obo/CDAO_0000012
 obo:CDAO_0000012 rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty obo:CDAO_0000148 ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass obo:CDAO_0000140
+                                 ] ;
                  rdfs:comment "Tree with a root node, which is the common ancestor to all the nodes in the tree"@en ;
                  rdfs:label "RootedTree"^^xsd:string .
 
@@ -370,25 +418,32 @@ obo:CDAO_0000121 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/CDAO_0000140
 obo:CDAO_0000140 rdf:type owl:Class ;
-                 rdfs:comment "Basic unit of graphs and trees"@en ;
+                 rdfs:comment "Basic unit of graphs and trees. This class was modified from its original definition (with class restrictions) to avoid multiple statements that relates a Node to a Network (e.g.: RootedTree). In its orignal definition, for each created instance of a Node, an additional statement must be defined to declare that a given node belongs to a Network what is quite verbose. However, we know that sub-nodes of a root node must belong to the same given Rooted Tree (e.g.: HOGs). Therefore, no needs to state sub-nodes to be part of a  RootedTree."@en ;
                  rdfs:label "Node"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C14250
 obo:NCIT_C14250 rdf:type owl:Class ;
                 owl:equivalentClass orth:Organism ;
+                owl:disjointWith up:Taxon ;
+                rdfs:comment "A living thing, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. EXAMPLE(S): animal, human being."@en ;
+                rdfs:isDefinedBy "http://purl.obolibrary.org/obo/ncit.owl" ;
                 rdfs:label "Organism" .
 
 
 ###  http://purl.obolibrary.org/obo/SO_0000104
 obo:SO_0000104 rdf:type owl:Class ;
                owl:equivalentClass orth:Protein ;
+               rdfs:comment "A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation."@en ;
+               rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
                rdfs:label "polypeptide"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/SO_0000704
 obo:SO_0000704 rdf:type owl:Class ;
                owl:equivalentClass orth:Gene ;
+               rdfs:comment "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."@en ;
+               rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
                rdfs:label "gene"^^xsd:string .
 
 
@@ -438,6 +493,9 @@ orth:Gene rdf:type owl:Class ;
                             owl:onProperty obo:RO_0001018 ;
                             owl:allValuesFrom sio:SIO_000750
                           ] ;
+          owl:disjointWith orth:Protein ;
+          rdfs:comment "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."@en ;
+          rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
           rdfs:label "Gene"@en .
 
 
@@ -460,7 +518,7 @@ orth:HierarchicalGeneTree rdf:type owl:Class ;
                           rdfs:subClassOf orth:HierarchicalClusteringTree ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty obo:CDAO_0000178 ;
-                                            owl:someValuesFrom orth:Gene
+                                            owl:someValuesFrom orth:GeneTreeNode
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty obo:CDAO_0000178 ;
@@ -545,7 +603,7 @@ orth:Organism rdf:type owl:Class ;
                                 owl:onProperty obo:RO_0002162 ;
                                 owl:someValuesFrom up:Taxon
                               ] ;
-              rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim can be associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606."@en ;
+              rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606."@en ;
               rdfs:label "Organism"@en ;
               <http://www.w3.org/2004/02/skos/core#altLabel> "Living being"@en .
 
@@ -557,6 +615,7 @@ orth:OrthologsCluster rdf:type owl:Class ;
                                         owl:onProperty orth:hasEvolutionaryEvent ;
                                         owl:allValuesFrom obo:CDAO_0000121
                                       ] ;
+                      owl:disjointWith orth:ParalogsCluster ;
                       rdfs:comment """Set of homologous sequences derived from a speciation event.
 
 """@en ;
@@ -597,6 +656,7 @@ orth:OrthologyRelation rdf:type owl:Class ;
                                          owl:onProperty orth:hasEvolutionaryEvent ;
                                          owl:allValuesFrom obo:CDAO_0000121
                                        ] ;
+                       owl:disjointWith orth:ParalogyRelation ;
                        rdfs:comment "homology pairwise relation that involves sequences that diverged after a speciation event."@en ;
                        rdfs:label "orthology relation"@en ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "orthologous relation"@en .
@@ -665,6 +725,8 @@ orth:Protein rdf:type owl:Class ;
                                owl:onProperty obo:RO_0001018 ;
                                owl:allValuesFrom sio:SIO_000750
                              ] ;
+             rdfs:comment "A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation."@en ;
+             rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
              rdfs:label "Protein"@en .
 
 
@@ -682,7 +744,7 @@ orth:Subgene rdf:type owl:Class ;
                                owl:onProperty obo:CDAO_0000194 ;
                                owl:someValuesFrom orth:Gene
                              ] ;
-             rdfs:comment "A region of the sequence of the gene"@en ;
+             rdfs:comment "A region of the sequence of the gene."@en ;
              rdfs:label "gene region"@en ,
                         "region of a gene"@en ,
                         "subgene"@en .
