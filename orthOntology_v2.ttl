@@ -1,4 +1,3 @@
-@prefix : <urn:default:baseUri:#> .
 @prefix up: <http://purl.uniprot.org/core/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
@@ -20,6 +19,8 @@
 #################################################################
 #    Annotation properties
 #################################################################
+
+
 
 ###  http://purl.org/net/orth#inDatabase
 orth:inDatabase rdf:type owl:AnnotationProperty ;
