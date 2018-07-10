@@ -144,3 +144,83 @@ figure {
     font-size: smaller;
 }
 
+
+
+      
+pre.example {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.example::before {
+    content:    "Example";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+pre.query {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+       width: 60%;
+
+
+}
+pre.query::before {
+    content:    "SPARQL Query";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+pre.result {
+    border-top: 1px solid #0026ff;
+    border-bottom: 1px solid #0026ff;
+  /*padding: 1em;
+     */
+       width: 60%;
+       
+
+
+}
+pre.result::before {
+    content:    "Query Results";
+    display:    block;
+    width:      150px;
+    background: #0026ff;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+.result table	{ border-collapse: collapse; }
+.result table td{ border-width: 1px ;
+                  border-color : black ; 
+                  font-family: monospace ; font-size: 88% ;
+                  empty-cells: show;
+                 /* padding-left: 1ex ; padding-right: 1ex ;*/
+                  vertical-align:top;
+                  text-align: left ; } 
+/*  spacing: 0 ;*/
+.result table th{ border-width: 1px ;
+                  font-family: monospace ; font-size: 88% ;
+                  border-color: black ;
+                  empty-cells: show;
+                  padding-left: 1ex ; padding-right: 1ex ;
+                  vertical-align:top;
+                  text-align:center; } 
