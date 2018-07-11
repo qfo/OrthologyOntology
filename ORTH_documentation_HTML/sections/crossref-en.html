@@ -113,8 +113,16 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000064</p>
       <div class="comment">
-         <span class="markdown">Evolutionary event</span>
+         <span class="markdown">Evolutionary event. This class does not need to be instantiated.
+          Its sub-classes are used to formally define other concepts such as 
+          <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.obolibrary.org/obo/cdao.owl">http://purl.obolibrary.org/obo/cdao.owl</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
@@ -137,7 +145,8 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#HomologsCluster</p>
       <div class="comment">
-         <span class="markdown">Set of homologous sequences</span>
+         <span class="markdown">Set of homologous sequences. It is recommended to solely instantiate its sub-classes.</span>
+         
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -198,9 +207,35 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#OrthologsCluster</p>
       <div class="comment">
-         <span class="markdown">Set of homologous sequences derived from a speciation event.
+         <span class="markdown">Set of homologous sequences derived from a speciation event.</span>
+        <pre class="example">
+###Hierarchical cluster example.
+  
+   inst:PROTEIN_1  a orth:Protein .
+   inst:PROTEIN_2  a orth:Protein .
+   inst:PROTEIN_3  a orth:Protein .
+   inst:ORTH_SET   a orth:OrthologyDataset.
+   inst:ORTH_HOG_1  a orth:OrthologsCluster ;
+                    orth:inDataset inst:ORTH_SET;
+                    orth:hasHomologousMember  inst:ORTH_HOG_2, inst:PROTEIN_2.
+   inst:ORTH_HOG_2  a orth:OrthologsCluster ;
+                    orth:inDataset inst:ORTH_SET;
+                    orth:hasHomologousMember  inst:PROTEIN_1, inst:PROTEIN_3.
+   inst:HGT a orth:HierarchicalGeneTree ;
+            obo:CDAO_0000148 inst:ORTH_HOG_1. # has_Root property (sub-property of has).
+         </pre>
+           <pre class="example">
+###Flat cluster example.
 
-</span>
+   inst:PROTEIN_1  a orth:Protein .
+   inst:PROTEIN_2  a orth:Protein .
+   inst:PROTEIN_3  a orth:Protein .
+   inst:ORTH_SET   a orth:OrthologyDataset.
+   inst:ORTH_CLUSTER   a orth:OrthologsCluster ;
+                       orth:inDataset inst:ORTH_SET;
+                       orth:hasHomologousMember  inst:PROTEIN_1, inst:PROTEIN_3, inst:PROTEIN_2.
+         </pre>
+
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -230,7 +265,33 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#ParalogsCluster</p>
       <div class="comment">
-         <span class="markdown">Set of homologous sequences derived from a duplication event</span>
+         <span class="markdown">Set of homologous sequences derived from a duplication event.</span>
+         <pre class="example">
+###Hierarchical cluster example.
+  
+   inst:GENE_1  a orth:Gene .
+   inst:GENE_2  a orth:Gene .
+   inst:GENE_3  a orth:Gene .
+   inst:ORTH_SET    a orth:OrthologyDataset.
+   inst:ORTH_HOG  a orth:OrthologsCluster ;
+                    orth:inDataset inst:ORTH_SET;
+                    orth:hasHomologousMember  inst:PARALOG_CLUSTER, inst:GENE_1.
+   inst:PARALOG_CLUSTER  a orth:ParalogsCluster ;
+                         orth:hasHomologousMember  inst:GENE_2, inst:GENE_3.
+   inst:HGT a orth:HierarchicalGeneTree ;
+            obo:CDAO_0000148 inst:ORTH_HOG. # has_Root property (sub-property of has).
+                    
+         </pre>
+           <pre class="example">
+###Flat cluster example.
+
+   inst:GENE_1  a orth:Gene .
+   inst:GENE_2  a orth:Gene .
+   inst:ORTH_SET    a orth:OrthologyDataset.
+   inst:ORTH_CLUSTER   a orth:ParalogsCluster ;
+                       orth:inDataset inst:ORTH_SET;
+                       orth:hasHomologousMember  inst:GENE_2, inst:GENE_3.
+         </pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -261,6 +322,16 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.org/net/orth#CoOrthologyRelation</p>
       <div class="comment">
          <span class="markdown">Co-orthology is a relation defined over three genes, where two of them are inparalogs with respect to the speciation event associated to the third gene. The two inparalogous genes are said to be co-orthologous to the third (out-group) gene.</span>
+     
+       <pre class="example">
+   inst:PROTEIN_1  a orth:Protein .
+   inst:IN_PARALOG a orth:InparalogyRelation .
+   inst:CO_ORTH    a orth:CoOrthologyRelation ;
+                   orth:hasCoOrthologousMember  inst:PROTEIN_1;
+                   orth:hasInparalogousMember   inst:IN_PARALOG.
+         </pre>
+
+     
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -292,7 +363,21 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://semanticscience.org/resource/SIO_000750</p>
       <div class="comment">
          <span class="markdown">A database is a data store such as relational, hierarchical and graph databases.</span>
+           <pre class="example">
+   inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
+                    rdfs:label "Pelodiscus sinensis from ENSEMBL v68";
+                    pav:version "Ensembl 68; PelSin_1.0; 6-AUG-2012".
+   inst:PROTEIN  a orth:Protein ;
+                 obo:RO_0001018 inst:ENSEMBLv68. # "contained in" property 
+   inst:GENE     a orth:Gene ;
+                 obo:RO_0001018 inst:ENSEMBLv68. # "contained in" property 
+         </pre>
+         
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd><a href="http://semanticscience.org/ontology/sio.owl">http://semanticscience.org/ontology/sio.owl</a></dd>
+      </dl>
    </div>
    <div class="entity" id="http://purl.obolibrary.org/obo/SO_0000704">
       <h3>gene<sup class="type-c" title="class">c</sup>
@@ -303,10 +388,11 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/SO_0000704</p>
       <div class="comment">
          <span class="markdown">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</span>
+          <p>We recommend to materialise the instances of its equivalent class <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a> rather than the current class.</p>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+         <dd><a href="http://purl.obolibrary.org/obo/so.owl">http://purl.obolibrary.org/obo/so.owl</a></dd>
       </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
@@ -325,11 +411,17 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.org/net/orth#Gene</p>
       <div class="comment">
          <span class="markdown">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</span>
+                <pre class="example">
+   inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
+   inst:GENE     a orth:Gene ;
+                 obo:RO_0001018 inst:ENSEMBLv68; # "contained in" property 
+                 orth:organism inst:RAT_1.
+   inst:RAT_1    obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
+                 a orth:Organism.
+   &lthttp://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.
+         </pre>
       </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
-      </dl>
+      
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -645,7 +737,7 @@ This section provides details for each class and property defined by ORTH.
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+         <dd>http://purl.obolibrary.org/obo/ncit.owl</dd>
       </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
@@ -849,7 +941,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+         <dd>http://purl.obolibrary.org/obo/so.owl</dd>
       </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
@@ -1572,7 +1664,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+          <a href="http://semanticscience.org/ontology/sio.owl">http://semanticscience.org/ontology/sio.owl</a>
       </dl>
       <div class="description">
          <p>
@@ -1808,7 +1900,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+         <dd>http://purl.obolibrary.org/obo/ro.owl</dd>
       </dl>
       <div class="description">
          <dl>
@@ -1994,7 +2086,7 @@ This property is normally used in a functional way, although PAV does not formal
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
+         <dd>http://purl.org/pav/</dd>
       </dl>
       <div class="description">
          <dl>
