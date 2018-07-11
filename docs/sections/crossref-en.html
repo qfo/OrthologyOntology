@@ -458,6 +458,11 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.org/net/orth#Subgene</p>
       <div class="comment">
          <span class="markdown">A region of the sequence of the gene.</span>
+         <pre class="example">
+   inst:SUB_GENE  a orth:Subgene ;
+                  obo:CDAO_0000194 inst:GENE. # "part_of" property
+   inst:GENE      a orth:Gene .
+         </pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -482,7 +487,9 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#GeneTreeNode</p>
       <div class="comment">
-         <span class="markdown">A node of a tree whose leaf nodes are sequence units and whose internal nodes are clusters of homologs</span>
+         <span class="markdown">A node of a tree whose leaf nodes are sequence units and whose internal nodes are clusters of homologs.  </span>
+         <p>We recommend to materialise the instances of its most specialised sub-classes 
+         (e.g.: <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a>) rather than the current class.</p>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -507,7 +514,13 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/SO_0005855</p>
       <div class="comment">
          <span class="markdown">A collection of related genes.</span>
+         <p>We recommend to materialise the instances of its most specialised sub-classes 
+         (e.g.: <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a>) rather than the current class.</p>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd><a href="http://purl.obolibrary.org/obo/so.owl">http://purl.obolibrary.org/obo/so.owl</a></dd>
+      </dl>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
@@ -525,7 +538,13 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/SO_0000831</p>
       <div class="comment">
          <span class="markdown">A manufactured term used to allow the parts of a gene to have an is_a path to the root.</span>
+         <p>We recommend to materialise the instances of its equivalent class 
+         (i.e.: <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a>) rather than the current class.</p>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd><a href="http://purl.obolibrary.org/obo/so.owl">http://purl.obolibrary.org/obo/so.owl</a></dd>
+      </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
          <dd>
