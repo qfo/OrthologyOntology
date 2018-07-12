@@ -113,9 +113,11 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000064</p>
       <div class="comment">
-         <span class="markdown">Evolutionary event. This class does not need to be instantiated.
-          Its sub-classes are used to formally define other concepts such as 
-          <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</span>
+         <span class="markdown">Evolutionary event.</span>
+         
+         <p>This class does not need to be instantiated.
+          Its sub-classes are used to formally define other concepts such as a
+          <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</p>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -287,10 +289,12 @@ This section provides details for each class and property defined by ORTH.
 
    inst:GENE_1  a orth:Gene .
    inst:GENE_2  a orth:Gene .
-   inst:ORTH_SET    a orth:OrthologyDataset.
-   inst:ORTH_CLUSTER   a orth:ParalogsCluster ;
-                       orth:inDataset inst:ORTH_SET;
-                       orth:hasHomologousMember  inst:GENE_2, inst:GENE_3.
+   inst:ORTH_SET a orth:OrthologyDataset.
+   
+   inst:PARALOG_CLUSTER 
+           a orth:ParalogsCluster ;
+           orth:inDataset inst:ORTH_SET;
+           orth:hasHomologousMember  inst:GENE_2, inst:GENE_3.
          </pre>
       </div>
       <dl class="description">
@@ -412,10 +416,16 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</span>
                 <pre class="example">
-   inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
    inst:GENE     a orth:Gene ;
-                 obo:RO_0001018 inst:ENSEMBLv68; # "contained in" property 
+                 rdfs:label	"TP53" ;
+	             rdfs:comment	"tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
+	             rdfs:seeAlso	&lthttp://omabrowser.org/cgi-bin/gateway.pl?f=DisplayEntry&p1=RATNO03710> .
+                 obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
+                 lscr:xrefEnsemblGene &lthttp://rdf.ebi.ac.uk/resource/ensembl/ENSRNOG00000010756>;
                  orth:organism inst:RAT_1.
+
+   inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
+                
    inst:RAT_1    obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
                  a orth:Organism.
    &lthttp://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.
@@ -561,8 +571,16 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000077</p>
       <div class="comment">
-         <span class="markdown">Evolutionary event that consists on the duplication of a gene</span>
+         <span class="markdown">Evolutionary event that consists on the duplication of a gene.</span>
+         <p>This class is mainly used to formally define some concepts such as 
+          <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</p>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.obolibrary.org/obo/cdao.owl">http://purl.obolibrary.org/obo/cdao.owl</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -602,9 +620,14 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#HierarchicalGeneTree</p>
       <div class="comment">
-         <span class="markdown">A tree whose leaf nodes correspond to genes</span>
+         <span class="markdown">A tree whose leaf nodes correspond to sequence units (e.g.: genes).</span>
       </div>
-      <dl class="description">
+       <pre class="example">
+  inst:ORTH_HOG  a orth:OrthologsCluster.
+  inst:HGT       a orth:HierarchicalGeneTree ;
+                 obo:CDAO_0000148 inst:ORTH_HOG. # has_Root property (sub-property of has).
+         </pre>
+       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#HierarchicalClusteringTree"
@@ -637,6 +660,8 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">This class represents homology relations among sequence units (e.g genes, proteins or gene regions).</span>
       </div>
+       <p>We recommend to materialise the instances of its sub-classes 
+         (e.g.: <a href="#OrthologyRelation" title="http://purl.org/net/orth#OrthologyRelation">orthology relation</a>) rather than the current class.</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -673,6 +698,16 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">Inparalogy is a relation defined over a triplet. It involves a pair of genes and a speciation event of reference. A gene pair is an inparalog if they are paralogs and duplicated after the speciation event of reference.</span>
       </div>
+      <pre class="example">
+  inst:PROTEIN_2  a orth:Protein.
+  inst:PROTEIN_3  a orth:Protein.
+  inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Primates";
+                  orth:taxRangeId "9443"^^xsd:integer. #The NCBI taxonomy ID
+  inst:IN_PARALOG  a orth:InparalogyRelation ;
+                   orth:hasHomologousMember inst:PROTEIN_2 , inst:PROTEIN_3;
+                   orth:hasTaxonomicRange inst:TAX_LEVEL.
+         </pre>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -704,10 +739,17 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities. This is a symmetric relation.</span>
       </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
-      </dl>
+      <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  inst:LD_ORTHOLOGS  
+        a orth:LeastDivergedOrthologyRelation ;
+        orth:isLeastDivergedOrtholog true; # by assigning this property an OWL-DL reasoner can infer that
+                                           # it is an instance of orth:LeastDivergedOrthologyRelation.    
+        orth:hasTaxonomicRange inst:TAX_LEVEL;
+        orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+         </pre>
+           
       <dl class="description">
          <dt>is equivalent to</dt>
          <dd>
@@ -729,8 +771,15 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000140</p>
       <div class="comment">
-         <span class="markdown">Basic unit of graphs and trees. This class was modified from its original definition (with class restrictions) to avoid multiple statements that relates a Node to a Network (e.g.: RootedTree). In its orignal definition, for each created instance of a Node, an additional statement must be defined to declare that a given node belongs to a Network what is quite verbose. However, we know that sub-nodes of a root node must belong to the same given Rooted Tree (e.g.: HOGs). Therefore, no needs to state sub-nodes to be part of a  RootedTree.</span>
+         <span class="markdown">Basic unit of graphs and trees.</span>
+         <p>This class was modified from its original definition (with class restrictions) to avoid multiple statements that relates a Node 
+         to a Network (e.g.: RootedTree). In its orignal definition, for each created instance of a Node, an additional statement must be 
+         defined to declare that a given node belongs to a Network what is quite verbose. However, we know that sub-nodes of a root node must belong to the same given Rooted Tree (e.g.: HOGs). Therefore, no needs to state sub-nodes to be part of a  RootedTree.</p>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+            <a href="http://purl.obolibrary.org/obo/cdao.owl">http://purl.obolibrary.org/obo/cdao.owl</a>
+      </dl>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
@@ -753,10 +802,11 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/NCIT_C14250</p>
       <div class="comment">
          <span class="markdown">A living thing, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. EXAMPLE(S): animal, human being.</span>
+         <p>We recommend to materialise the instances of its equivalent classes (e.g.:    <a href="#Organism" title="http://purl.org/net/orth#Organism">Organism</a>) rather than the current class.</p>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
-         <dd>http://purl.obolibrary.org/obo/ncit.owl</dd>
+                     <a href="http://purl.obolibrary.org/obo/ncit.owl">http://purl.obolibrary.org/obo/ncit.owl</a>
       </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
@@ -780,6 +830,21 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.org/net/orth#Organism</p>
       <div class="comment">
          <span class="markdown">A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as "Homo Sapiens", NCBI taxonomy identifier: 9606.</span>
+     <p>We strongly recommend to use UniProt taxonomy instances within the namespace "http://purl.uniprot.org/taxonomy/" to enhance interoperability among resources.
+     For example, the following  <a href="#http://purl.uniprot.org/core/Taxon" title="http://purl.uniprot.org/core/Taxon">Taxon</a> 
+     instances: <a href="http://purl.uniprot.org/taxonomy/10116">http://purl.uniprot.org/taxonomy/10116</a>,
+      <a href="http://purl.uniprot.org/taxonomy/9606">http://purl.uniprot.org/taxonomy/9606</a>,
+            <a href="http://purl.uniprot.org/taxonomy/9986">http://purl.uniprot.org/taxonomy/9986</a>, and so on.
+     These instances are the latest RDF serialisation of the <a href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI taxonomy</a> maintained by <a href="https://www.uniprot.org">UniProt</a>. 
+      </p>
+       <pre class="example">
+  inst:RAT_1   obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
+               a orth:Organism.
+  &lthttp://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon;
+            uniprot:scientificName "Rattus norvegicus".
+  inst:GENE a orth:Gene;
+            orth:organism inst:RAT_1 .
+       </pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -807,7 +872,13 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">Dataset that provides orthology relations including clusters of orthologs, pairwise orthology relations, and so on.
 
-Examples would be the content of resources such as OMA, InParanoid, TreeFam, PhylomeDB and so on. Each release of the resources is different dataset.</span>
+Examples would be the content of resources such as OrthoDB, OMA, InParanoid, TreeFam, PhylomeDB and so on. Each release of the resources is different dataset.</span>
+
+<pre class="example">
+   inst:ORTH_SET a orth:OrthologyDataset;
+                 pav:version "Mar2017";
+                 orth:inDatabase "https://omabrowser.org"^^xsd:anyURI.  
+</pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -820,7 +891,8 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasHomologyData" title="http://purl.org/net/orth#hasHomologyData">has homology data</a>
-            <sup class="type-op" title="object property">op</sup>, <span class="dotted" title="http://purl.org/net/orth#inDatabase">in database</span>
+            <sup class="type-op" title="object property">op</sup>, <a href="#inDatabase" title="http://purl.org/net/orth#inDatabase">in database</a>
+            <sup class="type-ap" title="annotation property">ap</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -838,6 +910,17 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.org/net/orth#OrthologyRelation</p>
       <div class="comment">
          <span class="markdown">homology pairwise relation that involves sequences that diverged after a speciation event.</span>
+         <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  inst:ORTHOLOGS  a orth:OrthologyRelation ;
+                  orth:hasTaxonomicRange inst:TAX_LEVEL;
+                  orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+
+  inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Primates";
+                  orth:taxRangeId 9443 . #The NCBI taxonomy ID.
+         </pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -851,7 +934,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
             <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">Taxonomic level</a>
             <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#hasHomologousMember" title="http://purl.org/net/orth#hasHomologousMember">has homologous member</a>
             <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">exactly</span> 2 <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>
+            <span class="logic">exactly</span> 2 <a href="#SequenceUnit" title="http://purl.org/net/orth#SequenceUnit">Sequence unit</a>
             <sup class="type-c" title="class">c</sup>)</dd>
          <dd>
             <a href="#hasEvolutionaryEvent" title="http://purl.org/net/orth#hasEvolutionaryEvent">has evolutionary event</a>
@@ -887,6 +970,23 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.org/net/orth#OutparalogyRelation</p>
       <div class="comment">
          <span class="markdown">Outparalogy is also a relation defined over a pair of genes and a speciation event of reference. This pair are outparalogs if the duplication event through which they are related to each other predates the speciation event of reference.</span>
+        <p>The  <a href="#hasDescendantEvolutionaryEvent" title="http://purl.org/net/orth#hasDescendantEvolutionaryEvent">has descendant evolutionary event</a>
+         property does not need to be asserted. It is mainly part of the class definition to indicate that the speciation event of reference (i.e.: 
+         <a href="#hasTaxonomicRange" title="http://purl.org/net/orth#hasTaxonomicRange">has taxonomic level</a> value) happens after the duplication event
+         that defines the paralogy relation.</p>
+       <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:OUTPARALOGS 
+         a orth:OutparalogyRelation ;
+         orth:hasTaxonomicRange inst:TAX_LEVEL;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+
+  inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Passeriformes".
+         </pre>
+      
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -913,6 +1013,16 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.org/net/orth#ParalogyRelation</p>
       <div class="comment">
          <span class="markdown">Homology relation that involves sequences that diverged after a duplication event.</span>
+    
+       <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:PARALOGS 
+         a orth:ParalogyRelation ;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+         </pre>
+     
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -926,7 +1036,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
             <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">Taxonomic level</a>
             <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#hasHomologousMember" title="http://purl.org/net/orth#hasHomologousMember">has homologous member</a>
             <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">exactly</span> 2 <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>
+            <span class="logic">exactly</span> 2 <a href="#SequenceUnit" title="http://purl.org/net/orth#SequenceUnit">Sequence unit</a>
             <sup class="type-c" title="class">c</sup>)</dd>
          <dd>
             <a href="#hasEvolutionaryEvent" title="http://purl.org/net/orth#hasEvolutionaryEvent">has evolutionary event</a>
@@ -957,6 +1067,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/SO_0000104</p>
       <div class="comment">
          <span class="markdown">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</span>
+      <p>We recommend to materialise the instances of its equivalent class (i.e.:    <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a>) rather than the current class.</p>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -979,11 +1090,21 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.org/net/orth#Protein</p>
       <div class="comment">
          <span class="markdown">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</span>
+       <pre class="example">
+   inst:PROTEIN  a orth:Protein ;
+                 obo:RO_0001018 inst:ENSEMBLv68; # "contained in" property 
+                 orth:organism inst:RAT_1.
+   
+   inst:ENSEMBLv68 a sio:SIO_000750; # "database" class 
+
+   inst:RAT_1 a orth:Organism;    
+              obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>. # "in taxon" property
+                 
+   &lthttp://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.
+         </pre>
+     
       </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
-      </dl>
+      
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1019,7 +1140,9 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000012</p>
       <div class="comment">
-         <span class="markdown">Tree with a root node, which is the common ancestor to all the nodes in the tree</span>
+         <span class="markdown">Tree with a root node, which is the common ancestor to all the nodes in the tree.</span>
+         <p>We recommend to materialise the instances of its sub-classes 
+         (e.g.: <a href="#HierarchicalGeneTree" title="http://purl.org/net/orth#HierarchicalGeneTree">Hierarchical gene tree</a>) rather than the current class.</p>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -1050,7 +1173,9 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#SequenceUnit</p>
       <div class="comment">
-         <span class="markdown">protein or DNA sequence as a unit of comparison</span>
+         <span class="markdown">protein or DNA sequence as a unit of comparison.</span>
+         <p>We recommend to materialise the instances of its sub-classes 
+         (e.g.: <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>) rather than the current class.</p>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -1091,7 +1216,9 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000121</p>
       <div class="comment">
-         <span class="markdown">Evolutionary event related with the evolution of a gene in different species</span>
+         <span class="markdown">Evolutionary event related with the evolution of a gene in different species.</span>
+         <p>This class does not need to be instantiated. Because it is mainly used to formally define other concepts such as a 
+                     <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</p>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -1110,6 +1237,20 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.uniprot.org/core/Taxon</p>
       <div class="comment">
          <span class="markdown">An element of a taxonomy for classifying life forms.</span>
+         <p>We strongly recommend to re-use the UniProt taxonomy instances within the namespace "http://purl.uniprot.org/taxonomy/" to enhance 
+         interoperability among resources.
+     For example, the following  <a href="#http://purl.uniprot.org/core/Taxon" title="http://purl.uniprot.org/core/Taxon">Taxon</a> 
+     instances: <a href="http://purl.uniprot.org/taxonomy/10116">http://purl.uniprot.org/taxonomy/10116</a>,
+      <a href="http://purl.uniprot.org/taxonomy/9606">http://purl.uniprot.org/taxonomy/9606</a>,
+            <a href="http://purl.uniprot.org/taxonomy/9986">http://purl.uniprot.org/taxonomy/9986</a>, and so on.
+     These instances are the latest RDF serialisation of the <a href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI taxonomy</a> maintained by <a href="https://www.uniprot.org">UniProt</a>. 
+      </p>
+       <pre class="example">
+ &lthttp://purl.uniprot.org/taxonomy/10116> 
+           a uniprot:Taxon;
+           uniprot:mnemonic "RAT";
+           uniprot:scientificName "Rattus norvegicus".
+         </pre>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -1149,7 +1290,31 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#TaxonomicRange</p>
       <div class="comment">
-         <span class="markdown">The taxonomic level represents the taxon at which a group of sequences are considered members of the same cluster of orthologs/paralogs</span>
+         <span class="markdown">The taxonomic level represents the taxon at which a group of sequences are considered members of the same 
+         cluster or relation of orthologs/paralogs.</span>
+         <p>Whenever it is possible, we strongly recommend to re-use the UniProt taxonomy instances' URIs within the namespace "http://purl.uniprot.org/taxonomy/" to enhance 
+         interoperability among resources.
+     For example, the following  <a href="#http://purl.uniprot.org/core/Taxon" title="http://purl.uniprot.org/core/Taxon">Taxon</a> 
+     instance can be also classified as an <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">orth:TaxonomicRange</a> :
+      <a href="http://purl.uniprot.org/taxonomy/9126">http://purl.uniprot.org/taxonomy/9126</a>.
+     Those instances are the latest RDF serialisation of the <a href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI taxonomy</a> maintained by <a href="https://www.uniprot.org">UniProt</a>. 
+      </p>
+         <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  inst:ORTH_SET   a orth:OrthologyDataset.
+  
+  inst:ORTH_CLUSTER  
+          a orth:OrthologsCluster ;
+          orth:inDataset inst:ORTH_SET;
+          orth:hasTaxonomicRange  &lthttp://purl.uniprot.org/taxonomy/9126>;
+          orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+  
+  &lthttp://purl.uniprot.org/taxonomy/9126>
+         a orth:TaxonomicRange;
+         orth:taxRange "Passeriformes";
+         orth:taxRangeId 9126.
+         </pre>
       </div>
       <dl class="description">
          <dt>is in domain of</dt>
@@ -1173,6 +1338,14 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
          <strong>IRI:</strong> http://purl.org/net/orth#XenologyRelation</p>
       <div class="comment">
          <span class="markdown">Gene pairs whose history, since their divergence, includes a horizontal transfer.</span>
+         <pre class="example">
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:XenologyRelation 
+         a orth:XenologyRelation ;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+         </pre>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
