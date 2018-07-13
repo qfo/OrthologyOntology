@@ -116,7 +116,7 @@ This section provides details for each class and property defined by ORTH.
          <span class="markdown">Evolutionary event.</span>
          
          <p>This class does not need to be instantiated.
-          Its sub-classes are used to formally define other concepts such as a
+          Its subclasses are used to formally define other concepts such as a
           <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>.</p>
       </div>
       <dl class="definedBy">
@@ -126,7 +126,7 @@ This section provides details for each class and property defined by ORTH.
          </dd>
       </dl>
       <dl class="description">
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#http://purl.obolibrary.org/obo/CDAO_0000077" title="http://purl.obolibrary.org/obo/CDAO_0000077">geneDuplication</a>
             <sup class="type-c" title="class">c</sup>, <a href="#http://purl.obolibrary.org/obo/CDAO_0000121" title="http://purl.obolibrary.org/obo/CDAO_0000121">speciation</a>
@@ -147,7 +147,7 @@ This section provides details for each class and property defined by ORTH.
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#HomologsCluster</p>
       <div class="comment">
-         <span class="markdown">Set of homologous sequences. It is recommended to solely instantiate its sub-classes.</span>
+         <span class="markdown">Set of homologous sequences. It is recommended to solely instantiate its subclasses.</span>
          
       </div>
       <dl class="description">
@@ -188,7 +188,7 @@ This section provides details for each class and property defined by ORTH.
             <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">Taxonomic level</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ParalogsCluster" title="http://purl.org/net/orth#ParalogsCluster">Cluster of paralogs</a>
@@ -416,15 +416,16 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</span>
                 <pre class="example">
-   inst:GENE     a orth:Gene ;
+   inst:GENE_P53 a orth:Gene ;
                  rdfs:label	"TP53" ;
 	             rdfs:comment	"tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
-	             rdfs:seeAlso	&lthttp://omabrowser.org/cgi-bin/gateway.pl?f=DisplayEntry&p1=RATNO03710> .
+	             rdfs:seeAlso	&lthttp://example.org/> .
                  obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
                  lscr:xrefEnsemblGene &lthttp://rdf.ebi.ac.uk/resource/ensembl/ENSRNOG00000010756>;
+                 sio:SIO_010078 inst:PROTEIN_P53; # "encodes" property 
                  orth:organism inst:RAT_1.
 
-   inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
+   inst:ENSEMBLv83  a sio:SIO_000750; # "database" class 
                 
    inst:RAT_1    obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
                  a orth:Organism.
@@ -498,7 +499,7 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.org/net/orth#GeneTreeNode</p>
       <div class="comment">
          <span class="markdown">A node of a tree whose leaf nodes are sequence units and whose internal nodes are clusters of homologs.  </span>
-         <p>We recommend to materialise the instances of its most specialised sub-classes 
+         <p>We recommend to materialise the instances of its most specialised subclasses 
          (e.g.: <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a>) rather than the current class.</p>
       </div>
       <dl class="description">
@@ -507,7 +508,7 @@ This section provides details for each class and property defined by ORTH.
             <a href="#http://purl.obolibrary.org/obo/CDAO_0000140" title="http://purl.obolibrary.org/obo/CDAO_0000140">Node</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">Cluster of homologous sequences</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SequenceUnit" title="http://purl.org/net/orth#SequenceUnit">Sequence unit</a>
@@ -524,7 +525,7 @@ This section provides details for each class and property defined by ORTH.
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/SO_0005855</p>
       <div class="comment">
          <span class="markdown">A collection of related genes.</span>
-         <p>We recommend to materialise the instances of its most specialised sub-classes 
+         <p>We recommend to materialise the instances of its most specialised subclasses 
          (e.g.: <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a>) rather than the current class.</p>
       </div>
       <dl class="definedBy">
@@ -532,7 +533,7 @@ This section provides details for each class and property defined by ORTH.
          <dd><a href="http://purl.obolibrary.org/obo/so.owl">http://purl.obolibrary.org/obo/so.owl</a></dd>
       </dl>
       <dl class="description">
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">Cluster of homologous sequences</a>
             <sup class="type-c" title="class">c</sup>
@@ -605,7 +606,7 @@ This section provides details for each class and property defined by ORTH.
             <a href="#http://purl.obolibrary.org/obo/CDAO_0000012" title="http://purl.obolibrary.org/obo/CDAO_0000012">RootedTree</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#HierarchicalGeneTree" title="http://purl.org/net/orth#HierarchicalGeneTree">Hierarchical gene tree </a>
             <sup class="type-c" title="class">c</sup>
@@ -660,7 +661,7 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">This class represents homology relations among sequence units (e.g genes, proteins or gene regions).</span>
       </div>
-       <p>We recommend to materialise the instances of its sub-classes 
+       <p>We recommend to materialise the instances of its subclasses 
          (e.g.: <a href="#OrthologyRelation" title="http://purl.org/net/orth#OrthologyRelation">orthology relation</a>) rather than the current class.</p>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -678,7 +679,7 @@ This section provides details for each class and property defined by ORTH.
             <a href="#OrthologyDataset" title="http://purl.org/net/orth#OrthologyDataset">Orthology datasource</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#CoOrthologyRelation" title="http://purl.org/net/orth#CoOrthologyRelation">co-orthology relation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OrthologyRelation" title="http://purl.org/net/orth#OrthologyRelation">orthology relation</a>
@@ -781,7 +782,7 @@ This section provides details for each class and property defined by ORTH.
             <a href="http://purl.obolibrary.org/obo/cdao.owl">http://purl.obolibrary.org/obo/cdao.owl</a>
       </dl>
       <dl class="description">
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#GeneTreeNode" title="http://purl.org/net/orth#GeneTreeNode">Gene tree node</a>
             <sup class="type-c" title="class">c</sup>
@@ -943,7 +944,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
             <a href="#http://purl.obolibrary.org/obo/CDAO_0000121" title="http://purl.obolibrary.org/obo/CDAO_0000121">speciation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#LeastDivergedOrthologyRelation"
                title="http://purl.org/net/orth#LeastDivergedOrthologyRelation">least diverged orthology relation</a>
@@ -1045,7 +1046,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
             <a href="#http://purl.obolibrary.org/obo/CDAO_0000077" title="http://purl.obolibrary.org/obo/CDAO_0000077">geneDuplication</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#InparalogyRelation" title="http://purl.org/net/orth#InparalogyRelation">inparalogy relation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OutparalogyRelation" title="http://purl.org/net/orth#OutparalogyRelation">outparalogy relation</a>
@@ -1092,10 +1093,17 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <span class="markdown">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</span>
        <pre class="example">
    inst:PROTEIN  a orth:Protein ;
-                 obo:RO_0001018 inst:ENSEMBLv68; # "contained in" property 
+                 rdfs:label	"TP53" ;
+	             rdfs:comment	"tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
+	             rdfs:seeAlso	&lthttp://example.org/> .
+                 obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
+                 lscr:xrefEnsemblProtein &lthttp://rdf.ebi.ac.uk/resource/ensembl.protein/ENSRNOP00000047840>;
+                 lscr:xrefUniprot	&lthttp://purl.uniprot.org/uniprot/P10361>;
+                 lscr:xrefEnsemblTranscript	lthttp://rdf.ebi.ac.uk/resource/ensembl.transcript/ENSRNOT00000046490> ;
+                 sio:SIO_010079 inst:GENE_P53; # "is encoded by" property 
                  orth:organism inst:RAT_1.
    
-   inst:ENSEMBLv68 a sio:SIO_000750; # "database" class 
+   inst:ENSEMBLv83 a sio:SIO_000750. # "database" class 
 
    inst:RAT_1 a orth:Organism;    
               obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>. # "in taxon" property
@@ -1141,7 +1149,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000012</p>
       <div class="comment">
          <span class="markdown">Tree with a root node, which is the common ancestor to all the nodes in the tree.</span>
-         <p>We recommend to materialise the instances of its sub-classes 
+         <p>We recommend to materialise the instances of its subclasses 
          (e.g.: <a href="#HierarchicalGeneTree" title="http://purl.org/net/orth#HierarchicalGeneTree">Hierarchical gene tree</a>) rather than the current class.</p>
       </div>
       <dl class="description">
@@ -1152,7 +1160,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
             <span class="logic">exactly</span> 1 <a href="#http://purl.obolibrary.org/obo/CDAO_0000140" title="http://purl.obolibrary.org/obo/CDAO_0000140">Node</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#HierarchicalClusteringTree"
                title="http://purl.org/net/orth#HierarchicalClusteringTree">Hierarchical clustering tree</a>
@@ -1174,7 +1182,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#SequenceUnit</p>
       <div class="comment">
          <span class="markdown">protein or DNA sequence as a unit of comparison.</span>
-         <p>We recommend to materialise the instances of its sub-classes 
+         <p>We recommend to materialise the instances of its subclasses 
          (e.g.: <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>) rather than the current class.</p>
       </div>
       <dl class="description">
@@ -1183,7 +1191,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
             <a href="#GeneTreeNode" title="http://purl.org/net/orth#GeneTreeNode">Gene tree node</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
+         <dt>has subclasses</dt>
          <dd>
             <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a>
@@ -1452,18 +1460,31 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/RO_0001018</p>
       <div class="comment">
-         <span class="markdown">This property was simplified. Original range and domain were removed due to be highly abstracted because it is well-know the domain of discourse: orthology databases.  The rage restriction of this property is defined as a class restriction in (e.g.: orth:Gene).</span>
+         <span class="markdown">This property was simplified. 
+         Original range and domain were removed due to be highly abstracted
+          because it is well-know the domain of discourse: orthology databases.
+          The range restriction of this property is defined as a class restriction in orth:Gene and orth:Protein.
+           </span>
+          
+           <p>See how to assert this property in <a href="#Gene">Gene</a>, <a href="#Protein">Protein</a>, and
+           <a href="#http://semanticscience.org/resource/SIO_000750">database</a>   class descriptions.</p>
+      
       </div>
+      
    </div>
    <div class="entity" id="http://semanticscience.org/resource/SIO_010078">
       <h3>encodes<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
+         
       </h3>
       <p>
          <strong>IRI:</strong> http://semanticscience.org/resource/SIO_010078</p>
       <div class="comment">
          <span class="markdown">A relation between two objects, in which the first object contains information that is used to produce the second object.</span>
+         
+         <p>See how to assert this property in <a href="#Gene">Gene</a> class description.</p>    
+     
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1490,6 +1511,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000178</p>
       <div class="comment">
          <span class="markdown">Generic 'has' property.</span>
+         
+         <p>We recommend to assert its sub-properties whenever it is possible instead of assigning the current property. </p>
       </div>
       <div class="description">
          <dl>
@@ -1499,6 +1522,13 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
                <sup class="type-op" title="object property">op</sup>, <a href="#hasHomologyData" title="http://purl.org/net/orth#hasHomologyData">has homology data</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#hasTaxonomicRange" title="http://purl.org/net/orth#hasTaxonomicRange">has taxonomic level</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.obolibrary.org/obo/CDAO_0000148" title="http://purl.obolibrary.org/obo/CDAO_0000148">has_Root</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.obolibrary.org/obo/CDAO_0000194" title="http://purl.obolibrary.org/obo/CDAO_0000194">part_of</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -1513,6 +1543,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasAncestralEvolutionaryEvent</p>
       <div class="comment">
          <span class="markdown">A property of a homology relation (e.g.: "inparalogy relation") to state an ancestral evolutionary event. An ancestral evolutionary event is an event that precedes another evolutionary event. For example, a speciation event before a duplication event.</span>
+      <p> This property it is used in the <a href="#InparalogyRelation">Inparalogy relation</a> class definition. It is not necessary
+      to assign values to this property. </p>
       </div>
       <div class="description">
          <dl>
@@ -1533,6 +1565,7 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasCoOrthologousMember</p>
       <div class="comment">
          <span class="markdown">A property to define the membership of a sequence unit into a co-orthology relation.</span>
+          <p>See how to assign values to this property in the <a href="#CoOrthologyRelation">co-orthology relation</a> class description.</p>
       </div>
       <div class="description">
          <dl>
@@ -1563,6 +1596,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasDescendantEvolutionaryEvent</p>
       <div class="comment">
          <span class="markdown">A property of a homology relation (e.g.: "outparalogy relation") to state a descendant evolutionary event. A descendant evolutionary event is  an event that occurs after another evolutionary event. For example, a speciation event after a duplication event.</span>
+      <p> This property it is used in the <a href="#OutparalogyRelation">Outparalogy relation</a> class definition. It is not necessary
+      to assign values to this property. </p>
       </div>
       <div class="description">
          <dl>
@@ -1622,6 +1657,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasHomolog</p>
       <div class="comment">
          <span class="markdown">Homologous pairwise relation between sequence units (e.g.: genes, proteins or gene regions). For example, A Gene(A) hasHomolog Gene(B). This property can be materialized or inferred by applying a logical rule.</span>
+      <p>We recommend to assign values to orth:hasHomolog sub-properties whenever it is possible instead of assigning orth:hasHomolog property.</p>
+      
       </div>
       <div class="description">
          <p>
@@ -1661,6 +1698,13 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasHomologousMember</p>
       <div class="comment">
          <span class="markdown">Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs.</span>
+        <p>See how to assert this property in the class descriptions of <a href="#ParalogsCluster">Cluster of paralogs</a>,
+        <a href="#OrthologsCluster">Cluster of orthologs</a>,
+        <a href="#InparalogyRelation">inparalogy relation</a>,
+        <a href="#LeastDivergedOrthologyRelation">least diverged orthology relation</a>,
+        <a href="#OrthologyRelation">orthology relation</a>, and
+        <a href="#ParalogyRelation">paralogy relation</a>.</p>    
+
       </div>
       <div class="description">
          <dl>
@@ -1735,8 +1779,11 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#hasInparalogousMember</p>
+         
       <div class="comment">
          <span class="markdown">A property to define the membership of a  in-paralogy relation into co-orthology relation.</span>
+         <p>See how to assert this property in the class description of 
+        <a href="#CoOrthologyRelation">co-orthology relation</a>.</p> 
       </div>
       <div class="description">
          <dl>
@@ -1767,11 +1814,16 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasLeastDivergedOrtholog</p>
       <div class="comment">
          <span class="markdown">Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities.</span>
+      
+      <pre class="example">
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasLeastDivergedOrtholog inst:PROTEIN_2 .
+      </pre>
+      
       </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>http://purl.org/net/orth</dd>
-      </dl>
+      
       <div class="description">
          <p>
             <strong>has characteristics:</strong> symmetric</p>
@@ -1803,6 +1855,18 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasOrtholog</p>
       <div class="comment">
          <span class="markdown">Orthologous pairwise relation between genes/proteins. For example, A Gene(A) hasOrtholog Gene(B). This property can be materialized or inferred by applying a logical rule.</span>
+        <p> This property was designed to easier data retrieval of pairwise orthologs. Some use cases can justify to materialise this property 
+          such as the fact that the property assertion cannot be inferred from the existing data, 
+        small orthology datasets and/or no information about the taxonomic level of the ortholog pairs. In general, we recommend to infer orth:hasOrtholog 
+        property assertions from the following data structures:
+         <a href="#structHOG">HOGs</a>, <a href="#OrthologyRelation">orthology relation</a> class and/or <a href="#structCluster">flat orthologous clusters</a>.</p>
+      <pre class="example">
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasOrtholog inst:PROTEIN_2 .
+      </pre>
+      
       </div>
       <div class="description">
          <p>
@@ -1826,11 +1890,25 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       <h3>has paralog<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
+        
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#hasParalog</p>
       <div class="comment">
          <span class="markdown">Paralogous pairwise relation between genes/proteins. For example, a Gene(A) hasParalog Gene(B). This property can be materialized or inferred by applying a logical rule.</span>
+       <p> This property was designed to easier data retrieval of pairwise paralogs. Some use cases can justify to materialise this property
+        such as the fact that the property assertion cannot be inferred from the existing data, 
+        small orthology datasets and/or no information about the taxonomic level of the ortholog pairs. In general, we recommend to infer orth:hasParalog 
+        property assertions from the following data structures:
+         <a href="#structHOG">HOGs</a>, <a href="#ParalogyRelation">paralogy relation</a> class
+          and/or <a href="#structCluster">flat paralogous clusters</a>.</p>
+      <pre class="example">
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasParalog inst:PROTEIN_2 .
+      </pre>
+      
       </div>
       <div class="description">
          <p>
@@ -1853,6 +1931,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://semanticscience.org/resource/SIO_000028</p>
       <div class="comment">
          <span class="markdown">has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part.</span>
+         <p>We recommend to assign values to its sub-properties 
+         (e.g.: <a href="#hasHomologousMember" title="http://purl.org/net/orth#hasHomologousMember">has homologous member</a>) rather than the current property.</p>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1881,6 +1961,11 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#hasTaxonomicRange</p>
       <div class="comment">
          <span class="markdown">Property that associates a cluster of homologs with the taxonomic range at which it has been calculated</span>
+         <p>See how to assert this property in the descriptions of 
+        <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">Taxonomic level</a>,
+        <a href="#InparalogyRelation">inparalogy relation</a>,
+        <a href="#LeastDivergedOrthologyRelation">least diverged orthology relation</a>, and 
+        <a href="#OrthologyRelation">orthology relation</a> classes.</p>   
       </div>
       <div class="description">
          <dl>
@@ -1912,11 +1997,19 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       <h3>has xenolog<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
+         
+      
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#hasXenolog</p>
       <div class="comment">
          <span class="markdown">Xenologous pairwise relation between genes/proteins. For example, a Gene(A) hasXenolog Gene(B).</span>
+         <pre class="example">
+   inst:GENE_1  a orth:Gene.
+   inst:GENE_2  a orth:Gene.
+   
+   inst:GENE_1  orth:hasXenolog inst:GENE_2 .
+      </pre>
       </div>
       <div class="description">
          <p>
@@ -1939,6 +2032,11 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000148</p>
       <div class="comment">
          <span class="markdown">The property links a rooted tree to the specific node that represents the unique root of the tree.</span>
+         <p>See how to assert this property in the descriptions of 
+        <a href="#HierarchicalGeneTree" title="http://purl.org/net/orth#HierarchicalGeneTree">Hierarchical gene tree</a>,
+        <a href="#OrthologsCluster">Cluster of orthologs</a>, and 
+        <a href="#ParalogsCluster">Cluster of paralogs</a> classes.</p>   
+         
       </div>
       <div class="description">
          <dl>
@@ -1968,7 +2066,11 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       <p>
          <strong>IRI:</strong> http://purl.org/net/orth#inDataset</p>
       <div class="comment">
-         <span class="markdown">Property that provides the dataset associated with a gene tree node</span>
+         <span class="markdown">Property that provides the dataset associated with a gene tree node.</span>
+         <p>See how to assert this property in the descriptions of 
+        <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">Taxonomic level</a>,
+        <a href="#OrthologsCluster">Cluster of orthologs</a>, and 
+        <a href="#ParalogsCluster">Cluster of paralogs</a> classes.</p>  
       </div>
       <div class="description">
          <dl>
@@ -2002,6 +2104,9 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.org/net/orth#organism</p>
       <div class="comment">
          <span class="markdown">A sequence unit (e.g.: gene) comes from an organism.</span>
+         <p>See how to assert this property in the descriptions of 
+        <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>, and
+        <a href="#Protein">Protein</a> classes. </p>  
       </div>
       <div class="description">
          <dl>
@@ -2027,6 +2132,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/RO_0002162</p>
       <div class="comment">
          <span class="markdown">Connects a biological entity to its taxon of origin.</span>
+         <p>See how to assert this property in the description of 
+        <a href="#Organism" title="http://purl.org/net/orth#Organism">Organism</a> class.</p>  
       </div>
    </div>
    <div class="entity" id="http://semanticscience.org/resource/SIO_010079">
@@ -2038,6 +2145,8 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
          <strong>IRI:</strong> http://semanticscience.org/resource/SIO_010079</p>
       <div class="comment">
          <span class="markdown">A relation between two objects, in which the first object is produced from the information contained in the second object.</span>
+         <p>See how to assert this property in the description of 
+        <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> class.</p>  
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -2111,6 +2220,24 @@ Examples would be the content of resources such as OrthoDB, OMA, InParanoid, Tre
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.obolibrary.org/obo/CDAO_0000194</p>
+         <div class="comment">
+         <span class="markdown">The inverse property of "has" property.</span>
+      </div>
+          <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd><a href="http://purl.obolibrary.org/obo/cdao.owl" title="http://purl.obolibrary.org/obo/cdao.owl">http://purl.obolibrary.org/obo/cdao.owl</a>
+         </dd>
+         
+         <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.obolibrary.org/obo/CDAO_0000178" title="http://purl.obolibrary.org/obo/CDAO_0000178">has</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+      </dl>
    </div>
    <div class="entity" id="http://purl.uniprot.org/core/replaces">
       <h3>replaces<sup class="type-op" title="object property">op</sup>

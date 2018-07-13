@@ -98,6 +98,7 @@ obo:CDAO_0000148 rdf:type owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/CDAO_0000178
 obo:CDAO_0000178 rdf:type owl:ObjectProperty ;
+                 owl:inverseOf obo:CDAO_0000194 ;
                  rdfs:comment "Generic 'has' property."@en ;
                  rdfs:label "has"^^xsd:string .
 
