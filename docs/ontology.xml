@@ -2,12 +2,17 @@
 <rdf:RDF xmlns="http://purl.org/net/orth#"
      xml:base="http://purl.org/net/orth"
      xmlns:orth="http://purl.org/net/orth#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:pav="http://purl.org/pav/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sio="http://semanticscience.org/resource/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:up="http://purl.uniprot.org/core/"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.org/net/orth">
         <owl:versionIRI rdf:resource="http://purl.org/net/orth/2.0"/>
         <owl:versionInfo xml:lang="en">This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .
@@ -24,12 +29,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
     
 
 
     <!-- http://purl.org/net/orth#inDatabase -->
-
 
     <owl:AnnotationProperty rdf:about="http://purl.org/net/orth#inDatabase">
         <rdfs:comment xml:lang="en">A property to define the database an orthology dataset belongs to.</rdfs:comment>
@@ -40,7 +43,6 @@
 
 
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
-
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
         <rdfs:comment xml:lang="en">The range of skos:altLabel is the class of RDF plain literals.</rdfs:comment>
@@ -56,7 +58,6 @@
 
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
-
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <rdfs:label xml:lang="en">definition</rdfs:label>
@@ -67,7 +68,6 @@
 
 
     <!-- http://www.w3.org/2004/02/skos/core#example -->
-
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
@@ -80,7 +80,6 @@
 
     <!-- http://www.w3.org/2004/02/skos/core#note -->
 
-
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <rdfs:label xml:lang="en">note</rdfs:label>
@@ -91,7 +90,6 @@
 
 
     <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
-
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
         <rdfs:comment xml:lang="en">A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag.</rdfs:comment>
@@ -107,7 +105,6 @@
 
 
     <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
-
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
@@ -126,12 +123,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
     
 
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000148 -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000148">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
@@ -145,8 +140,8 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000178 -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000178">
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000194"/>
         <rdfs:comment xml:lang="en">Generic &apos;has&apos; property.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has</rdfs:label>
     </owl:ObjectProperty>
@@ -155,7 +150,6 @@
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000194 -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000194">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
     </owl:ObjectProperty>
@@ -163,7 +157,6 @@
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0001018 -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001018">
         <rdfs:comment xml:lang="en">This property was simplified. Original range and domain were removed due to be highly abstracted because it is well-know the domain of discourse: orthology databases.  The rage restriction of this property is defined as a class restriction in (e.g.: orth:Gene).</rdfs:comment>
@@ -174,7 +167,6 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162">
         <rdfs:comment xml:lang="en">Connects a biological entity to its taxon of origin.</rdfs:comment>
         <rdfs:label xml:lang="en">in taxon</rdfs:label>
@@ -184,17 +176,15 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002350 -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002350">
         <rdfs:comment xml:lang="en">Is member of is a mereological relation between a item and a collection.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ro.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/ro.owl</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">member of</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.org/net/orth#hasAncestralEvolutionaryEvent -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasAncestralEvolutionaryEvent">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasEvolutionaryEvent"/>
@@ -205,7 +195,6 @@
 
 
     <!-- http://purl.org/net/orth#hasCoOrthologousMember -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasCoOrthologousMember">
         <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000028"/>
@@ -219,7 +208,6 @@
 
     <!-- http://purl.org/net/orth#hasDescendantEvolutionaryEvent -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasDescendantEvolutionaryEvent">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasEvolutionaryEvent"/>
         <rdfs:comment xml:lang="en">A property of a homology relation (e.g.: &quot;outparalogy relation&quot;) to state a descendant evolutionary event. A descendant evolutionary event is  an event that occurs after another evolutionary event. For example, a speciation event after a duplication event.</rdfs:comment>
@@ -229,7 +217,6 @@
 
 
     <!-- http://purl.org/net/orth#hasEvolutionaryEvent -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasEvolutionaryEvent">
         <rdfs:domain>
@@ -250,7 +237,6 @@
 
     <!-- http://purl.org/net/orth#hasHomolog -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasHomolog">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -265,11 +251,17 @@
 
     <!-- http://purl.org/net/orth#hasHomologousMember -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasHomologousMember">
         <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000028"/>
         <owl:inverseOf rdf:resource="http://purl.org/net/orth#isHomologousMember"/>
-        <rdfs:domain rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/orth#HomologsCluster"/>
+                    <rdf:Description rdf:about="http://purl.org/net/orth#HomologyRelation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -285,7 +277,6 @@
 
 
     <!-- http://purl.org/net/orth#hasHomologyData -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasHomologyData">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
@@ -307,7 +298,6 @@
 
     <!-- http://purl.org/net/orth#hasInparalogousMember -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasInparalogousMember">
         <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000028"/>
         <rdfs:domain rdf:resource="http://purl.org/net/orth#CoOrthologyRelation"/>
@@ -320,7 +310,6 @@
 
 
     <!-- http://purl.org/net/orth#hasLeastDivergedOrtholog -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasLeastDivergedOrtholog">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasOrtholog"/>
@@ -337,7 +326,6 @@
 
     <!-- http://purl.org/net/orth#hasOrtholog -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasOrtholog">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasHomolog"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -350,7 +338,6 @@
 
     <!-- http://purl.org/net/orth#hasParalog -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasParalog">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasHomolog"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -362,7 +349,6 @@
 
 
     <!-- http://purl.org/net/orth#hasTaxonomicRange -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasTaxonomicRange">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000178"/>
@@ -385,7 +371,6 @@
 
     <!-- http://purl.org/net/orth#hasXenolog -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#hasXenolog">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/net/orth#hasHomolog"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -397,7 +382,6 @@
 
 
     <!-- http://purl.org/net/orth#inDataset -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#inDataset">
         <rdfs:domain>
@@ -417,7 +401,6 @@
 
     <!-- http://purl.org/net/orth#isHomologousMember -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#isHomologousMember">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
         <rdfs:comment xml:lang="en">Inverse of has homologous member. This property permits to find the cluster in which a cluster or sequence unit is included.</rdfs:comment>
@@ -427,7 +410,6 @@
 
 
     <!-- http://purl.org/net/orth#organism -->
-
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/orth#organism">
         <rdfs:domain rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
@@ -440,7 +422,6 @@
 
     <!-- http://purl.uniprot.org/core/replaces -->
 
-
     <owl:ObjectProperty rdf:about="http://purl.uniprot.org/core/replaces">
         <rdfs:domain rdf:resource="http://purl.uniprot.org/core/Taxon"/>
         <rdfs:range rdf:resource="http://purl.uniprot.org/core/Taxon"/>
@@ -452,19 +433,17 @@
 
     <!-- http://semanticscience.org/resource/SIO_000028 -->
 
-
     <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000028">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
         <rdfs:comment xml:lang="en">has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://semanticscience.org/ontology/sio.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://semanticscience.org/ontology/sio.owl</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">has part</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://semanticscience.org/resource/SIO_010078 -->
-
 
     <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_010078">
         <owl:inverseOf rdf:resource="http://semanticscience.org/resource/SIO_010079"/>
@@ -476,7 +455,6 @@
 
 
     <!-- http://semanticscience.org/resource/SIO_010079 -->
-
 
     <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_010079">
         <rdfs:comment xml:lang="en">A relation between two objects, in which the first object is produced from the information contained in the second object.</rdfs:comment>
@@ -494,12 +472,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
     
 
 
     <!-- http://purl.org/dc/terms/identifier -->
-
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -511,7 +487,6 @@
 
     <!-- http://purl.org/net/orth#isLeastDivergedOrtholog -->
 
-
     <owl:DatatypeProperty rdf:about="http://purl.org/net/orth#isLeastDivergedOrtholog">
         <rdfs:domain rdf:resource="http://purl.org/net/orth#OrthologyRelation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -522,7 +497,6 @@
 
 
     <!-- http://purl.org/net/orth#taxRange -->
-
 
     <owl:DatatypeProperty rdf:about="http://purl.org/net/orth#taxRange">
         <rdfs:domain rdf:resource="http://purl.org/net/orth#TaxonomicRange"/>
@@ -536,7 +510,6 @@
 
     <!-- http://purl.org/net/orth#taxRangeId -->
 
-
     <owl:DatatypeProperty rdf:about="http://purl.org/net/orth#taxRangeId">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">This property links a cluster of homologs with its taxonomic level.</rdfs:comment>
@@ -547,7 +520,6 @@
 
 
     <!-- http://purl.org/pav/version -->
-
 
     <owl:DatatypeProperty rdf:about="http://purl.org/pav/version">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -562,13 +534,12 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.uniprot.org/core/mnemonic -->
 
-
     <owl:DatatypeProperty rdf:about="http://purl.uniprot.org/core/mnemonic">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A easy to remember identifier for a UniProtKB entry, but it is not a stable identifier and should not be used by programs to identify entries.</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rememberable string that can be used to find entries, not a stable identifier!</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mnemonic</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.uniprot.org/manual/entry_name</rdfs:seeAlso>
+        <rdfs:seeAlso>http://www.uniprot.org/manual/entry_name</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 
@@ -581,12 +552,10 @@ This property is normally used in a functional way, although PAV does not formal
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
     
 
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000012 -->
-
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000012">
         <rdfs:subClassOf>
@@ -604,7 +573,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000064 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000064">
         <rdfs:comment xml:lang="en">Evolutionary event</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cladogeneticChange</rdfs:label>
@@ -614,7 +582,6 @@ This property is normally used in a functional way, although PAV does not formal
 
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000077 -->
-
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000077">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000064"/>
@@ -627,7 +594,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000121 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000121">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000064"/>
         <rdfs:comment xml:lang="en">Evolutionary event related with the evolution of a gene in different species</rdfs:comment>
@@ -638,7 +604,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/CDAO_0000140 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000140">
         <rdfs:comment xml:lang="en">Basic unit of graphs and trees. This class was modified from its original definition (with class restrictions) to avoid multiple statements that relates a Node to a Network (e.g.: RootedTree). In its orignal definition, for each created instance of a Node, an additional statement must be defined to declare that a given node belongs to a Network what is quite verbose. However, we know that sub-nodes of a root node must belong to the same given Rooted Tree (e.g.: HOGs). Therefore, no needs to state sub-nodes to be part of a  RootedTree.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Node</rdfs:label>
@@ -648,24 +613,22 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C14250 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C14250">
         <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Organism"/>
         <owl:disjointWith rdf:resource="http://purl.uniprot.org/core/Taxon"/>
         <rdfs:comment xml:lang="en">A living thing, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. EXAMPLE(S): animal, human being.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ncit.owl</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organism</rdfs:label>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/ncit.owl</rdfs:isDefinedBy>
+        <rdfs:label>Organism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0000104 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000104">
         <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Protein"/>
         <rdfs:comment xml:lang="en">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polypeptide</rdfs:label>
     </owl:Class>
     
@@ -673,11 +636,10 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
         <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Gene"/>
         <rdfs:comment xml:lang="en">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene</rdfs:label>
     </owl:Class>
     
@@ -685,17 +647,15 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.obolibrary.org/obo/SO_0000831 -->
 
-
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000831">
         <owl:equivalentClass rdf:resource="http://purl.org/net/orth#Subgene"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A manufactured term used to allow the parts of a gene to have an is_a path to the root.</rdfs:comment>
+        <rdfs:comment>A manufactured term used to allow the parts of a gene to have an is_a path to the root.</rdfs:comment>
         <rdfs:label xml:lang="en">gene_member_region</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0005855 -->
-
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0005855">
         <rdfs:comment xml:lang="en">A collection of related genes.</rdfs:comment>
@@ -706,7 +666,6 @@ This property is normally used in a functional way, although PAV does not formal
 
 
     <!-- http://purl.org/net/orth#CoOrthologyRelation -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#CoOrthologyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologyRelation"/>
@@ -735,7 +694,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#Gene -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#Gene">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
         <rdfs:subClassOf>
@@ -752,14 +710,13 @@ This property is normally used in a functional way, although PAV does not formal
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/net/orth#Protein"/>
         <rdfs:comment xml:lang="en">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Gene</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#GeneTreeNode -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#GeneTreeNode">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000140"/>
@@ -771,7 +728,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#HierarchicalClusteringTree -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#HierarchicalClusteringTree">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000012"/>
         <rdfs:comment xml:lang="en">A tree whose content is the result of the application of hierarchical clustering to a dataset</rdfs:comment>
@@ -781,7 +737,6 @@ This property is normally used in a functional way, although PAV does not formal
 
 
     <!-- http://purl.org/net/orth#HierarchicalGeneTree -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#HierarchicalGeneTree">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HierarchicalClusteringTree"/>
@@ -797,14 +752,13 @@ This property is normally used in a functional way, although PAV does not formal
                 <owl:allValuesFrom rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A tree whose leaf nodes correspond to genes</rdfs:comment>
+        <rdfs:comment xml:lang="en">A tree whose leaf nodes correspond to sequence units (e.g.: genes).</rdfs:comment>
         <rdfs:label xml:lang="en">Hierarchical gene tree </rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#HomologsCluster -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#HomologsCluster">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0005855"/>
@@ -844,7 +798,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#HomologyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#HomologyRelation">
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -867,7 +820,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#InparalogyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#InparalogyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#ParalogyRelation"/>
         <rdfs:subClassOf>
@@ -887,7 +839,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#LeastDivergedOrthologyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#LeastDivergedOrthologyRelation">
         <owl:equivalentClass>
             <owl:Restriction>
@@ -906,7 +857,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#Organism -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#Organism">
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -922,7 +872,6 @@ This property is normally used in a functional way, although PAV does not formal
 
 
     <!-- http://purl.org/net/orth#OrthologsCluster -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#OrthologsCluster">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
@@ -946,7 +895,6 @@ This property is normally used in a functional way, although PAV does not formal
 
     <!-- http://purl.org/net/orth#OrthologyDataset -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#OrthologyDataset">
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -964,7 +912,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
     <!-- http://purl.org/net/orth#OrthologyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#OrthologyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologyRelation"/>
         <rdfs:subClassOf>
@@ -977,7 +924,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.org/net/orth#hasHomologousMember"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://purl.org/net/orth#Gene"/>
+                        <owl:onClass rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -998,7 +945,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
     <!-- http://purl.org/net/orth#OutparalogyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#OutparalogyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#ParalogyRelation"/>
         <rdfs:subClassOf>
@@ -1017,7 +963,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
 
     <!-- http://purl.org/net/orth#ParalogsCluster -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#ParalogsCluster">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologsCluster"/>
@@ -1038,7 +983,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
     <!-- http://purl.org/net/orth#ParalogyRelation -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#ParalogyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologyRelation"/>
         <rdfs:subClassOf>
@@ -1051,7 +995,7 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.org/net/orth#hasHomologousMember"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://purl.org/net/orth#Gene"/>
+                        <owl:onClass rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1071,7 +1015,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
     <!-- http://purl.org/net/orth#Protein -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#Protein">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
         <rdfs:subClassOf>
@@ -1087,14 +1030,13 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/so.owl</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Protein</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://purl.org/net/orth#SequenceUnit -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#SequenceUnit">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#GeneTreeNode"/>
@@ -1105,7 +1047,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
 
     <!-- http://purl.org/net/orth#Subgene -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#Subgene">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#SequenceUnit"/>
@@ -1125,7 +1066,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
     <!-- http://purl.org/net/orth#TaxonomicRange -->
 
-
     <owl:Class rdf:about="http://purl.org/net/orth#TaxonomicRange">
         <rdfs:comment xml:lang="en">The taxonomic level represents the taxon at which a group of sequences are considered members of the same cluster of orthologs/paralogs</rdfs:comment>
         <rdfs:label xml:lang="en">Taxonomic level</rdfs:label>
@@ -1135,7 +1075,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
 
     <!-- http://purl.org/net/orth#XenologyRelation -->
-
 
     <owl:Class rdf:about="http://purl.org/net/orth#XenologyRelation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/orth#HomologyRelation"/>
@@ -1148,7 +1087,6 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
 
     <!-- http://purl.uniprot.org/core/Taxon -->
-
 
     <owl:Class rdf:about="http://purl.uniprot.org/core/Taxon">
         <rdfs:subClassOf>
@@ -1166,13 +1104,12 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An element of a taxonomy for classifying life forms.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxon</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ncbi.nlm.nih.gov/books/NBK54428/</rdfs:seeAlso>
+        <rdfs:seeAlso>http://www.ncbi.nlm.nih.gov/books/NBK54428/</rdfs:seeAlso>
     </owl:Class>
     
 
 
     <!-- http://semanticscience.org/resource/SIO_000750 -->
-
 
     <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000750">
         <rdfs:comment xml:lang="en">A database is a data store such as relational, hierarchical and graph databases.</rdfs:comment>
@@ -1182,6 +1119,5 @@ Examples would be the content of resources such as OMA, InParanoid, TreeFam, Phy
 
 
 
-<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
-
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
