@@ -14,7 +14,7 @@ The OWL file is publicly available at http://purl.org/net/orth.
 * Erick Antezana, Belgium
 * Florent Villiers, France
 * Hirokazu Chiba, Database Center for Life Science (DBCLS), ROIS, Japan
-* Ikuo Uchiyama, Japan
+* Ikuo Uchiyama, National Institute for Basic Biology, Japan
 * Jesualdo Tomás Fernández-Breis, Departamento de Informatica y Sistemas, Universidad de Murcia, Spain.
 * María del Carmen Legaz-García, Spain
 * Tarcisio Mendes de Farias, University of Lausanne and SIB Swiss Institute of Bioinformatics, Switzerland
