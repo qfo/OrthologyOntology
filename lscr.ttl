@@ -159,14 +159,16 @@ URI RDF instance template to assign this property: http://purl.uniprot.org/unipr
 
 
 #################################################################
-#    Data properties
+#    RDF properties
 #################################################################
 
 ###  http://purl.org/dc/terms/identifier
-dct:identifier rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string ;
-               rdfs:label "identifier"@en .
-
+dct:identifier
+    a rdf:Property ;
+    rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Identifier"@en ;
+    rdfs:range rdfs:Literal .
 
 #################################################################
 #    Classes
