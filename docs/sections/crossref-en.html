@@ -211,31 +211,31 @@ This section provides details for each class and property defined by ORTH.
       <div class="comment">
          <span class="markdown">Set of homologous sequences derived from a speciation event.</span>
         <pre class="example">
-###Hierarchical cluster example.
+### Hierarchical cluster example
   
-   inst:PROTEIN_1  a orth:Protein .
-   inst:PROTEIN_2  a orth:Protein .
-   inst:PROTEIN_3  a orth:Protein .
-   inst:ORTH_SET   a orth:OrthologyDataset.
-   inst:ORTH_HOG_1  a orth:OrthologsCluster ;
-                    orth:inDataset inst:ORTH_SET;
-                    orth:hasHomologousMember  inst:ORTH_HOG_2, inst:PROTEIN_2.
-   inst:ORTH_HOG_2  a orth:OrthologsCluster ;
-                    orth:inDataset inst:ORTH_SET;
-                    orth:hasHomologousMember  inst:PROTEIN_1, inst:PROTEIN_3.
-   inst:HGT a orth:HierarchicalGeneTree ;
-            obo:CDAO_0000148 inst:ORTH_HOG_1. # has_Root property (sub-property of has).
+inst:PROTEIN_1 a orth:Protein .
+inst:PROTEIN_2 a orth:Protein .
+inst:PROTEIN_3 a orth:Protein .
+inst:ORTH_SET a orth:OrthologyDataset.
+inst:ORTH_HOG_1 a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:ORTH_HOG_2, inst:PROTEIN_2 .
+inst:ORTH_HOG_2 a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:PROTEIN_1, inst:PROTEIN_3 .
+inst:HGT a orth:HierarchicalGeneTree ;
+    obo:CDAO_0000148 inst:ORTH_HOG_1 . # has_Root property (sub-property of has)
          </pre>
            <pre class="example">
-###Flat cluster example.
+### Flat cluster example
 
-   inst:PROTEIN_1  a orth:Protein .
-   inst:PROTEIN_2  a orth:Protein .
-   inst:PROTEIN_3  a orth:Protein .
-   inst:ORTH_SET   a orth:OrthologyDataset.
-   inst:ORTH_CLUSTER   a orth:OrthologsCluster ;
-                       orth:inDataset inst:ORTH_SET;
-                       orth:hasHomologousMember  inst:PROTEIN_1, inst:PROTEIN_3, inst:PROTEIN_2.
+inst:PROTEIN_1 a orth:Protein .
+inst:PROTEIN_2 a orth:Protein .
+inst:PROTEIN_3 a orth:Protein .
+inst:ORTH_SET a orth:OrthologyDataset.
+inst:ORTH_CLUSTER a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:PROTEIN_1, inst:PROTEIN_3, inst:PROTEIN_2 .
          </pre>
 
       </div>
