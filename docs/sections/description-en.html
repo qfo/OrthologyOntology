@@ -2,7 +2,7 @@
 <p>The ORTH ontology mainly accommodates three different types of data structures to represent homology information. 
 These data structures may encapsulate information that can often be inferred or queried instead of being materialised.
 They are described in the next subsections. In Ref. [1], we demonstrate that for one given orthology database
- billions of <a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is ortholog to</a>  assertions 
+ billions of <a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is orthologous to</a>  assertions 
  can be inferred instead of materialised from the hierarchical orthologous groups (i.e.: space O(<var>n<sup>2</sup></var>) 
  where n is the number of genes). <a href="#fig1">Figure 1</a> illustrates these data structures according to the verbosity (i.e.: the number
  of needed triples) and the implicit information encapsulated.    
@@ -39,7 +39,7 @@ of a class.</figcaption>
 </figure>
 
 <p>From the HOG illustrated in <a href="#fig2">Figure 2</a>, we can infer that <i>inst:S100P_PELSI</i> gene 
-<a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is ortholog to</a>
+<a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is orthologous to</a>
 <i>inst:S100P_FICAL</i>, <i>inst:S100P_TAEGU</i> and <i>inst:S100P_ANAPL</i> at the taxonomic level Archelosauria. In addition, 
    <i>inst:S100P_ANAPL</i>   <a href="#hasParalog" title="http://purl.org/net/orth#hasParalog">is paralog to</a> the
    orthologous genes <i>inst:S100P_FICAL</i> and <i>inst:S100P_TAEGU</i> due to the fact of a duplication event (i.e. <i>inst:Duplication</i> a <a href="#ParalogsCluster" title="http://purl.org/net/orth#ParalogsCluster">Cluster of paralogs</a>).
