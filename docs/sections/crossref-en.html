@@ -418,16 +418,16 @@ inst:ORTH_CLUSTER a orth:OrthologsCluster ;
                 <pre class="example">
    inst:GENE_P53 a orth:Gene ;
                  rdfs:label	"TP53" ;
-	             rdfs:comment	"tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
-	             rdfs:seeAlso	&lthttp://example.org/> .
+                 rdfs:comment "tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
+                 rdfs:seeAlso &lthttp://example.org/> .
                  obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
                  lscr:xrefEnsemblGene &lthttp://rdf.ebi.ac.uk/resource/ensembl/ENSRNOG00000010756>;
                  sio:SIO_010078 inst:PROTEIN_P53; # "encodes" property 
                  orth:organism inst:RAT_1.
 
-   inst:ENSEMBLv83  a sio:SIO_000750; # "database" class 
+   inst:ENSEMBLv83 a sio:SIO_000750; # "database" class
                 
-   inst:RAT_1    obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
+   inst:RAT_1 obo:RO_0002162 &lthttp://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
                  a orth:Organism.
    &lthttp://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.
          </pre>
