@@ -3,8 +3,9 @@ The need of a common ontology for describing orthology information in biological
 The OWL file is publicly available at http://purl.org/net/orth.
 
 ### Issues and Activities
+* The ORTH ontology **3rd version** ([release candidate 3a](orthOntology_v3_a.ttl)) that corrects identified issues in the ORTH ontology version 2 and includes the concept of **Pangenomes**.
 * The ORTH ontology version 2 specification is available at http://qfo.github.io/OrthologyOntology/ 
-* [2017 modifications](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) to create a second version release candidate (http://purl.org/net/orth_rc)
+* [Orthology ontology change log](https://docs.google.com/spreadsheets/d/1z2e1SVAAmkzn439dWdluukOEZilTl-ZTZcdGbnGyRAA/edit?ts=59b7776a#gid=0) to create the **3rd version** ([release candidate 3a](orthOntology_v3_a.ttl)) and the 2nd version release candidate (http://purl.org/net/orth_rc)
 * [Go to wiki](https://github.com/qfo/OrthologyOntology/wiki/Orthology-Ontology-wiki) for previous activities
 
 ### Contributors
