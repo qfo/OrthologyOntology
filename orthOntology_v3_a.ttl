@@ -821,21 +821,21 @@ orth:genomeOf  rdf:type owl:ObjectProperty ;
                rdfs:comment ""@en ;
                rdfs:label "is genome of"^^xsd:string .
 
-orth:hasGenomeMember  rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf obo:RO_0002351 ;
-               owl:inverseOf orth:genomeMemberOf ;
+orth:includesGenome  rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf obo:RO_0002524 ;
+               owl:inverseOf orth:includedInPangenome ;
                rdfs:domain orth:Pangenome ;
                rdfs:range orth:Genome ;
                rdfs:comment ""@en ;
-               rdfs:label "has genome member"^^xsd:string .
+               rdfs:label "includes genome"^^xsd:string .
 
-orth:genomeMemberOf  rdf:type owl:ObjectProperty ;
-               rdfs:subProperty obo:RO_0002350 ;
-               owl:inverseOf orth:hasGenomeMember ;
+orth:includedInPangenome  rdf:type owl:ObjectProperty ;
+               rdfs:subProperty obo:RO_0002525 ;
+               owl:inverseOf orth:includesGenome ;
                rdfs:domain orth:Genome ;
                rdfs:range orth:Pangenome ;
                rdfs:comment ""@en ;
-               rdfs:label "is a genome member of"^^xsd:string .
+               rdfs:label "included in pangenome"^^xsd:string .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 obo:BFO_0000051 rdf:type owl:ObjectProperty, owl:TransitiveProperty ;
