@@ -151,10 +151,25 @@ URI RDF instance template to assign this property: http://omabrowser.org/ontolog
 ###  http://purl.org/lscr#xrefUniprot
 lscr:xrefUniprot rdf:type owl:AnnotationProperty ;
                  rdfs:comment """This cross-reference relates a given resource to  a UniProt protein.
-
 URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefUniprot http://purl.uniprot.org/uniprot/P68871"""@en ;
                  rdfs:label "see also UniProt cross-reference"@en ;
                  rdfs:subPropertyOf rdfs:seeAlso ;
+                 rdfs:range up:Protein .
+
+###  http://purl.org/lscr#xrefSwissProt
+lscr:xrefSwissProt rdf:type owl:AnnotationProperty ;
+                 rdfs:comment """This cross-reference relates a given resource to a UniProt/SwissProt protein.
+URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefUniprot http://purl.uniprot.org/uniprot/P68871"""@en ;
+                 rdfs:label "see also UniProt/SwissProt cross-reference"@en ;
+                 rdfs:subPropertyOf rdfs:xrefUniprot ;
+                 rdfs:range up:Protein .
+
+###  http://purl.org/lscr#xrefSwissProt
+lscr:xrefTrEMBL rdf:type owl:AnnotationProperty ;
+                 rdfs:comment """This cross-reference relates a given resource to a UniProt/TrEMBL protein.
+URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefUniprot http://purl.uniprot.org/uniprot/H3BS01"""@en ;
+                 rdfs:label "see also UniProt/TrEMBL cross-reference"@en ;
+                 rdfs:subPropertyOf rdfs:xrefUniprot ;
                  rdfs:range up:Protein .
 
 
