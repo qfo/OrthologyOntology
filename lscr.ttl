@@ -161,7 +161,7 @@ lscr:xrefSwissProt rdf:type owl:AnnotationProperty ;
                  rdfs:comment """This cross-reference relates a given resource to a UniProt/SwissProt protein.
 URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefSwissProt http://purl.uniprot.org/uniprot/P68871"""@en ;
                  rdfs:label "see also UniProt/SwissProt cross-reference"@en ;
-                 rdfs:subPropertyOf rdfs:xrefUniprot ;
+                 rdfs:subPropertyOf lscr:xrefUniprot ;
                  rdfs:range up:Protein .
 
 ###  http://purl.org/lscr#xrefSwissProt
@@ -169,7 +169,7 @@ lscr:xrefTrEMBL rdf:type owl:AnnotationProperty ;
                  rdfs:comment """This cross-reference relates a given resource to a UniProt/TrEMBL protein.
 URI RDF instance template to assign this property: http://purl.uniprot.org/uniprot/{UNIPROT_ID}. Example: :ANY_URI lscr:xrefTrEMBL http://purl.uniprot.org/uniprot/H3BS01"""@en ;
                  rdfs:label "see also UniProt/TrEMBL cross-reference"@en ;
-                 rdfs:subPropertyOf rdfs:xrefUniprot ;
+                 rdfs:subPropertyOf lscr:xrefUniprot ;
                  rdfs:range up:Protein .
 
 
