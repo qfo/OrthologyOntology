@@ -2,18 +2,28 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Orthology ontology documentation</title>
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>Orthology Ontology</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://purl.org/net/orth","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/net/orth","name":"http://purl.org/net/orth", "headline":"Document describing the ontology http://purl.org/net/orth", "datePublished":"Tue Jun 26 11:45:03 CEST 2018", "version":"This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .
-@authors T.M. de Farias, H. Chiba, J.T. Fernandez-Breis, E. Antezana, D. Kuznetsov, C. Dessimoz and F. Villiers."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/net/orth#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/net/orth#","name":"Orthology Ontology", "headline":"The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH). ORTH ontology is designed to describe sequence homology data available in multiple orthology databases on the Web (e.g.: [OMA](https://omabrowser.org/oma/home/), [OrthoDB](http://www.orthodb.org/), [HieranoiDB](http://hieranoidb.sbc.su.se/)). By sequence homology data, we mostly mean gene region, gene and protein-centric orthology, paralogy, and xenology information. Depending on the database, the homology information is structured in different ways. ORTH ontology accommodates these disparate data structures namely Hierarchical Orthologous Group (HOG), cluster of homologous sequences and homologous-pairwise relations between sequences. In addition to the specific ORTH terms, this specification includes terms of the imported ontologies (e.g. Semanticscience Integrated Ontology, SIO) which are pertinent to represent the information from various orthology databases in a homogeneous way.", "dateReleased":"2017-11-13", "dateModified":"2024-05-14", "version":"2.0", "license":"https://creativecommons.org/publicdomain/zero/1.0/", "codeRepository":"https://github.com/qfo/OrthologyOntology", "author":[{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"},{"@type":"Person","name":"Jesualdo Tomás Fernández-Breis","url":"https://orcid.org/0000-0002-7558-2880"},{"@type":"Person","name":"Hirokazu Chiba","url":"https://orcid.org/0000-0003-4062-8903"}], "contributor":[{"@type":"Person","name":"Christophe Dessimoz","url":"https://orcid.org/0000-0002-2170-853X"},{"@type":"Person","name":"Erick Antezana","url":"https://orcid.org/0000-0002-2497-8236"},{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"},{"@type":"Person","name":"Jesualdo Tomás Fernández-Breis","url":"https://orcid.org/0000-0002-7558-2880"},{"@type":"Person","name":"Ikuo Uchiyama","url":"https://orcid.org/0000-0002-9197-5000"},{"@type":"Person","name":"María del Carmen Legaz-García","url":"https://orcid.org/0000-0003-3560-6646"},{"@type":"Person","name":"Hirokazu Chiba","url":"https://orcid.org/0000-0003-4062-8903"},{"@type":"Person","name":"Dmitry Kuznetsov","url":"https://www.sib.swiss/directory/person/dmitry-kuznetsov"},{"@type":"Person","name":"Florent Villers"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
     <script> 
 function loadHash() {
-  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
 	var hash = location.hash;
 	if($(hash).offset()!=null){
 	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
@@ -29,7 +39,7 @@ function loadTOC(){
 				t+='</ul>';
 				j=0;
 			}
-			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).text()+'</a></li>';
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
 			i++;
 		}
 		if(jQuery(this).is('h3')){
@@ -37,16 +47,18 @@ function loadTOC(){
 				t+='<ul>';
 			}
 			j++;
-			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).text()+'</a></li>';
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
 		}
-		t = t.replace(' back to ToC','');
 	  });
 	  t+='</ul>';
 	  $("#toc").html(t); 
 }
-    $(function(){
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ };    $(function(){
       $("#abstract").load("sections/abstract-en.html"); 
       $("#introduction").load("sections/introduction-en.html"); 
+      $("#nstable").load("sections/ns-en.html"); 
       $("#overview").load("sections/overview-en.html"); 
       $("#description").load("sections/description-en.html"); 
       $("#references").load("sections/references-en.html"); 
@@ -58,55 +70,59 @@ function loadTOC(){
 <body>
 <div class="container">
 <div class="head">
-<div style="float:right">language <a href="index.html"><b>en</b></a> </div>
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Orthology Ontology</h1>
+<h2>Release: 2017-11-13</h2>
 
 
 <dl>
+<dt>Modified on: 2024-05-14</dt>
 <dt>This version:</dt>
 <dd><a href="http://purl.org/net/orth/2.0">http://purl.org/net/orth/2.0</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://purl.org/net/orth#">http://purl.org/net/orth#</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="http://purl.org/net/orth/1.0">http://purl.org/net/orth/1.0</a></dd>
 <dt>Revision:</dt>
-<dd>This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .
-</dd>
-<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by-sa/4.0/" /></a>
+<dd>2.0</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0002-3175-5372">Tarcisio Mendes de Farias</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="https://orcid.org/0000-0002-7558-2880">Jesualdo Tomás Fernández-Breis</a>, <a href="https://webs.um.es">University of Murcia</a></dd><dd><a href="https://orcid.org/0000-0003-4062-8903">Hirokazu Chiba</a>, <a href="https://dbcls.rois.ac.jp/index-en.html">National Institute for Basic Biology</a></dd>
 
-</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#ontology" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<dt>Contributors:</dt>
+<dd><a href="https://orcid.org/0000-0002-2170-853X">Christophe Dessimoz</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="https://orcid.org/0000-0002-2497-8236">Erick Antezana</a>, <a href="https://www.unicc.org">United Nations International Computing Centre</a></dd><dd><a href="https://orcid.org/0000-0002-3175-5372">Tarcisio Mendes de Farias</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="https://orcid.org/0000-0002-7558-2880">Jesualdo Tomás Fernández-Breis</a>, <a href="https://webs.um.es">University of Murcia</a></dd><dd><a href="https://orcid.org/0000-0002-9197-5000">Ikuo Uchiyama</a>, <a href="https://www.nibb.ac.jp/en">National Institute for Basic Biology</a></dd><dd><a href="https://orcid.org/0000-0003-3560-6646">María del Carmen Legaz-García</a>, <a href="https://webs.um.es">University of Murcia</a></dd><dd><a href="https://orcid.org/0000-0003-4062-8903">Hirokazu Chiba</a>, <a href="https://dbcls.rois.ac.jp/index-en.html">National Institute for Basic Biology</a></dd><dd><a href="https://www.sib.swiss/directory/person/dmitry-kuznetsov">Dmitry Kuznetsov</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd>Florent Villers, <a href="https://www.bayer.com/en/agriculture">Bayer CropScience</a></dd>
+
+<dt>Publisher:</dt>
+<dd><a href="http://questfororthologs.org/">http://questfororthologs.org/</a></dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/publicdomain/zero/1.0/-blue.svg" alt="https://creativecommons.org/publicdomain/zero/1.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>de Farias, T. M., Chiba, H., & Fernández-Breis, J. T. (2017, December). Leveraging logical rules for efficacious representation of large orthology datasets. In Proceedings of the 10th International Semantic Web Applications and Tools for Healthcare and Life Sciences (SWAT4HCLS) Conference. <a href="http://ceur-ws.org/Vol-2042/paper36.pdf">http://ceur-ws.org/Vol-2042/paper36.pdf</a></dd>
+<dt>Compatible with:</dt>
+<dd><a href="http://purl.org/net/orth/1.0">http://purl.org/net/orth/1.0</a></dd>
+<dt>Vocabulary maintained at:</dt>
+<dd><a href="https://github.com/qfo/OrthologyOntology">https://github.com/qfo/OrthologyOntology</a></dd>
 </dl>
 
-<dl><dt>Editors:</dt>
-<dd>Tarcisio Mendes de Farias,  University of Lausanne and SIB Swiss Institute of Bioinformatics, Switzerland</dd>
-<dd>Hirokazu Chiba, Database Center for Life Science (DBCLS), ROIS, Japan<dd>
-</dl>
-
-
-<dl><dt>Contributors:</dt>
-<dd>(In alphabetical order)</dd>
-<dd>Christophe Dessimoz,  University of Lausanne and SIB Swiss Institute of Bioinformatics, Switzerland</dd>
-<dd>Dmitry Kuznetsov, SIB Swiss Institute of Bioinformatics, Switzerland</dd>
-<dd>Erick Antezana, Belgium<dd>
-<dd>Florent Villiers, France<dd>
-<dd>Hirokazu Chiba, Database Center for Life Science (DBCLS), ROIS, Japan<dd>
-<dd>Ikuo Uchiyama, National Institute for Basic Biology, Japan<dd>
-<dd>Jesualdo Tomás Fernández-Breis, Departamento de Informatica y Sistemas, Universidad de Murcia, Spain.<dd>
-<dd>María del Carmen Legaz-García, Spain<dd>
-<dd>Tarcisio Mendes de Farias,  University of Lausanne and SIB Swiss Institute of Bioinformatics, Switzerland</dd>
-</dl>
 <hr/>
 </div>
 <div class="status">
 <div>
-<span>Orthology (ORTH) ontology specification</span>
+<span>accepted</span>
 </div>
 </div>     <div id="abstract"></div>
 <div id="toc"></div>     <div id="introduction"></div>
+	  <div id="nstable"></div>
      <div id="overview"></div>
      <div id="description"></div>
      <div id="crossref"></div>
      <div id="references"></div>
-<div id="acknowledgements">
-<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+     <div id="changelog"></div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>
 The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
 </div>
+
 
 </div>
 </body>

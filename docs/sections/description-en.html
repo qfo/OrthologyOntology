@@ -1,58 +1,101 @@
-<h2 id="desc" class="list">ORTH: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>The ORTH ontology mainly accommodates three different types of data structures to represent homology information. 
-These data structures may encapsulate information that can often be inferred or queried instead of being materialised.
-They are described in the next subsections. In Ref. [1], we demonstrate that for one given orthology database
- billions of <a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is orthologous to</a>  assertions 
- can be inferred instead of materialised from the hierarchical orthologous groups (i.e.: space O(<var>n<sup>2</sup></var>) 
- where n is the number of genes). <a href="#fig1">Figure 1</a> illustrates these data structures according to the verbosity (i.e.: the number
- of needed triples) and the implicit information encapsulated.    
-</p> 
-<figure id="fig1">
-<p><img src="images/fig1.png" class="imagedesc"/>
-<figcaption><a href="#fig1">Figure 1</a>. The different levels of homology information expressiveness by using ORTH ontology.</figcaption>
-</figure>
+<h2 id="desc" class="list">Orthology Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-<h3 id="structHOG" class="list">Hierarchical orthologous group (HOG)</h3>
-<p>Hierarchical Orthologous Groups (HOGs) are defined as sets of genes that have descended from 
-a single common ancestor within a taxonomic range of interest [2]. 
-In the computer science context, the data structure to represent a HOG is a Tree. <a href="#fig2">Figure 2</a> depicts part of an 
-instantiation example of a HOG with a root at the level of Archelosauria taxon (e.g.: inst:Archelosauri). 
-For the sake of simplicity, several property assertions are absent in <a href="#fig2">Figure 2</a>.  When interpreting a HOG as a tree,
-the root node (e.g.: inst:Archelosauria) must be an instance of orth:OrthologsCluster  (i.e.: labelled as <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a>)
-the intermediate nodes must be instances of orth:OrthologsCluster or orth:ParalogsCluster (i.e.: labelled as <a href="#ParalogsCluster" title="http://purl.org/net/orth#ParalogsCluster">Cluster of paralogs</a>).
-The leaves may be instances of  <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>, 
-      <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or 
-            <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a>. 
-A  <a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">Cluster of homologous sequences</a> 
-may contain other clusters (e.g.: <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a>)
-and <a href="#SequenceUnit" title="http://purl.org/net/orth#SequenceUnit">Sequence units</a> (e.g.: <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>).
-To assign that a cluster contains another one, we should assert the orth:hasHomologousMember property
-(i.e.: <a href="#hasHomologousMember" title="http://purl.org/net/orth#hasHomologousMember">has homologous member</a>)
-to a given <a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">Cluster of homologous sequences</a>.
-</p>
+<span class="markdown">The ORTH ontology mainly accommodates three different types of data structures to represent homology information. These data structures may encapsulate information that can often be inferred or queried instead of being materialised. They are described in the next subsections. In Ref. [[1]](http://ceur-ws.org/Vol-2042/paper36.pdf), we demonstrate that for one given orthology database billions of [is orthologous](#hasOrtholog) to assertions can be inferred instead of materialised from the hierarchical orthologous groups (i.e.: space O(n2) where n is the number of genes). Figure 1 illustrates these data structures according to the verbosity (i.e.: the number of needed triples) and the implicit information encapsulated.
 
-<figure id="fig2">
-<p><img src="images/hog.png" class="imagedesc"/>
-<figcaption><a href="#fig2">Figure 2</a>. An instantiation example of a Hierarchical Orthologous Group using ORTH terms. 
-For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance
-of a class.</figcaption>
-</figure>
+*Figure 1. The different levels of homology information expressiveness by using ORTH ontology.*
 
-<p>From the HOG illustrated in <a href="#fig2">Figure 2</a>, we can infer that <i>inst:S100P_PELSI</i> gene 
-<a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">is orthologous to</a>
-<i>inst:S100P_FICAL</i>, <i>inst:S100P_TAEGU</i> and <i>inst:S100P_ANAPL</i> at the taxonomic level Archelosauria. In addition, 
-   <i>inst:S100P_ANAPL</i>   <a href="#hasParalog" title="http://purl.org/net/orth#hasParalog">is paralog to</a> the
-   orthologous genes <i>inst:S100P_FICAL</i> and <i>inst:S100P_TAEGU</i> due to the fact of a duplication event (i.e. <i>inst:Duplication</i> a <a href="#ParalogsCluster" title="http://purl.org/net/orth#ParalogsCluster">Cluster of paralogs</a>).
-</p>
-The query below retrieves the orthologous genes of <i>inst:S100P_PELSI</i> from the HOG illustrated in <a href="#fig2">Figure 2</a>. Depending on the type of orthology prediction, it 
-can be <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>, <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or  <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a> 
-based then the query below can be rewritten accordingly  by replacing  orth:SequenceUnit with orth:Gene, orth:Protein or orth:Subgene.
- To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
+![fig1](./images/fig1.png)
 
-<pre class="query">
+### Non-hierarchical cluster of homologous sequences
+
+Several orthology databases solely generate non-hierarchical [clusters of homologous sequences](#HomologsCluster)  or besides HOGs, they provide non-hierarchical clusters (i.e.: groups). Frequently the number of pairwise homology relations derived from the non-hierarchical [clusters of homologous sequences](#HomologsCluster)  are not the same as the ones of HOGs. In the context of the ORTH ontology, a cluster can be interpreted as a tree with a root node and leaves (i.e.: without intermediate nodes). Figure 2 illustrates how the HOG depicted in Figure 2 can be represented as the non-hierarchical [clusters of homologous sequences](#HomologsCluster) . For the sake of simplicity, the inst:Passeriformes instance is not considered in Figure 2. In the context of the non-hierarchical clusters, a [Cluster of orthologs](#OrthologsCluster) must contain only instances of a [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) which are all orthologs among them. In a similar way to the cluster of orthologs (i.e.: orth:OrthologsCluster), a [Cluster of paralogs](#ParalogsCluster) (i.e.: orth:ParalogsCluster) must contain only instances of a [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) which are all paralogs among them. For example, we may notice that due to a duplication event in the HOG in Figure 2, two clusters of orthologs are explicitly defined at the Archelosauria taxonomic level (i.e.: inst:Archelosauria_1 and inst:Archelosauria_2) in Figure 2. Therefore, for each of these clusters all genes are orthologous to each other. For instance, the inst:Archelosauria_1 orthologous cluster [has homologous member](#hasHomologousMember)s the inst:S100P_PELSI, inst:S100P_FICAL and inst:S100P_TAEGU genes. However, the inst:Archelosauria_1 cluster does not have the inst:S100P_ANAPL gene as a member because this gene [is paralogous to](#hasParalog)  inst:S100P_FICAL and inst:S100P_TAEGU genes.
+
+*Figure 2. A non hierarchical cluster instantiation example. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+
+![fig3](./images/fig3.png)
+
+When comparing the data structure of the non-hierarchical clusters (i.e.: flat clusters) to HOGs, one may notice that flat clusters are a more verbose representation because we need to assign more triples to explicitly define flat cluster members which are implicitly described in a HOG. For example, we have to create two orthologous clusters (i.e. inst:Archelosauria_1 and inst:Archelosauria_2) at the same taxonomic level to represent orthologous groups at the Archelosauria taxon. These groups were derived from the HOG example in Figure 2. Moreover, a HOG contains more information that is not captured by non-hierarchical clusters such as the order of speciation and duplication events. This information is crucial to infer for instance [inparalogy relations](#InparalogyRelation).
+
+Yet, we do not need to materialize flat cluster information from HOGs because we can infer or query them. Therefore, we recommend to materialise flat clusters only if they cannot be derived from a HOG or a use case where the number of derived clusters are small and/or the performance in terms of query execution time overcomes storage constraints. For example, some orthology databases do not predict orthology information as a HOG.
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the flat clusters illustrated in Figure 2. To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
+
+#### SPARQL Query
+```
 SELECT ?gene1 ?gene2 WHERE  { 
-   ?gene1 a orth:SequenceUnit. #<a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>, <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or  <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a>
-   ?gene2 a orth:SequenceUnit. #<a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>, <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or  <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a>
+   ?cluster a orth:OrthologsCluster. 
+   ?cluster orth:hasHomologousMember ?gene1. 
+   ?cluster orth:hasHomologousMember ?gene2. 
+  
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   FILTER(?gene1 != ?gene2)
+ }
+```
+
+#### Query results
+```
+gene1             gene2
+inst:S100P_PELSI  inst:S100P_FICAL
+inst:S100P_PELSI  inst:S100P_TAEGU
+inst:S100P_PELSI  inst:S100P_ANAPL
+```
+
+Some examples of the orthology databases that provide non-hierarchical cluster of homologous sequences: [OMA](https://omabrowser.org/oma/home/), [OrthoDB](https://www.orthodb.org/) and [InParanoid](http://inparanoid.sbc.su.se/cgi-bin/index.cgi).
+
+### Pairwise-homology relations between sequences
+
+By using ORTH ontology terms, we can describe, for example, the following homologous relations:
+
+* [orthology relation](#OrthologyRelation)
+* [paralogy relation](#ParalogyRelation)
+* [outparalogy relation](#OutparalogyRelation)
+* [inparalogy relation](#InparalogyRelation)
+* [co-orthology relation](#CoOrthologyRelation)
+
+The pairwise-homology relations are indeed defined as OWL classes rather than properties because frequently these relations are contextualised with respect to a [taxonomic level](#TaxonomicRange) of reference, a [speciation](#http://purl.obolibrary.org/obo/CDAO_0000121) event, a [geneDuplication](#http://purl.obolibrary.org/obo/CDAO_0000077) event, and so on. Besides this, due to the fact that the number of homology relations drastically increases with the number of genomes, it is recommended to materialise these relations if only if they cannot be derived from HOGs or flat clusters (see an example in Figure 3). Some orthology databases solely provide orthology pairwise relations. Therefore, a pairwise relation cannot explicitly be represented with a HOG or a non-hierarchical cluster.
+
+*Figure 3. The pairwise-homologous relations between sequences derived from HOG illustrated in Figure 4 and flat cluster in Figure 2. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+
+![fig4](./images/fig4.png)
+
+To facilitate the knowledge extraction, the ORTH pairwise-homology relation classes might be populated by applying Horn-like rules or queries over HOGs and/or flat clusters. Moreover, ORTH ontology also contains OWL object properties to represent non-contextualised homology pairwise relations by asserting the [has ortholog](#hasOrtholog), [has paralog](#hasParalog), [has xenolog](#hasXenolog) and [has homolog](#hasHomolog) object properties. One can notice that these properties might be inferred from the instances of ORTH pairwise-homology relation classes. Moreover, the pairwise-homology relations such as the inparalogy relation class cannot be defined as an OWL object property because it needs to be contextualised with respect to a speciation event of reference.
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the orthology-relations such as the one illustrated in Figure 3A. To query paralogy relations, we only need to replace orth:OrthologyRelation with orth:ParalogyRelation.
+
+
+```
+SELECT  ?gene1 ?gene2 WHERE  { 
+   ?relation a orth:OrthologyRelation. 
+   ?relation orth:hasHomologousMember ?gene1. 
+   ?relation orth:hasHomologousMember ?gene2. 
+  
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   FILTER(?gene1 != ?gene2)
+   }
+```
+
+If the [has ortholog](#hasOrtholog) property is inferred or materialised, the previous queries can be rewritten as follows:
+
+```
+SELECT ?gene1 ?gene2 WHERE  {  
+   ?gene1 orth:hasOrtholog ?gene2. 
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   }
+```
+
+###  Hierarchical orthologous group (HOG)
+
+Hierarchical Orthologous Groups (HOGs) are defined as sets of genes that have descended from a single common ancestor within a taxonomic range of interest [[2]](https://doi.org/10.1371/journal.pone.0053786). In the computer science context, the data structure to represent a HOG is a Tree. Figure 4 depicts part of an instantiation example of a HOG with a root at the level of Archelosauria taxon (e.g., inst:Archelosauri). For the sake of simplicity, several property assertions are absent in Figure 4. When interpreting a HOG as a tree, the root node (e.g., inst:Archelosauria) must be an instance of orth:OrthologsCluster (i.e., labelled as [Cluster of orthologs](#OrthologsCluster)) the intermediate nodes must be instances of orth:OrthologsCluster or orth:ParalogsCluster (i.e., labelled as [Cluster of paralogs](#ParalogsCluster)). The leaves may be instances of [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene). A [Cluster of homologous sequences](#HomologsCluster) may contain other clusters (e.g., [Cluster of orthologs](#OrthologsCluster)) and [Sequence units](#SequenceUnit) (e.g., [Gene](#Gene)). To assign that a cluster contains another one, we should assert the orth:hasHomologousMember property (i.e., [has homologous member](#hasHomologousMember)) to a given [Cluster of homologous sequences](#HomologsCluster).
+
+From the HOG illustrated in Figure 4, we can infer that inst:S100P_PELSI gene [is orthologous to](#hasOrtholog) inst:S100P_FICAL, inst:S100P_TAEGU and inst:S100P_ANAPL at the taxonomic level Archelosauria. In addition, inst:S100P_ANAPL [is paralogous to](#hasParalog) the orthologous genes inst:S100P_FICAL and inst:S100P_TAEGU due to the fact of a duplication event (i.e., inst:Duplication a [Cluster of paralogs](#ParalogsCluster)).
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the HOG illustrated in Figure 4. Depending on the type of orthology prediction, it can be [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) based then the query below can be rewritten accordingly by replacing orth:SequenceUnit with orth:Gene, orth:Protein or orth:Subgene. To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
+
+#### SPARQL Query
+```
+SELECT ?gene1 ?gene2 WHERE  { 
+   ?gene1 a orth:SequenceUnit. #Gene, [Protein](#Protein) or  [gene region](#Subgene)
+   ?gene2 a orth:SequenceUnit. #Gene, [Protein](#Protein) or  [gene region](#Subgene)
    ?cluster a orth:OrthologsCluster. 
    ?cluster orth:hasHomologousMember ?node1. 
    ?cluster orth:hasHomologousMember ?node2. 
@@ -63,201 +106,17 @@ SELECT ?gene1 ?gene2 WHERE  {
     
    FILTER(?node1 != ?node2)
    }
-</pre>
+```
 
-<pre class="result">
-<table id="tab1" class="resultTab">
-<tbody>  <tr> <th>gene1</th>
-          <th>gene2</th>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_FICAL</td>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_TAEGU</td>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_ANAPL</td>
-        </tr>
-        
-</tbody>
-</table></pre>
+#### Query results
+```
+gene1             gene2
+inst:S100P_PELSI  inst:S100P_FICAL
+inst:S100P_PELSI  inst:S100P_TAEGU
+inst:S100P_PELSI  inst:S100P_ANAPL
+```
 
-<p>
-Some examples of orthology databases that provide HOGs: 
-      <a href="https://omabrowser.org/oma/home/">OMA</a>,
-         <a href="http://hieranoidb.sbc.su.se">HieranoiDB</a> and
-           <a href="https://www.genome.jp/tools/oc/">KEGG OC</a>.
+Some examples of orthology databases that provide HOGs: [OMA](https://omabrowser.org/oma/home/), [HieranoiDB](http://hieranoidb.sbc.su.se/) and [KEGG OC](https://www.genome.jp/tools/oc/).
 
-</p>
-<h3 id="structCluster" class="list">Non-hierarchical cluster of homologous sequences</h3>
-<p>Several orthology databases solely generate non-hierarchical
-<a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">clusters of homologous sequences</a> or besides HOGs, they provide 
-non-hierarchical clusters (i.e.: groups). Frequently the number of pairwise homology relations derived from the non-hierarchical 
-<a href="#HomologsCluster" title="http://purl.org/net/orth#HomologsCluster">clusters of homologous sequences</a>
-are not the same as the ones of HOGs. In the context of the ORTH ontology, a cluster can be interpreted as a tree with a root node and leaves (i.e.: without intermediate nodes).
-<a href="#fig3">Figure 3</a> illustrates how the HOG depicted in <a href="#fig2">Figure 2</a> can be represented as the non-hierarchical clusters of homologous sequences.
-For the sake of simplicity, the inst:Passeriformes instance is not considered in <a href="#fig3">Figure 3</a>. 
-In the context of the non-hierarchical clusters, a <a href="#OrthologsCluster" title="http://purl.org/net/orth#OrthologsCluster">Cluster of orthologs</a> must contain only
-instances of a <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>,  
-      <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or 
-            <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a> which are all orthologs among them.
-In a similar way to the cluster of orthologs (i.e.: orth:OrthologsCluster), a <a href="#ParalogsCluster" title="http://purl.org/net/orth#ParalogsCluster">Cluster of paralogs</a>  (i.e.: orth:ParalogsCluster) must contain only
-instances of a <a href="#Gene" title="http://purl.org/net/orth#Gene">Gene</a>,  
-      <a href="#Protein" title="http://purl.org/net/orth#Protein">Protein</a> or 
-            <a href="#Subgene" title="http://purl.org/net/orth#Subgene">gene region</a> which are all paralogs among them.
-For example, we may notice that due to a duplication event in the HOG in <a href="#fig2">Figure 2</a>, two clusters of orthologs are explicitly
-defined at the Archelosauria taxonomic level (i.e.: <i>inst:Archelosauria_1</i> and <i>inst:Archelosauria_2</i>) in <a href="#fig3">Figure 3</a>.
-Therefore, for each of these clusters all genes are orthologous to each other. For instance, the <i>inst:Archelosauria_1</i> orthologous cluster 
-<a href="#hasHomologousMember" title="http://purl.org/net/orth#hasHomologousMember">has homologous members</a> 
-the <i>inst:S100P_PELSI</i>, <i>inst:S100P_FICAL</i> and <i>inst:S100P_TAEGU</i> genes. However, the <i>inst:Archelosauria_1</i> cluster does
-not have the <i>inst:S100P_ANAPL</i> gene as a member because this gene       <a href="#hasParalog" title="http://purl.org/net/orth#hasParalog">is paralogous to</a>
-  <i>inst:S100P_FICAL</i> and <i>inst:S100P_TAEGU</i> genes.
-</p>
-
-<figure id="fig3">
-<p><img src="images/fig3.png" class="imagedesc"/>
-<figcaption><a href="#fig3">Figure 3</a>. A non hierarchical cluster instantiation example. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance
-of a class.</figcaption>
-</figure>
-<p> When comparing the data structure of the non-hierarchical clusters (i.e.: flat clusters) to HOGs, one may notice that flat clusters are
- a more verbose representation because we need to assign more triples to explicitly define flat cluster members which are 
- implicitly described in a HOG. For example, we have to create two orthologous clusters (i.e. inst:Archelosauria_1 and  inst:Archelosauria_2) at the same taxonomic level to
- represent orthologous groups at the Archelosauria taxon. These groups were derived from the HOG example in <a href="#fig2">Figure 2</a>. 
- Moreover, a HOG contains more information that is not captured by non-hierarchical clusters such as the order of speciation and duplication events. 
- This information is crucial to infer for instance  <a href="#InparalogyRelation" title="http://purl.org/net/orth#InparalogyRelation">inparalogy relations</a>.
-</p>
-
-<p> Yet, we do not need to materialize flat cluster information from HOGs because we can infer or query them. 
-      Therefore, we recommend to materialise flat clusters only if they cannot be derived from a HOG or 
-      a use case where the number of derived clusters are small and/or the performance in terms of query execution time overcomes
-      storage constraints. For example, some orthology databases do not predict orthology information as a HOG.
-</p>
-
-The query below retrieves the orthologous genes of <i>inst:S100P_PELSI</i> from the flat clusters illustrated in <a href="#fig3">Figure 3</a>.
- To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
-
-
-<pre class="query">
-SELECT ?gene1 ?gene2 WHERE  { 
-   ?cluster a orth:OrthologsCluster. 
-   ?cluster orth:hasHomologousMember ?gene1. 
-   ?cluster orth:hasHomologousMember ?gene2. 
-  
-   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
-   FILTER(?gene1 != ?gene2)
- }
-</pre>
-
-<pre class="result">
-<table id="tab1" class="resultTab">
-<tbody>  <tr> <th>gene1</th>
-          <th>gene2</th>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_FICAL</td>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_TAEGU</td>
-        </tr>
-        <tr>
-          <td>inst:S100P_PELSI</td>
-          <td>inst:S100P_ANAPL</td>
-        </tr>
-        </tbody>
-</table></pre>
-
-<p>
-Some examples of the orthology databases that provide non-hierarchical cluster of homologous sequences: 
-      <a href="https://omabrowser.org/oma/home/">OMA</a>,
-         <a href="https://www.orthodb.org">OrthoDB</a> and
-           <a href="http://inparanoid.sbc.su.se/cgi-bin/index.cgi">InParanoid</a>.
-
-</p>
-
-<h3 id="structPairwise" class="list">Pairwise-homology relations between sequences </h3>
-
-<p>
- 
-By using ORTH ontology terms, we can describe, for example, the following homologous relations:
-<ul>
-  <li>
-      <a href="#OrthologyRelation" title="http://purl.org/net/orth#OrthologyRelation">orthology relation</a>
-   </li>
-    <li>
-      <a href="#ParalogyRelation" title="http://purl.org/net/orth#ParalogyRelation">paralogy relation</a>
-   </li>
-       
-   <li>
-      <a href="#OutparalogyRelation" title="http://purl.org/net/orth#OutparalogyRelation">outparalogy relation</a>
-   </li>
-   <li>
-<a href="#InparalogyRelation" title="http://purl.org/net/orth#InparalogyRelation">inparalogy relation</a>   </li>
-<li>   <a href="#CoOrthologyRelation" title="http://purl.org/net/orth#CoOrthologyRelation">co-orthology relation</a>
- </li>
-   </ul>
- 
-</p>
-<p>
-The pairwise-homology relations are indeed defined as OWL classes rather than properties because frequently these relations are contextualised with respect to 
-a <a href="#TaxonomicRange" title="http://purl.org/net/orth#TaxonomicRange">taxonomic level</a> of reference, a 
-      <a href="#http://purl.obolibrary.org/obo/CDAO_0000121" title="http://purl.obolibrary.org/obo/CDAO_0000121">speciation</a> event,
-a       <a href="#http://purl.obolibrary.org/obo/CDAO_0000077" title="http://purl.obolibrary.org/obo/CDAO_0000077">geneDuplication</a> event, and so on.
-
-
-Besides this, due to the fact that the number of homology relations drastically increases with the number of genomes, it is recommended to 
-materialise these relations if only if they cannot be derived from  <a href="#structHOG">HOGs</a> or <a href="#structCluster">flat clusters</a> (see an example in <a href="#fig3">Figure 4</a>).
-Some orthology databases solely provide orthology pairwise relations such as <a href="https://www.ebi.ac.uk/rdf/"> Ensembl (EMBL-EBI SPARQL endpoint)</a>.
-Therefore, a pairwise relation cannot explicitly be represented with a HOG or a non-hierarchical cluster. </p>
-
-<figure id="fig4">
-<p><img src="images/fig4.png" class="imagedesc"/>
-<figcaption><a href="#fig3">Figure 4</a>. The pairwise-homologous relations between sequences derived from HOG illustrated in <a href="#fig2">Figure 2</a> and flat cluster in <a href="#fig3">Figure 3</a>.
- For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.</figcaption>
-</figure>
-
-<p>To facilitate the knowledge extraction, the ORTH pairwise-homology relation classes might be populated by applying Horn-like rules or queries over 
- <a href="#structHOG">HOGs</a> and/or <a href="#structCluster">flat clusters</a>. Moreover, ORTH ontology also contains OWL object 
- properties to represent non-contextualised homology pairwise relations by asserting the 
-  <a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">has ortholog</a>,
- <a href="#hasParalog" title="http://purl.org/net/orth#hasParalog">has paralog</a>,
-       <a href="#hasXenolog" title="http://purl.org/net/orth#hasXenolog">has xenolog</a> and
-             <a href="#hasHomolog" title="http://purl.org/net/orth#hasHomolog">has homolog</a> object properties. One can notice that these properties
-might be inferred from the instances of ORTH pairwise-homology relation classes. Moreover, the pairwise-homology relations such as the
-      <a href="#InparalogyRelation" title="http://purl.org/net/orth#InparalogyRelation">inparalogy relation</a> class
- cannot be defined as an OWL object property because it needs to be contextualised with respect to 
-a speciation event of reference.
-</p>
-
-The query below retrieves the orthologous genes of <i>inst:S100P_PELSI</i> from the orthology-relations such as the one 
-illustrated in <a href="#fig4">Figure 4A</a>.  To query paralogy relations, we only need to replace 
-orth:OrthologyRelation with orth:ParalogyRelation. 
-
-<pre class="query">
-SELECT  ?gene1 ?gene2 WHERE  { 
-   ?relation a orth:OrthologyRelation. 
-   ?relation orth:hasHomologousMember ?gene1. 
-   ?relation orth:hasHomologousMember ?gene2. 
-  
-   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
-   FILTER(?gene1 != ?gene2)
-   }
-</pre>
-
-If the  <a href="#hasOrtholog" title="http://purl.org/net/orth#hasOrtholog">has ortholog</a> property is inferred or materialised, 
-the previous queries can be rewritten as follows:
-
-<pre class="query">
-SELECT ?gene1 ?gene2 WHERE  {  
-   ?gene1 orth:hasOrtholog ?gene2. 
-   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
-   }
-</pre>
-
-
- 
+*Figure 4. An instantiation example of a Hierarchical Orthologous Group using ORTH terms. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+ </span><img src="http://qfo.github.io/OrthologyOntology/images/hog.png">

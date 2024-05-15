@@ -1,0 +1,2098 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.uniprot.org/core", "http://purl.org/pav", "http://purl.obolibrary.org/obo", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/net/orth", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://semanticscience.org/resource" ],
+    "iri" : "http://purl.org/net/orth",
+    "version" : "This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .\n@authors T.M. de Farias, H. Chiba, J.T. Fernandez-Breis, E. Antezana, D. Kuznetsov, C. Dessimoz and F. Villiers.",
+    "other" : {
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .\n@authors T.M. de Farias, H. Chiba, J.T. Fernandez-Breis, E. Antezana, D. Kuznetsov, C. Dessimoz and F. Villiers.",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 33,
+    "objectPropertyCount" : 26,
+    "datatypePropertyCount" : 6,
+    "individualCount" : 0
+  },
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "7",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "15",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "21",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "19",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "8",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "6",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "28",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "97",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "85",
+    "type" : "owl:Class"
+  }, {
+    "id" : "76",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "instances" : 0,
+    "union" : [ "1", "2", "3" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://purl.org/net/orth#Subgene",
+    "equivalent" : [ "8" ],
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Subgene",
+      "en" : "region of a gene"
+    },
+    "comment" : {
+      "en" : "A region of the sequence of the gene."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "7",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://purl.uniprot.org/core/Taxon",
+    "baseIri" : "http://purl.uniprot.org/core",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://www.ncbi.nlm.nih.gov/books/NBK54428/",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Taxon",
+      "undefined" : "Taxon"
+    },
+    "comment" : {
+      "undefined" : "An element of a taxonomy for classifying life forms."
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000077",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "gene duplication",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CDAO_0000077",
+      "undefined" : "geneDuplication"
+    },
+    "comment" : {
+      "en" : "Evolutionary event that consists on the duplication of a gene"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#OrthologyDataset",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrthologyDataset",
+      "en" : "Orthology datasource"
+    },
+    "comment" : {
+      "en" : "Dataset that provides orthology relations including clusters of orthologs, pairwise orthology relations, and so on.\n\nExamples would be the content of resources such as OMA, InParanoid, TreeFam, PhylomeDB and so on. Each release of the resources is different dataset."
+    },
+    "id" : "12"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "14" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "13"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "5" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "15"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "2", "3" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/SO_0005855",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "gene group",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SO_0005855",
+      "undefined" : "gene_group"
+    },
+    "subClasses" : [ "1" ],
+    "comment" : {
+      "en" : "A collection of related genes."
+    },
+    "attributes" : [ "external" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000121",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CDAO_0000121",
+      "undefined" : "speciation"
+    },
+    "comment" : {
+      "en" : "Evolutionary event related with the evolution of a gene in different species"
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://purl.org/net/orth#Gene",
+    "equivalent" : [ "64" ],
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/so.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Gene",
+      "en" : "Gene"
+    },
+    "comment" : {
+      "en" : "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "17",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#Protein",
+    "equivalent" : [ "65" ],
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/so.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Protein",
+      "en" : "Protein"
+    },
+    "comment" : {
+      "en" : "A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "19",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/SO_0000831",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SO_0000831",
+      "en" : "gene_member_region"
+    },
+    "comment" : {
+      "undefined" : "A manufactured term used to allow the parts of a gene to have an is_a path to the root."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000012",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CDAO_0000012",
+      "undefined" : "RootedTree"
+    },
+    "subClasses" : [ "72" ],
+    "comment" : {
+      "en" : "Tree with a root node, which is the common ancestor to all the nodes in the tree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://purl.org/net/orth#OrthologsCluster",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Cluster of orthologous sequences",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "group of orthologs",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Orthologous cluster",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OrthologsCluster",
+      "en" : "Cluster of orthologs"
+    },
+    "comment" : {
+      "en" : "Set of homologous sequences derived from a speciation event.\n\n"
+    },
+    "id" : "48",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#OutparalogyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "alloparalog",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "out-paralogy relation",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "out-paralogous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OutparalogyRelation",
+      "en" : "outparalogy relation"
+    },
+    "comment" : {
+      "en" : "Outparalogy is also a relation defined over a pair of genes and a speciation event of reference. This pair are outparalogs if the duplication event through which they are related to each other predates the speciation event of reference."
+    },
+    "id" : "31",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/SO_0000704",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/so.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SO_0000704",
+      "undefined" : "gene"
+    },
+    "comment" : {
+      "en" : "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000140",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CDAO_0000140",
+      "undefined" : "Node"
+    },
+    "subClasses" : [ "85" ],
+    "comment" : {
+      "en" : "Basic unit of graphs and trees. This class was modified from its original definition (with class restrictions) to avoid multiple statements that relates a Node to a Network (e.g.: RootedTree). In its orignal definition, for each created instance of a Node, an additional statement must be defined to declare that a given node belongs to a Network what is quite verbose. However, we know that sub-nodes of a root node must belong to the same given Rooted Tree (e.g.: HOGs). Therefore, no needs to state sub-nodes to be part of a  RootedTree."
+    },
+    "attributes" : [ "external" ],
+    "id" : "86"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://purl.org/net/orth#Organism",
+    "equivalent" : [ "94" ],
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Living being",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Organism",
+      "en" : "Organism"
+    },
+    "comment" : {
+      "en" : "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "28",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "95",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://purl.org/net/orth#TaxonomicRange",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Taxonomic range",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "TaxonomicRange",
+      "en" : "Taxonomic level"
+    },
+    "comment" : {
+      "en" : "The taxonomic level represents the taxon at which a group of sequences are considered members of the same cluster of orthologs/paralogs"
+    },
+    "id" : "60"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "96",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "14" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "98",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://purl.org/net/orth#OrthologyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "orthologous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OrthologyRelation",
+      "en" : "orthology relation"
+    },
+    "subClasses" : [ "80" ],
+    "comment" : {
+      "en" : "homology pairwise relation that involves sequences that diverged after a speciation event."
+    },
+    "id" : "2",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#HierarchicalGeneTree",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HierarchicalGeneTree",
+      "en" : "Hierarchical gene tree "
+    },
+    "comment" : {
+      "en" : "A tree whose leaf nodes correspond to genes"
+    },
+    "id" : "82",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#HomologsCluster",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "homologs cluster",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "homologous group",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Cluster of homologs",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HomologsCluster",
+      "en" : "Cluster of homologous sequences"
+    },
+    "subClasses" : [ "48", "24" ],
+    "comment" : {
+      "en" : "Set of homologous sequences"
+    },
+    "id" : "1",
+    "superClasses" : [ "43", "85" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#LeastDivergedOrthologyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://pantherdb.org/genes/",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "least diverged orthologous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LeastDivergedOrthologyRelation",
+      "en" : "least diverged orthology relation"
+    },
+    "comment" : {
+      "en" : "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities. This is a symmetric relation."
+    },
+    "id" : "80",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#XenologyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "en",
+        "value" : "https://doi.org/10.1093/bioinformatics/btw686",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "xenologous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "XenologyRelation",
+      "en" : "xenology relation"
+    },
+    "comment" : {
+      "en" : "Gene pairs whose history, since their divergence, includes a horizontal transfer."
+    },
+    "id" : "63",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#HierarchicalClusteringTree",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HierarchicalClusteringTree",
+      "en" : "Hierarchical clustering tree"
+    },
+    "subClasses" : [ "82" ],
+    "comment" : {
+      "en" : "A tree whose content is the result of the application of hierarchical clustering to a dataset"
+    },
+    "id" : "72",
+    "superClasses" : [ "71" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#SequenceUnit",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SequenceUnit",
+      "en" : "Sequence unit"
+    },
+    "subClasses" : [ "17", "7", "19" ],
+    "comment" : {
+      "en" : "protein or DNA sequence as a unit of comparison"
+    },
+    "id" : "5",
+    "superClasses" : [ "85" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#HomologyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "homologous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HomologyRelation",
+      "en" : "homology relation"
+    },
+    "subClasses" : [ "76", "2", "63", "3" ],
+    "comment" : {
+      "en" : "This class represents homology relations among sequence units (e.g genes, proteins or gene regions)."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "http://semanticscience.org/resource/SIO_000750",
+    "baseIri" : "http://semanticscience.org/resource",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SIO_000750",
+      "en" : "database"
+    },
+    "comment" : {
+      "en" : "A database is a data store such as relational, hierarchical and graph databases."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/NCIT_C14250",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/ncit.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "NCIT_C14250",
+      "undefined" : "Organism"
+    },
+    "comment" : {
+      "en" : "A living thing, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. EXAMPLE(S): animal, human being."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://purl.org/net/orth#GeneTreeNode",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GeneTreeNode",
+      "en" : "Gene tree node"
+    },
+    "subClasses" : [ "1", "5" ],
+    "comment" : {
+      "en" : "A node of a tree whose leaf nodes are sequence units and whose internal nodes are clusters of homologs"
+    },
+    "id" : "85",
+    "superClasses" : [ "86" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#CoOrthologyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "co-orthologous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CoOrthologyRelation",
+      "en" : "co-orthology relation"
+    },
+    "comment" : {
+      "en" : "Co-orthology is a relation defined over three genes, where two of them are inparalogs with respect to the speciation event associated to the third gene. The two inparalogous genes are said to be co-orthologous to the third (out-group) gene."
+    },
+    "id" : "76",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#InparalogyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "in-paralogous relation",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "in-paralogy relation",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "symparalog",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InparalogyRelation",
+      "en" : "inparalogy relation"
+    },
+    "comment" : {
+      "en" : "Inparalogy is a relation defined over a triplet. It involves a pair of genes and a speciation event of reference. A gene pair is an inparalog if they are paralogs and duplicated after the speciation event of reference."
+    },
+    "id" : "55",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000064",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "clado genetic change",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CDAO_0000064",
+      "undefined" : "cladogeneticChange"
+    },
+    "subClasses" : [ "10", "32" ],
+    "comment" : {
+      "en" : "Evolutionary event"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/SO_0000104",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/so.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SO_0000104",
+      "undefined" : "polypeptide"
+    },
+    "comment" : {
+      "en" : "A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://purl.org/net/orth#ParalogsCluster",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Paralogs cluster",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "Cluster of paralogous sequences",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "group of paralogs",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ParalogsCluster",
+      "en" : "Cluster of paralogs"
+    },
+    "comment" : {
+      "en" : "Set of homologous sequences derived from a duplication event"
+    },
+    "id" : "24",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://purl.org/net/orth#ParalogyRelation",
+    "baseIri" : "http://purl.org/net/orth",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "paralogous relation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ParalogyRelation",
+      "en" : "paralogy relation"
+    },
+    "subClasses" : [ "31", "55" ],
+    "comment" : {
+      "en" : "Homology relation that involves sequences that diverged after a duplication event."
+    },
+    "id" : "3",
+    "superClasses" : [ "14" ]
+  } ],
+  "property" : [ {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "18",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "22",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "23",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "34",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "35",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "46",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "47",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "49",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "50",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "51",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "52",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "54",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "56",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "66",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "103",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "104",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "106",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "108",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "109",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "112",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "113",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "114",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "115",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "116",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "117",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "118",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "119",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "67",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://purl.org/net/orth#organism",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "organism",
+      "en" : "in organism"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "A sequence unit (e.g.: gene) comes from an organism."
+    },
+    "attributes" : [ "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000194",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "CDAO_0000194",
+      "undefined" : "part_of"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/RO_0001018",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "RO_0001018",
+      "en" : "contained in"
+    },
+    "domain" : "19",
+    "comment" : {
+      "en" : "This property was simplified. Original range and domain were removed due to be highly abstracted because it is well-know the domain of discourse: orthology databases.  The rage restriction of this property is defined as a class restriction in (e.g.: orth:Gene)."
+    },
+    "attributes" : [ "object", "external", "allValues" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://purl.uniprot.org/core/replaces",
+    "baseIri" : "http://purl.uniprot.org/core",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "replaces",
+      "en" : "replaces"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "A resource that is replaced by this resource."
+    },
+    "attributes" : [ "object", "external", "allValues" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "24",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/RO_0002350",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/ro.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RO_0002350",
+      "en" : "member of"
+    },
+    "domain" : "28",
+    "subproperty" : [ "29" ],
+    "comment" : {
+      "en" : "Is member of is a mereological relation between a item and a collection."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasDescendantEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasDescendantEvolutionaryEvent",
+      "en" : "has descendant evolutionary event"
+    },
+    "superproperty" : [ "33" ],
+    "domain" : "31",
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"outparalogy relation\") to state a descendant evolutionary event. A descendant evolutionary event is  an event that occurs after another evolutionary event. For example, a speciation event after a duplication event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://purl.org/net/orth#organism",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "organism",
+      "en" : "in organism"
+    },
+    "domain" : "19",
+    "comment" : {
+      "en" : "A sequence unit (e.g.: gene) comes from an organism."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "3",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasHomolog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "5",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "is homologous to",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasHomolog",
+      "en" : "has homolog"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "5",
+    "subproperty" : [ "38", "39", "40" ],
+    "comment" : {
+      "en" : "Homologous pairwise relation between sequence units (e.g.: genes, proteins or gene regions). For example, A Gene(A) hasHomolog Gene(B). This property can be materialized or inferred by applying a logical rule."
+    },
+    "attributes" : [ "object", "symmetric" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://purl.org/pav/version",
+    "baseIri" : "http://purl.org/pav",
+    "range" : "42",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "en",
+        "value" : "http://purl.org/pav/",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "version",
+      "en" : "Version"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "The version number of a resource. This is a freetext string, typical values are \"1.5\" or \"21\". The URI identifying the previous version can be provided using prov:previousVersion.\n\nThis property is normally used in a functional way, although PAV does not formally restrict this."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "2",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "44"
+  }, {
+    "range" : "2",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "48",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/RO_0002162",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "RO_0002162",
+      "en" : "in taxon"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Connects a biological entity to its taxon of origin."
+    },
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "49"
+  }, {
+    "iri" : "http://purl.org/pav/version",
+    "baseIri" : "http://purl.org/pav",
+    "range" : "45",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "en",
+        "value" : "http://purl.org/pav/",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "version",
+      "en" : "Version"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "The version number of a resource. This is a freetext string, typical values are \"1.5\" or \"21\". The URI identifying the previous version can be provided using prov:previousVersion.\n\nThis property is normally used in a functional way, although PAV does not formally restrict this."
+    },
+    "attributes" : [ "datatype", "someValues", "external" ],
+    "id" : "50"
+  }, {
+    "range" : "48",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasHomologousMember",
+    "inverse" : "29",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasHomologousMember",
+      "en" : "has homologous member"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "14",
+    "comment" : {
+      "en" : "Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasAncestralEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasAncestralEvolutionaryEvent",
+      "en" : "has ancestral evolutionary event"
+    },
+    "superproperty" : [ "33" ],
+    "domain" : "55",
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"inparalogy relation\") to state an ancestral evolutionary event. An ancestral evolutionary event is an event that precedes another evolutionary event. For example, a speciation event before a duplication event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://purl.org/net/orth#inDataset",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "inDataset",
+      "en" : "in dataset"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "Property that provides the dataset associated with a gene tree node"
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "56"
+  }, {
+    "range" : "14",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "57"
+  }, {
+    "range" : "14",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://purl.org/net/orth#taxRange",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "61",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "tax range",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "taxRange",
+      "en" : "taxonomic level"
+    },
+    "domain" : "60",
+    "comment" : {
+      "en" : "Property that stores the name of the taxonomic level at which a given cluster of homologs has been calculated"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "59"
+  }, {
+    "range" : "14",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasHomologyData",
+    "inverse" : "67",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasHomologyData",
+      "en" : "has homology data"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "12",
+    "comment" : {
+      "en" : "Inverse property of inDataset.  It permits to retrieve  the clusters or homology relations included in a particular dataset."
+    },
+    "attributes" : [ "object" ],
+    "id" : "66"
+  }, {
+    "iri" : "http://semanticscience.org/resource/SIO_000028",
+    "baseIri" : "http://semanticscience.org/resource",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio.owl",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SIO_000028",
+      "en" : "has part"
+    },
+    "domain" : "28",
+    "subproperty" : [ "68", "69", "70" ],
+    "comment" : {
+      "en" : "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."
+    },
+    "attributes" : [ "object", "reflexive", "transitive", "external" ],
+    "id" : "53"
+  }, {
+    "range" : "5",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "73"
+  }, {
+    "range" : "5",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "74"
+  }, {
+    "range" : "14",
+    "domain" : "76",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "75"
+  }, {
+    "range" : "5",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "77"
+  }, {
+    "range" : "1",
+    "domain" : "48",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "78"
+  }, {
+    "range" : "2",
+    "domain" : "80",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "79"
+  }, {
+    "range" : "72",
+    "domain" : "82",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "81"
+  }, {
+    "range" : "1",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "83"
+  }, {
+    "range" : "86",
+    "domain" : "85",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "84"
+  }, {
+    "range" : "71",
+    "domain" : "72",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://purl.uniprot.org/core/replaces",
+    "baseIri" : "http://purl.uniprot.org/core",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "replaces",
+      "en" : "replaces"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "A resource that is replaced by this resource."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://purl.org/net/orth#taxRangeId",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "90",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "tax range id",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "taxRangeId",
+      "en" : "taxonomic level identifier"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "This property links a cluster of homologs with its taxonomic level."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasTaxonomicRange",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "60",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "has taxonomic range",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasTaxonomicRange",
+      "en" : "has taxonomic level"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "0",
+    "comment" : {
+      "en" : "Property that associates a cluster of homologs with the taxonomic range at which it has been calculated"
+    },
+    "attributes" : [ "object" ],
+    "id" : "91"
+  }, {
+    "range" : "43",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "92"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000148",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "CDAO_0000148",
+      "undefined" : "has_Root"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "71",
+    "comment" : {
+      "en" : "The property links a rooted tree to the specific node that represents the unique root of the tree."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasParalog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "hasParalog",
+      "en" : "is paralog to"
+    },
+    "superproperty" : [ "36" ],
+    "domain" : "28",
+    "comment" : {
+      "en" : "Paralogous pairwise relation between genes/proteins. For example, a Gene(A) hasParalog Gene(B). This property can be materialized or inferred by applying a logical rule."
+    },
+    "attributes" : [ "object", "symmetric" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://purl.org/net/orth#isHomologousMember",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "isHomologousMember",
+      "en" : "is homologous member"
+    },
+    "superproperty" : [ "27" ],
+    "domain" : "28",
+    "comment" : {
+      "en" : "Inverse of has homologous member. This property permits to find the cluster in which a cluster or sequence unit is included."
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasCoOrthologousMember",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasCoOrthologousMember",
+      "en" : "has co-orthologous member"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "76",
+    "comment" : {
+      "en" : "A property to define the membership of a sequence unit into a co-orthology relation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasOrtholog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "hasOrtholog",
+      "en" : "has ortholog"
+    },
+    "superproperty" : [ "36" ],
+    "domain" : "28",
+    "subproperty" : [ "99" ],
+    "comment" : {
+      "en" : "Orthologous pairwise relation between genes/proteins. For example, A Gene(A) hasOrtholog Gene(B). This property can be materialized or inferred by applying a logical rule."
+    },
+    "attributes" : [ "object", "symmetric" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "21",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasInparalogousMember",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "55",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "has in-paralogous member",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInparalogousMember",
+      "en" : "has inparalogous member"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "76",
+    "comment" : {
+      "en" : "A property to define the membership of a  in-paralogy relation into co-orthology relation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://purl.org/dc/terms/identifier",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "96",
+    "label" : {
+      "IRI-based" : "identifier",
+      "en" : "identifier"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "This property is orignally defined in dcterms schema however in the context of the ORTH ontology we define this property as being an OWL datatype property rather than a generic RDF property. This property should be assigned to any individual that have one or more identifiers. For example, uniprot:P01308 dcterms:identifier \"P01308\"."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasLeastDivergedOrtholog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "5",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://pantherdb.org/genes/",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "is least divergent ortholog to",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasLeastDivergedOrtholog",
+      "en" : "has least diverged ortholog"
+    },
+    "superproperty" : [ "38" ],
+    "domain" : "5",
+    "comment" : {
+      "en" : "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities."
+    },
+    "attributes" : [ "object", "symmetric" ],
+    "id" : "99"
+  }, {
+    "range" : "3",
+    "domain" : "55",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "101"
+  }, {
+    "range" : "3",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "102"
+  }, {
+    "iri" : "http://semanticscience.org/resource/SIO_010078",
+    "inverse" : "104",
+    "baseIri" : "http://semanticscience.org/resource",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SIO_010078",
+      "en" : "encodes"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "A relation between two objects, in which the first object contains information that is used to produce the second object."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "103"
+  }, {
+    "range" : "85",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "105"
+  }, {
+    "iri" : "http://semanticscience.org/resource/SIO_010079",
+    "baseIri" : "http://semanticscience.org/resource",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SIO_010079",
+      "en" : "is encoded by"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "A relation between two objects, in which the first object is produced from the information contained in the second object."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "104"
+  }, {
+    "range" : "85",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "106"
+  }, {
+    "range" : "11",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "107"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/RO_0001018",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "RO_0001018",
+      "en" : "contained in"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "This property was simplified. Original range and domain were removed due to be highly abstracted because it is well-know the domain of discourse: orthology databases.  The rage restriction of this property is defined as a class restriction in (e.g.: orth:Gene)."
+    },
+    "attributes" : [ "object", "external", "allValues" ],
+    "id" : "109"
+  }, {
+    "range" : "19",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "110"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasHomologousMember",
+    "inverse" : "29",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasHomologousMember",
+      "en" : "has homologous member"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs."
+    },
+    "attributes" : [ "object" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000178",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "CDAO_0000178",
+      "undefined" : "has"
+    },
+    "domain" : "82",
+    "subproperty" : [ "66", "36", "93", "91" ],
+    "comment" : {
+      "en" : "Generic 'has' property."
+    },
+    "attributes" : [ "object", "external", "allValues" ],
+    "id" : "111"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/CDAO_0000178",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "CDAO_0000178",
+      "undefined" : "has"
+    },
+    "domain" : "82",
+    "subproperty" : [ "66", "36", "93", "91" ],
+    "comment" : {
+      "en" : "Generic 'has' property."
+    },
+    "attributes" : [ "object", "someValues", "external" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasTaxonomicRange",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "60",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "has taxonomic range",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasTaxonomicRange",
+      "en" : "has taxonomic level"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that associates a cluster of homologs with the taxonomic range at which it has been calculated"
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "113"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasEvolutionaryEvent",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasEvolutionaryEvent",
+      "en" : "has evolutionary event"
+    },
+    "domain" : "1",
+    "subproperty" : [ "25", "26" ],
+    "comment" : {
+      "en" : "A property of a homology relation (e.g.: \"paralogy relation\") to state an evolutionary event such as a duplication or a speciation event."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "114"
+  }, {
+    "iri" : "http://purl.org/net/orth#isLeastDivergedOrtholog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "98",
+    "label" : {
+      "IRI-based" : "isLeastDivergedOrtholog",
+      "en" : "is least diverged ortholog"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities. This property assigns a boolean value to state if an orthology relation is a actually LDO relation."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "115"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasHomologousMember",
+    "inverse" : "29",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "hasHomologousMember",
+      "en" : "has homologous member"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that permits to define the membership of a cluster of homologs or a sequence unit to a clusters of homologs."
+    },
+    "attributes" : [ "object", "allValues" ],
+    "id" : "116"
+  }, {
+    "iri" : "http://purl.org/net/orth#inDataset",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "inDataset",
+      "en" : "in dataset"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that provides the dataset associated with a gene tree node"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "117"
+  }, {
+    "range" : "9",
+    "domain" : "94",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "118"
+  }, {
+    "iri" : "http://purl.org/net/orth#organism",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "organism",
+      "en" : "in organism"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "A sequence unit (e.g.: gene) comes from an organism."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "119"
+  }, {
+    "iri" : "http://purl.org/net/orth#inDataset",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "inDataset",
+      "en" : "in dataset"
+    },
+    "domain" : "97",
+    "comment" : {
+      "en" : "Property that provides the dataset associated with a gene tree node"
+    },
+    "attributes" : [ "object" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://purl.uniprot.org/core/mnemonic",
+    "baseIri" : "http://purl.uniprot.org/core",
+    "range" : "95",
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://www.uniprot.org/manual/entry_name",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "mnemonic",
+      "undefined" : "Mnemonic"
+    },
+    "maxCardinality" : "1",
+    "domain" : "28",
+    "comment" : {
+      "en" : "A easy to remember identifier for a UniProtKB entry, but it is not a stable identifier and should not be used by programs to identify entries.",
+      "undefined" : "A rememberable string that can be used to find entries, not a stable identifier!"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "120"
+  }, {
+    "iri" : "http://purl.org/net/orth#hasXenolog",
+    "baseIri" : "http://purl.org/net/orth",
+    "range" : "28",
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "is xenolog to",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasXenolog",
+      "en" : "has xenolog"
+    },
+    "superproperty" : [ "36" ],
+    "domain" : "28",
+    "comment" : {
+      "en" : "Xenologous pairwise relation between genes/proteins. For example, a Gene(A) hasXenolog Gene(B)."
+    },
+    "attributes" : [ "object", "symmetric" ],
+    "id" : "40"
+  } ]
+}

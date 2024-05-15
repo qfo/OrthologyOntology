@@ -1,102 +1,12 @@
 <h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>
-The shared genes among different species are evidence of evolution from a common ancestor. 
-For example, we share approximately 90% of our genes with mice. These related genes are called orthologs. 
-Orthologs are genes in different species that evolved from a common ancestral gene by a speciation event. 
-These genes are normally thought to retain the same function. 
-The functional conservation of related genes across species explains the success of model organism-based research,
- which enables knowledge on human biology and medicine to be gained
-from other species, such as mice, fruit fly, or yeast. In this context, 
-the knowledge of orthologs between, say, mice and humans allows for studying biological processes in mice, 
-and then transferring the knowledge to humans.
-</p>
-<p>
- The community of orthology researchers has increased its interest for ontologies in the last years since the creation of the
-  <a href="https://questfororthologs.org">Quest for Orthologs (QfO) consortium</a>. QfO pursues
-   the standardization and interoperability of orthology resources and methods, including the development of common standards
-    and formats for the representation of orthology information and knowledge. 
-The 2013 QfO meeting  identified the potential benefits of semantic web technologies for the interoperability of orthology information.
- Since then, QfO researchers developed the first version of the Orthology Ontology (ORTH) available on the
-  <a href="https://github.com/qfo/OrthologyOntology/blob/master/oo.owl">QfO github</a>, which served to demonstrate
-   the feasibility of creating semantically interoperable orthology resources.
-The experience with the ORTH has shown some limitations for the activities needed by the QfO community. 
-More concretely, new homology-related concepts need to be formalized in the ontology and some aspects of the current representation
- need to be improved in order to permit a more powerful, reasoning-based exploitation of orthology data. Therefore, in this second
- version of the ORTH ontology, new concepts and properties were included  to be able to describe information  available in more than
- 40 <a href="https://questfororthologs.org/orthology_databases">orthology databases</a>. 
-</p>
-<p> Although, the methods used to generate homology information by the orthology databases focus on predicting orthology, they also
- provide other homology information such as paralogy. Besides this, these databases structure the data in one or more different manners such as hierarchical
-  and non-hierarchical clusters, and pairwise relations. Often, these data structures are the result of the prediction approaches. 
-A homology ontology (HOM) already exists and it is available <a href="https://github.com/BgeeDB/homology-ontology">here</a>,
- however it does not focus on describing the orthology databases as a data schema. Actually, the HOM ontology  defines 
- an homology taxonomy that can be used to annotate homology-related data.  
-By using the <a href="https://www.w3.org/2009/08/skos-reference/skos.html">SKOS vocabulary</a>, we aligned both ORTH and HOM ontologies. The alignment is
- available to download on the <a href="https://github.com/qfo/OrthologyOntology/blob/master/HOM_ORTH_skos_alignment.ttl">QfO GitHub</a>.
-</p>
- <p>
-Moreover, the ORTH ontology available to download and described in this specification, it is indeed a view that contains imported 
-ontology terms  without frequently considering all related axioms (e.g.: annotations or class hierarchy).
-This view was built to define a domain ontology designed to describe homology information from multiple orthology databases. By doing so,
-the proposed ORTH ontology view simplifies the understandability and the use of ORTH by orthology database owners. 
+<span class="markdown">The shared genes among different species are evidence of evolution from a common ancestor. For example, we share approximately 90% of our genes with mice. These related genes are called orthologs. Orthologs are genes in different species that evolved from a common ancestral gene by a speciation event. These genes are normally thought to retain the same function. The functional conservation of related genes across species explains the success of model organism-based research, which enables knowledge on human biology and medicine to be gained from other species, such as mice, fruit fly, or yeast. In this context, the knowledge of orthologs between, say, mice and humans allows for studying biological processes in mice, and then transferring the knowledge to humans.
 
-To enhance information interoperability among biological databases, we defined a first draft of
-the Life Science Cross-references (LSCR) ontology that mainly defines sub-properties of
-the <a href="https://www.w3.org/TR/rdf-schema/#ch_seealso">rdfs:seeAlso</a> property such as 
-lscr:xrefUniprot. These LSCR properties can be used to explicitly assign cross-references to external databases.
-Cross-references can be interpreted as the intersection points among orthology database resources. The LSCR is available to download 
-on the <a href="https://github.com/qfo/OrthologyOntology/blob/master/lscr.ttl">QfO GitHub</a>.
-</p>
-<p>
-Depending on the homology data structure generated by the orthology database owners, the most appropriate concepts and relations (e.g. 
-<a href="#structHOG">Hierarchical Orthologous Cluster (HOG)</a>, <a href="#structCluster">flat clusters</a>, and <a href="#structPairwise">pairwise</a>)
-should be used to represent homology data. For example, by querying the HOGs, additional information can be extracted such as the pairwise orthology relations
- without needing to materialize them, because that would increase significantly the number of triples to store in the already large orthology datasets.
-</p>
-<p>
-The structure of the rest of the ORTH specification is described next. In Section 2, we will provide
-an overview of the ORTH ontology and a graphical visualisation. Section 3 describes ORTH focusing on different types of data structures
- to represent homology information and several query examples. Finally, ORTH classes and properties are fully explained and
-  exemplified in Section 4.  
-</p>
+The community of orthology researchers has increased its interest for ontologies in the last years since the creation of [the Quest for Orthologs (QfO) consortium](https://questfororthologs.org/). QfO pursues the standardization and interoperability of orthology resources and methods, including the development of common standards and formats for the representation of orthology information and knowledge. The 2013 QfO meeting identified the potential benefits of semantic web technologies for the interoperability of orthology information. Since then, QfO researchers developed the first version of the Orthology Ontology (ORTH) available on the [QfO github](https://github.com/qfo/OrthologyOntology/blob/master/oo.owl), which served to demonstrate the feasibility of creating semantically interoperable orthology resources. The experience with the ORTH has shown some limitations for the activities needed by the QfO community. More concretely, new homology-related concepts need to be formalized in the ontology and some aspects of the current representation need to be improved in order to permit a more powerful, reasoning-based exploitation of orthology data. Therefore, in this second version of the ORTH ontology, new concepts and properties were included to be able to describe information available in more than 40 [orthology databases](https://questfororthologs.org/orthology_databases).
 
+Although, the methods used to generate homology information by the orthology databases focus on predicting orthology, they also provide other homology information such as paralogy. Besides this, these databases structure the data in one or more different manners such as hierarchical and non-hierarchical clusters, and pairwise relations. Often, these data structures are the result of the prediction approaches. A homology ontology (HOM) already exists and it is available [here](https://github.com/BgeeDB/homology-ontology), however it does not focus on describing the orthology databases as a data schema. Actually, the HOM ontology defines an homology taxonomy that can be used to annotate homology-related data. By using the [SKOS vocabulary](https://www.w3.org/2009/08/skos-reference/skos.html), we aligned both ORTH and HOM ontologies. The alignment is available to download on the [QfO GitHub](https://github.com/qfo/OrthologyOntology/blob/master/HOM_ORTH_skos_alignment.ttl).
 
+Moreover, the ORTH ontology available to download and described in this specification, it is indeed a view that contains imported ontology terms without frequently considering all related axioms (e.g., annotations or class hierarchy). This view was built to define a domain ontology designed to describe homology information from multiple orthology databases. By doing so, the proposed ORTH ontology view simplifies the understandability and the use of ORTH by orthology database owners. To enhance information interoperability among biological databases, we defined a first draft of the Life Science Cross-references [(LSCR) ontology](https://purl.org/lscr) that mainly defines sub-properties of the [rdfs:seeAlso](https://www.w3.org/TR/rdf-schema/#ch_seealso) property such as lscr:xrefUniprot. These LSCR properties can be used to explicitly assign cross-references to external databases. Cross-references can be interpreted as the intersection points among orthology database resources. The LSCR is available to download on the [QfO GitHub](https://github.com/qfo/OrthologyOntology/blob/master/lscr.ttl).
 
-<div id="namespacedeclarations">
-<h3 id="ns" class="list">Namespace declarations</h3>
-<p>
-For the examples used in the ORTH ontology specification, we used the prefix inst: that extends to "instance" of a class and 
-the namespace is defined in <a href="#ns">Table 1</a>.
-</p>
-<div id="ns" align="center">
-<table>
-<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
-<tbody>
-<tr><td><b>pav</b></td><td>&lt;http://purl.org/pav/&gt;</td></tr>
-<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
-<tr><td><b>sio</b></td><td>&lt;http://semanticscience.org/resource/&gt;</td></tr>
-<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
-<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
-<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
-<tr><td><b>core</b></td><td>&lt;http://purl.uniprot.org/core/&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
-<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
-<tr><td><b>net</b></td><td>&lt;http://purl.org/net/&gt;</td></tr>
-<tr><td><b>obo</b></td><td>&lt;http://purl.obolibrary.org/obo/&gt;</td></tr>
-<tr><td><b>orth</b></td><td>&lt;http://purl.org/net/orth#&gt;</td></tr>
-<tr><td><b>inst</b></td><td>&lt;http://example.org#&gt;</td></tr>
-<tr><td><b>lscr</b></td><td>&lt;http://purl.org/lscr#&gt;</td></tr>
-<tr><td><b>uniprot</b></td><td>&lt;http://purl.uniprot.org/core/&gt;</td></tr>
-</tbody>
-</table>
-</div>
-</div>
+Depending on the homology data structure generated by the orthology database owners, the most appropriate concepts and relations (e.g., [Hierarchical Orthologous Cluster (HOG), flat clusters, and pairwise) should be used to represent homology data. For example, by querying the HOGs, additional information can be extracted such as the pairwise orthology relations without needing to materialize them, because that would increase significantly the number of triples to store in the already large orthology datasets.
 
-<div id="howtocite">
-<h3 id="ns" class="list">How to cite this specification</h3>
-<p>
-
-de Farias, T. M., Chiba, H., & Fernández-Breis, J. T. (2017, December). <a href="http://ceur-ws.org/Vol-2042/paper36.pdf">Leveraging logical rules for efficacious representation of large orthology datasets.</a> 
-In Proceedings of the 10th International Semantic Web Applications and Tools for Healthcare and Life Sciences (SWAT4HCLS) Conference.
-</p>
-</div>
+The structure of the rest of the ORTH specification is described next. In Section 2, we will provide an overview of the ORTH ontology and a graphical visualisation. Section 3 describes ORTH focusing on different types of data structures to represent homology information and several query examples. Finally, ORTH classes and properties are fully explained and exemplified in Section 4. </span>

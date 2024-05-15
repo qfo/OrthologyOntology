@@ -10,14 +10,218 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix orth: <http://purl.org/net/orth#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> . 
+@prefix bibo : <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @base <http://purl.org/net/orth> .
 
 <http://purl.org/net/orth> rdf:type owl:Ontology ;
                             dct:title "Orthology Ontology"@en ;
-                            dct:description "The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH). ORTH ontology is designed to describe sequence homology data available in multiple orthology databases on the Web (e.g.: OMA, OrthoDB, HieranoiDB, and etc.). By sequence homology data, we mostly mean gene region, gene and protein-centric orthology, paralogy, and xenology information. Depending on the database, the homology information is structured in different ways. ORTH ontology accommodates these disparate data structures namely Hierarchical Orthologous Group (HOG), cluster of homologous sequences and homologous-pairwise relations between sequences. In addition to the specific ORTH terms, this specification includes terms of the imported ontologies (e.g. Semanticscience Integrated Ontology, SIO) which are pertinent to represent the information from various orthology databases in a homogeneous way."@en ;
+                            dct:modified "2024-05-14"^^xsd:date ;
                             owl:versionIRI <http://purl.org/net/orth/2.0> ;
-                            owl:versionInfo """This ontology is the second version of the orthology ontology first published in 2015 and available at http://purl.bioontology.org/ontology/ORTH .
-@authors T.M. de Farias, H. Chiba, J.T. Fernandez-Breis, E. Antezana, D. Kuznetsov, C. Dessimoz and F. Villiers."""@en .
+                            owl:versionInfo "2.0" ;
+                            vann:preferredNamespacePrefix "orth" ;
+                            dct:license  <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                            dct:abstract "The need of a common ontology for describing orthology information in biological research communities has led to the creation of the Orthology Ontology (ORTH). ORTH ontology is designed to describe sequence homology data available in multiple orthology databases on the Web (e.g.: [OMA](https://omabrowser.org/oma/home/), [OrthoDB](http://www.orthodb.org/), [HieranoiDB](http://hieranoidb.sbc.su.se/)). By sequence homology data, we mostly mean gene region, gene and protein-centric orthology, paralogy, and xenology information. Depending on the database, the homology information is structured in different ways. ORTH ontology accommodates these disparate data structures namely Hierarchical Orthologous Group (HOG), cluster of homologous sequences and homologous-pairwise relations between sequences. In addition to the specific ORTH terms, this specification includes terms of the imported ontologies (e.g. Semanticscience Integrated Ontology, SIO) which are pertinent to represent the information from various orthology databases in a homogeneous way." ;
+                            schema:codeRepository "https://github.com/qfo/OrthologyOntology"^^xsd:anyURI ;
+                            schema:image <http://qfo.github.io/OrthologyOntology/images/hog.png> ;
+                            dct:created "2017-11-13"^^xsd:date ;
+                            vann:preferredNamespaceUri <http://purl.org/net/orth#> ;
+                            dct:issue "2017-12-01"^^xsd:date ;
+                            dct:creator <https://orcid.org/0000-0002-3175-5372>, <https://orcid.org/0000-0003-4062-8903>, <https://orcid.org/0000-0002-7558-2880> ;
+                            dct:bibliographicCitation '''de Farias, T. M., Chiba, H., & Fernández-Breis, J. T. (2017, December). Leveraging logical rules for efficacious representation of large orthology datasets. In Proceedings of the 10th International Semantic Web Applications and Tools for Healthcare and Life Sciences (SWAT4HCLS) Conference. <a href="http://ceur-ws.org/Vol-2042/paper36.pdf">http://ceur-ws.org/Vol-2042/paper36.pdf</a>''' ;
+                            owl:priorVersion <http://purl.org/net/orth/1.0> ;
+                            owl:backwardCompatibleWith <http://purl.org/net/orth/1.0> ;
+                            dct:publisher <http://questfororthologs.org/> ;
+                            bibo:status <http://purl.org/ontology/bibo/status/accepted> ;
+                            dct:contributor <https://orcid.org/0000-0002-3175-5372>, <https://orcid.org/0000-0003-4062-8903>, <https://orcid.org/0000-0002-7558-2880>, <https://orcid.org/0000-0002-2170-853X>, <https://orcid.org/0000-0002-2497-8236>, <https://www.sib.swiss/directory/person/dmitry-kuznetsov>, <https://orcid.org/0000-0003-3560-6646>, <https://orcid.org/0000-0002-9197-5000>, _:FLORENT_VILLIERS ;
+                            widoco:introduction '''The shared genes among different species are evidence of evolution from a common ancestor. For example, we share approximately 90% of our genes with mice. These related genes are called orthologs. Orthologs are genes in different species that evolved from a common ancestral gene by a speciation event. These genes are normally thought to retain the same function. The functional conservation of related genes across species explains the success of model organism-based research, which enables knowledge on human biology and medicine to be gained from other species, such as mice, fruit fly, or yeast. In this context, the knowledge of orthologs between, say, mice and humans allows for studying biological processes in mice, and then transferring the knowledge to humans.
+
+The community of orthology researchers has increased its interest for ontologies in the last years since the creation of [the Quest for Orthologs (QfO) consortium](https://questfororthologs.org/). QfO pursues the standardization and interoperability of orthology resources and methods, including the development of common standards and formats for the representation of orthology information and knowledge. The 2013 QfO meeting identified the potential benefits of semantic web technologies for the interoperability of orthology information. Since then, QfO researchers developed the first version of the Orthology Ontology (ORTH) available on the [QfO github](https://github.com/qfo/OrthologyOntology/blob/master/oo.owl), which served to demonstrate the feasibility of creating semantically interoperable orthology resources. The experience with the ORTH has shown some limitations for the activities needed by the QfO community. More concretely, new homology-related concepts need to be formalized in the ontology and some aspects of the current representation need to be improved in order to permit a more powerful, reasoning-based exploitation of orthology data. Therefore, in this second version of the ORTH ontology, new concepts and properties were included to be able to describe information available in more than 40 [orthology databases](https://questfororthologs.org/orthology_databases).
+
+Although, the methods used to generate homology information by the orthology databases focus on predicting orthology, they also provide other homology information such as paralogy. Besides this, these databases structure the data in one or more different manners such as hierarchical and non-hierarchical clusters, and pairwise relations. Often, these data structures are the result of the prediction approaches. A homology ontology (HOM) already exists and it is available [here](https://github.com/BgeeDB/homology-ontology), however it does not focus on describing the orthology databases as a data schema. Actually, the HOM ontology defines an homology taxonomy that can be used to annotate homology-related data. By using the [SKOS vocabulary](https://www.w3.org/2009/08/skos-reference/skos.html), we aligned both ORTH and HOM ontologies. The alignment is available to download on the [QfO GitHub](https://github.com/qfo/OrthologyOntology/blob/master/HOM_ORTH_skos_alignment.ttl).
+
+Moreover, the ORTH ontology available to download and described in this specification, it is indeed a view that contains imported ontology terms without frequently considering all related axioms (e.g., annotations or class hierarchy). This view was built to define a domain ontology designed to describe homology information from multiple orthology databases. By doing so, the proposed ORTH ontology view simplifies the understandability and the use of ORTH by orthology database owners. To enhance information interoperability among biological databases, we defined a first draft of the Life Science Cross-references [(LSCR) ontology](https://purl.org/lscr) that mainly defines sub-properties of the [rdfs:seeAlso](https://www.w3.org/TR/rdf-schema/#ch_seealso) property such as lscr:xrefUniprot. These LSCR properties can be used to explicitly assign cross-references to external databases. Cross-references can be interpreted as the intersection points among orthology database resources. The LSCR is available to download on the [QfO GitHub](https://github.com/qfo/OrthologyOntology/blob/master/lscr.ttl).
+
+Depending on the homology data structure generated by the orthology database owners, the most appropriate concepts and relations (e.g., [Hierarchical Orthologous Cluster (HOG), flat clusters, and pairwise) should be used to represent homology data. For example, by querying the HOGs, additional information can be extracted such as the pairwise orthology relations without needing to materialize them, because that would increase significantly the number of triples to store in the already large orthology datasets.
+
+The structure of the rest of the ORTH specification is described next. In Section 2, we will provide an overview of the ORTH ontology and a graphical visualisation. Section 3 describes ORTH focusing on different types of data structures to represent homology information and several query examples. Finally, ORTH classes and properties are fully explained and exemplified in Section 4. ''';
+                            dct:description '''The ORTH ontology mainly accommodates three different types of data structures to represent homology information. These data structures may encapsulate information that can often be inferred or queried instead of being materialised. They are described in the next subsections. In Ref. [[1]](http://ceur-ws.org/Vol-2042/paper36.pdf), we demonstrate that for one given orthology database billions of [is orthologous](#hasOrtholog) to assertions can be inferred instead of materialised from the hierarchical orthologous groups (i.e.: space O(n2) where n is the number of genes). Figure 1 illustrates these data structures according to the verbosity (i.e.: the number of needed triples) and the implicit information encapsulated.
+
+*Figure 1. The different levels of homology information expressiveness by using ORTH ontology.*
+
+![fig1](./images/fig1.png)
+
+### Non-hierarchical cluster of homologous sequences
+
+Several orthology databases solely generate non-hierarchical [clusters of homologous sequences](#HomologsCluster)  or besides HOGs, they provide non-hierarchical clusters (i.e.: groups). Frequently the number of pairwise homology relations derived from the non-hierarchical [clusters of homologous sequences](#HomologsCluster)  are not the same as the ones of HOGs. In the context of the ORTH ontology, a cluster can be interpreted as a tree with a root node and leaves (i.e.: without intermediate nodes). Figure 2 illustrates how the HOG depicted in Figure 2 can be represented as the non-hierarchical [clusters of homologous sequences](#HomologsCluster) . For the sake of simplicity, the inst:Passeriformes instance is not considered in Figure 2. In the context of the non-hierarchical clusters, a [Cluster of orthologs](#OrthologsCluster) must contain only instances of a [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) which are all orthologs among them. In a similar way to the cluster of orthologs (i.e.: orth:OrthologsCluster), a [Cluster of paralogs](#ParalogsCluster) (i.e.: orth:ParalogsCluster) must contain only instances of a [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) which are all paralogs among them. For example, we may notice that due to a duplication event in the HOG in Figure 2, two clusters of orthologs are explicitly defined at the Archelosauria taxonomic level (i.e.: inst:Archelosauria_1 and inst:Archelosauria_2) in Figure 2. Therefore, for each of these clusters all genes are orthologous to each other. For instance, the inst:Archelosauria_1 orthologous cluster [has homologous member](#hasHomologousMember)s the inst:S100P_PELSI, inst:S100P_FICAL and inst:S100P_TAEGU genes. However, the inst:Archelosauria_1 cluster does not have the inst:S100P_ANAPL gene as a member because this gene [is paralogous to](#hasParalog)  inst:S100P_FICAL and inst:S100P_TAEGU genes.
+
+*Figure 2. A non hierarchical cluster instantiation example. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+
+![fig3](./images/fig3.png)
+
+When comparing the data structure of the non-hierarchical clusters (i.e.: flat clusters) to HOGs, one may notice that flat clusters are a more verbose representation because we need to assign more triples to explicitly define flat cluster members which are implicitly described in a HOG. For example, we have to create two orthologous clusters (i.e. inst:Archelosauria_1 and inst:Archelosauria_2) at the same taxonomic level to represent orthologous groups at the Archelosauria taxon. These groups were derived from the HOG example in Figure 2. Moreover, a HOG contains more information that is not captured by non-hierarchical clusters such as the order of speciation and duplication events. This information is crucial to infer for instance [inparalogy relations](#InparalogyRelation).
+
+Yet, we do not need to materialize flat cluster information from HOGs because we can infer or query them. Therefore, we recommend to materialise flat clusters only if they cannot be derived from a HOG or a use case where the number of derived clusters are small and/or the performance in terms of query execution time overcomes storage constraints. For example, some orthology databases do not predict orthology information as a HOG.
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the flat clusters illustrated in Figure 2. To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
+
+#### SPARQL Query
+```
+SELECT ?gene1 ?gene2 WHERE  { 
+   ?cluster a orth:OrthologsCluster. 
+   ?cluster orth:hasHomologousMember ?gene1. 
+   ?cluster orth:hasHomologousMember ?gene2. 
+  
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   FILTER(?gene1 != ?gene2)
+ }
+```
+
+#### Query results
+```
+gene1             gene2
+inst:S100P_PELSI  inst:S100P_FICAL
+inst:S100P_PELSI  inst:S100P_TAEGU
+inst:S100P_PELSI  inst:S100P_ANAPL
+```
+
+Some examples of the orthology databases that provide non-hierarchical cluster of homologous sequences: [OMA](https://omabrowser.org/oma/home/), [OrthoDB](https://www.orthodb.org/) and [InParanoid](http://inparanoid.sbc.su.se/cgi-bin/index.cgi).
+
+### Pairwise-homology relations between sequences
+
+By using ORTH ontology terms, we can describe, for example, the following homologous relations:
+
+* [orthology relation](#OrthologyRelation)
+* [paralogy relation](#ParalogyRelation)
+* [outparalogy relation](#OutparalogyRelation)
+* [inparalogy relation](#InparalogyRelation)
+* [co-orthology relation](#CoOrthologyRelation)
+
+The pairwise-homology relations are indeed defined as OWL classes rather than properties because frequently these relations are contextualised with respect to a [taxonomic level](#TaxonomicRange) of reference, a [speciation](#http://purl.obolibrary.org/obo/CDAO_0000121) event, a [geneDuplication](#http://purl.obolibrary.org/obo/CDAO_0000077) event, and so on. Besides this, due to the fact that the number of homology relations drastically increases with the number of genomes, it is recommended to materialise these relations if only if they cannot be derived from HOGs or flat clusters (see an example in Figure 3). Some orthology databases solely provide orthology pairwise relations. Therefore, a pairwise relation cannot explicitly be represented with a HOG or a non-hierarchical cluster.
+
+*Figure 3. The pairwise-homologous relations between sequences derived from HOG illustrated in Figure 4 and flat cluster in Figure 2. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+
+![fig4](./images/fig4.png)
+
+To facilitate the knowledge extraction, the ORTH pairwise-homology relation classes might be populated by applying Horn-like rules or queries over HOGs and/or flat clusters. Moreover, ORTH ontology also contains OWL object properties to represent non-contextualised homology pairwise relations by asserting the [has ortholog](#hasOrtholog), [has paralog](#hasParalog), [has xenolog](#hasXenolog) and [has homolog](#hasHomolog) object properties. One can notice that these properties might be inferred from the instances of ORTH pairwise-homology relation classes. Moreover, the pairwise-homology relations such as the inparalogy relation class cannot be defined as an OWL object property because it needs to be contextualised with respect to a speciation event of reference.
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the orthology-relations such as the one illustrated in Figure 3A. To query paralogy relations, we only need to replace orth:OrthologyRelation with orth:ParalogyRelation.
+
+
+```
+SELECT  ?gene1 ?gene2 WHERE  { 
+   ?relation a orth:OrthologyRelation. 
+   ?relation orth:hasHomologousMember ?gene1. 
+   ?relation orth:hasHomologousMember ?gene2. 
+  
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   FILTER(?gene1 != ?gene2)
+   }
+```
+
+If the [has ortholog](#hasOrtholog) property is inferred or materialised, the previous queries can be rewritten as follows:
+
+```
+SELECT ?gene1 ?gene2 WHERE  {  
+   ?gene1 orth:hasOrtholog ?gene2. 
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+   }
+```
+
+###  Hierarchical orthologous group (HOG)
+
+Hierarchical Orthologous Groups (HOGs) are defined as sets of genes that have descended from a single common ancestor within a taxonomic range of interest [[2]](https://doi.org/10.1371/journal.pone.0053786). In the computer science context, the data structure to represent a HOG is a Tree. Figure 4 depicts part of an instantiation example of a HOG with a root at the level of Archelosauria taxon (e.g., inst:Archelosauri). For the sake of simplicity, several property assertions are absent in Figure 4. When interpreting a HOG as a tree, the root node (e.g., inst:Archelosauria) must be an instance of orth:OrthologsCluster (i.e., labelled as [Cluster of orthologs](#OrthologsCluster)) the intermediate nodes must be instances of orth:OrthologsCluster or orth:ParalogsCluster (i.e., labelled as [Cluster of paralogs](#ParalogsCluster)). The leaves may be instances of [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene). A [Cluster of homologous sequences](#HomologsCluster) may contain other clusters (e.g., [Cluster of orthologs](#OrthologsCluster)) and [Sequence units](#SequenceUnit) (e.g., [Gene](#Gene)). To assign that a cluster contains another one, we should assert the orth:hasHomologousMember property (i.e., [has homologous member](#hasHomologousMember)) to a given [Cluster of homologous sequences](#HomologsCluster).
+
+From the HOG illustrated in Figure 4, we can infer that inst:S100P_PELSI gene [is orthologous to](#hasOrtholog) inst:S100P_FICAL, inst:S100P_TAEGU and inst:S100P_ANAPL at the taxonomic level Archelosauria. In addition, inst:S100P_ANAPL [is paralogous to](#hasParalog) the orthologous genes inst:S100P_FICAL and inst:S100P_TAEGU due to the fact of a duplication event (i.e., inst:Duplication a [Cluster of paralogs](#ParalogsCluster)).
+
+The query below retrieves the orthologous genes of inst:S100P_PELSI from the HOG illustrated in Figure 4. Depending on the type of orthology prediction, it can be [Gene](#Gene), [Protein](#Protein) or [gene region](#Subgene) based then the query below can be rewritten accordingly by replacing orth:SequenceUnit with orth:Gene, orth:Protein or orth:Subgene. To query paralogy relations, we only need to replace orth:OrthologsCluster with orth:ParalogsCluster.
+
+#### SPARQL Query
+```
+SELECT ?gene1 ?gene2 WHERE  { 
+   ?gene1 a orth:SequenceUnit. #Gene, [Protein](#Protein) or  [gene region](#Subgene)
+   ?gene2 a orth:SequenceUnit. #Gene, [Protein](#Protein) or  [gene region](#Subgene)
+   ?cluster a orth:OrthologsCluster. 
+   ?cluster orth:hasHomologousMember ?node1. 
+   ?cluster orth:hasHomologousMember ?node2. 
+   ?node2 orth:hasHomologousMember* ?gene2. 
+   ?node1 orth:hasHomologousMember* ?gene1. 
+   
+   VALUES( ?gene1 ){ ( inst:S100P_PELSI ) }
+    
+   FILTER(?node1 != ?node2)
+   }
+```
+
+#### Query results
+```
+gene1             gene2
+inst:S100P_PELSI  inst:S100P_FICAL
+inst:S100P_PELSI  inst:S100P_TAEGU
+inst:S100P_PELSI  inst:S100P_ANAPL
+```
+
+Some examples of orthology databases that provide HOGs: [OMA](https://omabrowser.org/oma/home/), [HieranoiDB](http://hieranoidb.sbc.su.se/) and [KEGG OC](https://www.genome.jp/tools/oc/).
+
+*Figure 4. An instantiation example of a Hierarchical Orthologous Group using ORTH terms. For the sake of example and to improve readability, inst: is a prefix to indicate it is an instance of a class.*
+ ''' .
+
+
+<https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0003-4062-8903> foaf:name "Hirokazu Chiba"@en ;
+  org:memberOf <https://dbcls.rois.ac.jp> .
+<https://orcid.org/0000-0002-7558-2880> foaf:name "Jesualdo Tomás Fernández-Breis"@en ;
+  org:memberOf <https://webs.um.es> .
+<https://orcid.org/0000-0002-2170-853X> foaf:name "Christophe Dessimoz"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0002-2497-8236> foaf:name "Erick Antezana"@en ;
+  org:memberOf <http://www.unicc.org> .
+<https://www.sib.swiss/directory/person/dmitry-kuznetsov> foaf:name "Dmitry Kuznetsov"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0003-3560-6646> foaf:name "María del Carmen Legaz-García"@en ;
+  org:memberOf <https://webs.um.es> .
+<https://orcid.org/0000-0002-9197-5000> foaf:name "Ikuo Uchiyama"@en ;
+  org:memberOf <https://www.nibb.ac.jp> .
+_:FLORENT_VILLIERS foaf:name "Florent Villers"@en ;
+  org:memberOf <https://www.bayer.com> .
+
+
+<https://www.sib.swiss> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.sib.swiss" ;
+                          foaf:name "SIB Swiss Institute of Bioinformatics"@en .
+
+<https://webs.um.es> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://webs.um.es" ;
+                          foaf:name "University of Murcia"@en .
+
+<https://www.nibb.ac.jp> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.nibb.ac.jp/en" ;
+                          foaf:name "National Institute for Basic Biology"@en .
+
+
+<https://dbcls.rois.ac.jp> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://dbcls.rois.ac.jp/index-en.html" ;
+                          foaf:name "National Institute for Basic Biology"@en .
+
+<http://www.unicc.org> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.unicc.org" ;
+                          foaf:name "United Nations International Computing Centre"@en .
+
+<https://www.bayer.com>  rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.bayer.com/en/agriculture" ;
+                          foaf:name "Bayer CropScience"@en .                         
+
 
 #################################################################
 #    Annotation properties
@@ -227,7 +431,14 @@ orth:hasLeastDivergedOrtholog rdf:type owl:ObjectProperty ;
                               rdfs:comment "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities."@en ;
                               rdfs:isDefinedBy "http://pantherdb.org/genes/"^^xsd:anyURI ;
                               rdfs:label "has least diverged ortholog"@en ;
-                              <http://www.w3.org/2004/02/skos/core#altLabel> "is least divergent ortholog to"@en .
+                              <http://www.w3.org/2004/02/skos/core#altLabel> "is least divergent ortholog to"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasLeastDivergedOrtholog inst:PROTEIN_2 .'''.
 
 
 ###  http://purl.org/net/orth#hasOrtholog
@@ -236,7 +447,14 @@ orth:hasOrtholog rdf:type owl:ObjectProperty ;
                  rdf:type owl:SymmetricProperty ;
                  rdfs:comment "Orthologous pairwise relation between genes/proteins. For example, A Gene(A) hasOrtholog Gene(B). This property can be materialized or inferred by applying a logical rule."@en ;
                  rdfs:label "has ortholog"@en ,
-                            "is ortholog to"@en .
+                            "is ortholog to"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasOrtholog inst:PROTEIN_2 .'''.
 
 
 ###  http://purl.org/net/orth#hasParalog
@@ -245,7 +463,14 @@ orth:hasParalog rdf:type owl:ObjectProperty ;
                 rdf:type owl:SymmetricProperty ;
                 rdfs:comment "Paralogous pairwise relation between genes/proteins. For example, a Gene(A) hasParalog Gene(B). This property can be materialized or inferred by applying a logical rule."@en ;
                 rdfs:label "has paralog"@en ,
-                           "is paralog to"@en .
+                           "is paralog to"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+   inst:PROTEIN_1  a orth:Protein.
+   inst:PROTEIN_2  a orth:Protein.
+   
+   inst:PROTEIN_1  orth:hasParalog inst:PROTEIN_2 .'''.
 
 
 ###  http://purl.org/net/orth#hasTaxonomicRange
@@ -269,7 +494,14 @@ orth:hasXenolog rdf:type owl:ObjectProperty ;
                 rdf:type owl:SymmetricProperty ;
                 rdfs:comment "Xenologous pairwise relation between genes/proteins. For example, a Gene(A) hasXenolog Gene(B)."@en ;
                 rdfs:label "has xenolog"@en ;
-                <http://www.w3.org/2004/02/skos/core#altLabel> "is xenolog to"@en .
+                <http://www.w3.org/2004/02/skos/core#altLabel> "is xenolog to"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+   inst:GENE_1  a orth:Gene.
+   inst:GENE_2  a orth:Gene.
+   
+   inst:GENE_1  orth:hasXenolog inst:GENE_2 .'''.
 
 
 ###  http://purl.org/net/orth#inDataset
@@ -486,7 +718,15 @@ orth:CoOrthologyRelation rdf:type owl:Class ;
                                          ] ;
                          rdfs:comment "Co-orthology is a relation defined over three genes, where two of them are inparalogs with respect to the speciation event associated to the third gene. The two inparalogous genes are said to be co-orthologous to the third (out-group) gene."@en ;
                          rdfs:label "co-orthology relation"@en ;
-                         <http://www.w3.org/2004/02/skos/core#altLabel> "co-orthologous relation"@en .
+                         <http://www.w3.org/2004/02/skos/core#altLabel> "co-orthologous relation"@en ;
+                         vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+inst:PROTEIN_1  a orth:Protein .
+   inst:IN_PARALOG a orth:InparalogyRelation .
+   inst:CO_ORTH    a orth:CoOrthologyRelation ;
+                   orth:hasCoOrthologousMember  inst:PROTEIN_1;
+                   orth:hasInparalogousMember   inst:IN_PARALOG.'''.
 
 
 ###  http://purl.org/net/orth#Gene
@@ -503,7 +743,27 @@ orth:Gene rdf:type owl:Class ;
           owl:disjointWith orth:Protein ;
           rdfs:comment "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."@en ;
           rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
-          rdfs:label "Gene"@en .
+          rdfs:label "Gene"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.org/net/orth#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix lscr: <http://purl.org/lscr#> .
+inst:GENE_P53 a orth:Gene ;
+                 rdfs:label "TP53" ;
+                 rdfs:comment "tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
+                 rdfs:seeAlso <http://example.org/> .
+                 obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
+                 lscr:xrefEnsemblGene <http://rdf.ebi.ac.uk/resource/ensembl/ENSRNOG00000010756>;
+                 sio:SIO_010078 inst:PROTEIN_P53; # "encodes" property 
+                 orth:organism inst:RAT_1.
+
+   inst:ENSEMBLv83 a sio:SIO_000750; # "database" class
+                
+   inst:RAT_1 obo:RO_0002162 <http://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
+                 a orth:Organism.
+   <http://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.'''.
 
 
 ###  http://purl.org/net/orth#GeneTreeNode
@@ -532,7 +792,14 @@ orth:HierarchicalGeneTree rdf:type owl:Class ;
                                             owl:allValuesFrom orth:GeneTreeNode
                                           ] ;
                           rdfs:comment "A tree whose leaf nodes correspond to sequence units (e.g.: genes)."@en ;
-                          rdfs:label "Hierarchical gene tree "@en .
+                          rdfs:label "Hierarchical gene tree "@en ;
+                          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.org/net/orth#> .
+  inst:ORTH_HOG  a orth:OrthologsCluster.
+  inst:HGT       a orth:HierarchicalGeneTree ;
+                 obo:CDAO_0000148 inst:ORTH_HOG. # has_Root property (sub-property of has).'''.
 
 
 ###  http://purl.org/net/orth#HomologsCluster
@@ -588,7 +855,18 @@ orth:InparalogyRelation rdf:type owl:Class ;
                         rdfs:label "inparalogy relation"@en ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "in-paralogous relation"@en ,
                                                                        "in-paralogy relation"@en ,
-                                                                       "symparalog"@en .
+                                                                       "symparalog"@en ;
+                        vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+inst:PROTEIN_2  a orth:Protein.
+inst:PROTEIN_3  a orth:Protein.
+inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Primates";
+                  orth:taxRangeId "9443"^^xsd:integer. #The NCBI taxonomy ID
+inst:IN_PARALOG  a orth:InparalogyRelation ;
+                   orth:hasHomologousMember inst:PROTEIN_2 , inst:PROTEIN_3;
+                   orth:hasTaxonomicRange inst:TAX_LEVEL.'''.
 
 
 ###  http://purl.org/net/orth#LeastDivergedOrthologyRelation
@@ -601,7 +879,18 @@ orth:LeastDivergedOrthologyRelation rdf:type owl:Class ;
                                     rdfs:comment "Least diverged orthologs (LDOs) are the genes in two different organisms that have diverged the least since their common ancestor and are most likely to retain the greatest functional similarities. This is a symmetric relation."@en ;
                                     rdfs:isDefinedBy "http://pantherdb.org/genes/"^^xsd:anyURI ;
                                     rdfs:label "least diverged orthology relation"@en ;
-                                    <http://www.w3.org/2004/02/skos/core#altLabel> "least diverged orthologous relation"@en .
+                                    <http://www.w3.org/2004/02/skos/core#altLabel> "least diverged orthologous relation"@en ;
+                        vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+inst:GENE_1  a orth:Gene.
+inst:GENE_2  a orth:Gene.
+inst:LD_ORTHOLOGS  
+        a orth:LeastDivergedOrthologyRelation ;
+        orth:isLeastDivergedOrtholog true; # by assigning this property an OWL-DL reasoner can infer that
+                                           # it is an instance of orth:LeastDivergedOrthologyRelation.    
+        orth:hasTaxonomicRange inst:TAX_LEVEL;
+        orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.'''.
 
 
 ###  http://purl.org/net/orth#Organism
@@ -612,7 +901,19 @@ orth:Organism rdf:type owl:Class ;
                               ] ;
               rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606."@en ;
               rdfs:label "Organism"@en ;
-              <http://www.w3.org/2004/02/skos/core#altLabel> "Living being"@en .
+              <http://www.w3.org/2004/02/skos/core#altLabel> "Living being"@en ;
+                        vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.org/net/orth#> .
+@prefix uniprot: <http://purl.uniprot.org/core/> .
+
+  inst:RAT_1   obo:RO_0002162 <http://purl.uniprot.org/taxonomy/10116>; # "in taxon" property
+               a orth:Organism.
+  <http://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon;
+            uniprot:scientificName "Rattus norvegicus".
+  inst:GENE a orth:Gene;
+            orth:organism inst:RAT_1 .'''.
 
 
 ###  http://purl.org/net/orth#OrthologsCluster
@@ -629,7 +930,37 @@ orth:OrthologsCluster rdf:type owl:Class ;
                       rdfs:label "Cluster of orthologs"@en ;
                       <http://www.w3.org/2004/02/skos/core#altLabel> "Cluster of orthologous sequences"@en ,
                                                                      "Orthologous cluster"@en ,
-                                                                     "group of orthologs"@en .
+                                                                     "group of orthologs"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+### Hierarchical cluster example
+  
+inst:PROTEIN_1 a orth:Protein .
+inst:PROTEIN_2 a orth:Protein .
+inst:PROTEIN_3 a orth:Protein .
+inst:ORTH_SET a orth:OrthologyDataset.
+inst:ORTH_HOG_1 a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:ORTH_HOG_2, inst:PROTEIN_2 .
+inst:ORTH_HOG_2 a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:PROTEIN_1, inst:PROTEIN_3 .
+inst:HGT a orth:HierarchicalGeneTree ;
+    obo:CDAO_0000148 inst:ORTH_HOG_1 . # has_Root property (sub-property of has) ''' , 
+    '''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+### Flat cluster example
+
+inst:PROTEIN_1 a orth:Protein .
+inst:PROTEIN_2 a orth:Protein .
+inst:PROTEIN_3 a orth:Protein .
+inst:ORTH_SET a orth:OrthologyDataset.
+inst:ORTH_CLUSTER a orth:OrthologsCluster ;
+    orth:inDataset inst:ORTH_SET ;
+    orth:hasHomologousMember inst:PROTEIN_1, inst:PROTEIN_3, inst:PROTEIN_2 . '''.
 
 
 ###  http://purl.org/net/orth#OrthologyDataset
@@ -641,7 +972,16 @@ orth:OrthologyDataset rdf:type owl:Class ;
                       rdfs:comment """Dataset that provides orthology relations including clusters of orthologs, pairwise orthology relations, and so on.
 
 Examples would be the content of resources such as OMA, InParanoid, TreeFam, PhylomeDB and so on. Each release of the resources is different dataset."""@en ;
-                      rdfs:label "Orthology datasource"@en .
+                      rdfs:label "Orthology datasource"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+   inst:ORTH_SET a orth:OrthologyDataset;
+                 pav:version "Mar2017";
+                 orth:inDatabase "https://omabrowser.org"^^xsd:anyURI.  '''.
 
 
 ###  http://purl.org/net/orth#OrthologyRelation
@@ -666,7 +1006,19 @@ orth:OrthologyRelation rdf:type owl:Class ;
                        owl:disjointWith orth:ParalogyRelation ;
                        rdfs:comment "homology pairwise relation that involves sequences that diverged after a speciation event."@en ;
                        rdfs:label "orthology relation"@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "orthologous relation"@en .
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "orthologous relation"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  inst:ORTHOLOGS  a orth:OrthologyRelation ;
+                  orth:hasTaxonomicRange inst:TAX_LEVEL;
+                  orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+
+  inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Primates";
+                  orth:taxRangeId 9443 . #The NCBI taxonomy ID.'''.
 
 
 ###  http://purl.org/net/orth#OutparalogyRelation
@@ -680,7 +1032,20 @@ orth:OutparalogyRelation rdf:type owl:Class ;
                          rdfs:label "outparalogy relation"@en ;
                          <http://www.w3.org/2004/02/skos/core#altLabel> "alloparalog"@en ,
                                                                         "out-paralogous relation"@en ,
-                                                                        "out-paralogy relation"@en .
+                                                                        "out-paralogy relation"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:OUTPARALOGS 
+         a orth:OutparalogyRelation ;
+         orth:hasTaxonomicRange inst:TAX_LEVEL;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+
+  inst:TAX_LEVEL  a orth:TaxonomicRange;
+                  orth:taxRange "Passeriformes".'''.
 
 
 ###  http://purl.org/net/orth#ParalogsCluster
@@ -694,7 +1059,38 @@ orth:ParalogsCluster rdf:type owl:Class ;
                      rdfs:label "Cluster of paralogs"@en ;
                      <http://www.w3.org/2004/02/skos/core#altLabel> "Cluster of paralogous sequences"@en ,
                                                                     "Paralogs cluster"@en ,
-                                                                    "group of paralogs"@en .
+                                                                    "group of paralogs"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+###Hierarchical cluster example.
+  
+   inst:GENE_1  a orth:Gene .
+   inst:GENE_2  a orth:Gene .
+   inst:GENE_3  a orth:Gene .
+   inst:ORTH_SET    a orth:OrthologyDataset.
+   inst:ORTH_HOG  a orth:OrthologsCluster ;
+                    orth:inDataset inst:ORTH_SET;
+                    orth:hasHomologousMember  inst:PARALOG_CLUSTER, inst:GENE_1.
+   inst:PARALOG_CLUSTER  a orth:ParalogsCluster ;
+                         orth:hasHomologousMember  inst:GENE_2, inst:GENE_3.
+   inst:HGT a orth:HierarchicalGeneTree ;
+            obo:CDAO_0000148 inst:ORTH_HOG. # has_Root property (sub-property of has). ''', 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+###Flat cluster example.
+
+   inst:GENE_1  a orth:Gene .
+   inst:GENE_2  a orth:Gene .
+   inst:ORTH_SET a orth:OrthologyDataset.
+   
+   inst:PARALOG_CLUSTER 
+           a orth:ParalogsCluster ;
+           orth:inDataset inst:ORTH_SET;
+           orth:hasHomologousMember  inst:GENE_2, inst:GENE_3. ''' .
+
 
 
 ###  http://purl.org/net/orth#ParalogyRelation
@@ -718,7 +1114,16 @@ orth:ParalogyRelation rdf:type owl:Class ;
                                       ] ;
                       rdfs:comment "Homology relation that involves sequences that diverged after a duplication event."@en ;
                       rdfs:label "paralogy relation"@en ;
-                      <http://www.w3.org/2004/02/skos/core#altLabel> "paralogous relation"@en .
+                      <http://www.w3.org/2004/02/skos/core#altLabel> "paralogous relation"@en ;
+                      vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:PARALOGS 
+         a orth:ParalogyRelation ;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.'''.
 
 
 ###  http://purl.org/net/orth#Protein
@@ -734,7 +1139,31 @@ orth:Protein rdf:type owl:Class ;
                              ] ;
              rdfs:comment "A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation."@en ;
              rdfs:isDefinedBy "http://purl.obolibrary.org/obo/so.owl" ;
-             rdfs:label "Protein"@en .
+             rdfs:label "Protein"@en ;
+               vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix lscr: <http://purl.org/lscr#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix uniprot: <http://purl.uniprot.org/core/> .
+inst:PROTEIN  a orth:Protein ;
+                rdfs:label "TP53" ;
+                rdfs:comment "tumor protein p53 [Source:RGD Symbol;Acc:3889]" ;
+                rdfs:seeAlso <http://example.org/> .
+                obo:RO_0001018 inst:ENSEMBLv83; # "contained in" property 
+                lscr:xrefEnsemblProtein <http://rdf.ebi.ac.uk/resource/ensembl.protein/ENSRNOP00000047840>;
+                lscr:xrefUniprot <http://purl.uniprot.org/uniprot/P10361>;
+                lscr:xrefEnsemblTranscript lthttp://rdf.ebi.ac.uk/resource/ensembl.transcript/ENSRNOT00000046490> ;
+                sio:SIO_010079 inst:GENE_P53; # "is encoded by" property 
+                orth:organism inst:RAT_1 .
+   
+   inst:ENSEMBLv83 a sio:SIO_000750. # "database" class 
+
+   inst:RAT_1 a orth:Organism;    
+              obo:RO_0002162 <http://purl.uniprot.org/taxonomy/10116>. # "in taxon" property
+                 
+   <http://purl.uniprot.org/taxonomy/10116> a uniprot:Taxon.'''.
 
 
 ###  http://purl.org/net/orth#SequenceUnit
@@ -754,14 +1183,39 @@ orth:Subgene rdf:type owl:Class ;
              rdfs:comment "A region of the sequence of the gene."@en ;
              rdfs:label "gene region"@en ,
                         "region of a gene"@en ,
-                        "subgene"@en .
+                        "subgene"@en ;
+          rdfs:label "Gene"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix obo: <http://purl.org/net/orth#> .
+inst:SUB_GENE  a orth:Subgene ;
+                  obo:CDAO_0000194 inst:GENE. # "part_of" property
+   inst:GENE      a orth:Gene .'''.
 
 
 ###  http://purl.org/net/orth#TaxonomicRange
 orth:TaxonomicRange rdf:type owl:Class ;
                     rdfs:comment "The taxonomic level represents the taxon at which a group of sequences are considered members of the same cluster of orthologs/paralogs"@en ;
                     rdfs:label "Taxonomic level"@en ;
-                    <http://www.w3.org/2004/02/skos/core#altLabel> "Taxonomic range"@en .
+                    <http://www.w3.org/2004/02/skos/core#altLabel> "Taxonomic range"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  inst:ORTH_SET   a orth:OrthologyDataset.
+  
+  inst:ORTH_CLUSTER  
+          a orth:OrthologsCluster ;
+          orth:inDataset inst:ORTH_SET;
+          orth:hasTaxonomicRange  <http://purl.uniprot.org/taxonomy/9126>;
+          orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.
+  
+  <http://purl.uniprot.org/taxonomy/9126>
+         a orth:TaxonomicRange;
+         orth:taxRange "Passeriformes";
+         orth:taxRangeId 9126.'''.
 
 
 ###  http://purl.org/net/orth#XenologyRelation
@@ -770,7 +1224,16 @@ orth:XenologyRelation rdf:type owl:Class ;
                       rdfs:comment "Gene pairs whose history, since their divergence, includes a horizontal transfer."@en ;
                       rdfs:isDefinedBy "https://doi.org/10.1093/bioinformatics/btw686"@en ;
                       rdfs:label "xenology relation"@en ;
-                      <http://www.w3.org/2004/02/skos/core#altLabel> "xenologous relation"@en .
+                      <http://www.w3.org/2004/02/skos/core#altLabel> "xenologous relation"@en ;
+          vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+  inst:GENE_1  a orth:Gene.
+  inst:GENE_2  a orth:Gene.
+  
+  inst:XenologyRelation 
+         a orth:XenologyRelation ;
+         orth:hasHomologousMember inst:GENE_1 , inst:GENE_2.'''.
 
 
 ###  http://purl.uniprot.org/core/Taxon
@@ -786,13 +1249,31 @@ up:Taxon rdf:type owl:Class ;
                          ] ;
          rdfs:comment "An element of a taxonomy for classifying life forms."^^xsd:string ;
          rdfs:label "Taxon"^^xsd:string ;
-         rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/books/NBK54428/" .
+         rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/books/NBK54428/" ;
+         vann:example 
+'''@prefix uniprot: <http://purl.uniprot.org/core/> .
+ <http://purl.uniprot.org/taxonomy/10116> 
+           a uniprot:Taxon;
+           uniprot:mnemonic "RAT";
+           uniprot:scientificName "Rattus norvegicus". '''.
 
 
 ###  http://semanticscience.org/resource/SIO_000750
 sio:SIO_000750 rdf:type owl:Class ;
                rdfs:comment "A database is a data store such as relational, hierarchical and graph databases."@en ;
-               rdfs:label "database"@en .
+               rdfs:label "database"@en ;
+               vann:example 
+'''@prefix inst: <http://example.org#> .
+@prefix orth: <http://purl.org/net/orth#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix pav: <http://purl.org/pav/> .
+ inst:ENSEMBLv68  a sio:SIO_000750; # "database" class 
+                    rdfs:label "Pelodiscus sinensis from ENSEMBL v68";
+                    pav:version "Ensembl 68; PelSin_1.0; 6-AUG-2012".
+   inst:PROTEIN  a orth:Protein ;
+                 obo:RO_0001018 inst:ENSEMBLv68. # "contained in" property 
+   inst:GENE     a orth:Gene ;
+                 obo:RO_0001018 inst:ENSEMBLv68. # "contained in" property '''.
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
