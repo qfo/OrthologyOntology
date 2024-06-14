@@ -13,7 +13,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> . 
-@prefix bibo : <http://purl.org/ontology/bibo/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @base <http://purl.org/net/orth> .
